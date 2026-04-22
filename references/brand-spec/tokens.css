@@ -1,0 +1,237 @@
+/* ============================================================
+   Aham Design System — Colors & Type
+   Master CSS variable file for Brand V2.0, Prototype, Field,
+   and Platform (Ant 5) tracks.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+/* User-supplied brand font — SimSun Bold (宋体 粗体).
+   Registered as "SimSun" so the --ff-serif stack picks it up on
+   systems without system SimSun installed. */
+@font-face {
+  font-family: "SimSun";
+  src: url("./fonts/simsunb.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ────────────────────────────────────────────────
+     BRAND BLUE  ★  UNIFIED primary — all tracks
+     (Aham Blue — merged with former platform blue)
+     ──────────────────────────────────────────────── */
+  --blue-50:  #E6F4FF;
+  --blue-100: #BAE0FF;
+  --blue-200: #91CAFF;
+  --blue-300: #69B1FF;
+  --blue-400: #4096FF;
+  --blue-500: #1677FF;   /* ★ sole brand accent */
+  --blue-600: #0958D9;
+  --blue-700: #003EB3;
+  --blue-800: #002C8C;
+  --blue-900: #001D66;
+
+  /* Aliases for backward compatibility (same value) */
+  --platform-primary:        #1677FF;
+  --platform-primary-hover:  #4096FF;
+  --platform-primary-active: #0958D9;
+  --platform-blue-1:         #E6F4FF;
+
+  /* ────────────────────────────────────────────────
+     NEUTRAL INK SCALE
+     ──────────────────────────────────────────────── */
+  --ink-0:    #FFFFFF;
+  --ink-50:   #FAFAFA;
+  --ink-100:  #F5F5F5;
+  --ink-200:  #E2E2E2;
+  --ink-300:  #CCCCCC;
+  --ink-400:  #BBBBBB;
+  --ink-500:  #888888;
+  --ink-600:  #555555;
+  --ink-700:  #333333;
+  --ink-800:  #1A1A1A;     /* near-black; never pure #000 */
+  --ink-900:  #0A0E14;     /* covers / chapter dark */
+  --ink-dark-menu: #001529; /* Ant dark top-nav */
+
+  /* Text alpha (Ant 5 convention) */
+  --text-primary:    rgba(0, 0, 0, 0.88);
+  --text-secondary:  rgba(0, 0, 0, 0.65);
+  --text-tertiary:   rgba(0, 0, 0, 0.45);
+  --text-quaternary: rgba(0, 0, 0, 0.25);
+
+  /* ────────────────────────────────────────────────
+     SEMANTIC (status — must pair with symbol/text)
+     ──────────────────────────────────────────────── */
+  --success-50:  #EDF3EE;
+  --success-600: #2E6B3E;
+  --warning-50:  #F7EFE0;
+  --warning-600: #8A5A00;
+  --danger-50:   #F5E6E6;
+  --danger-600:  #9C2B2B;
+
+  /* Ant 5 semantic equivalents (Platform track) */
+  --ant-success: #52C41A;
+  --ant-warning: #FAAD14;
+  --ant-error:   #FF4D4F;
+  --ant-info:    #1677FF;
+  --ant-green-1: #F6FFED;
+  --ant-gold-1:  #FFFBE6;
+  --ant-red-1:   #FFF2F0;
+
+  /* ────────────────────────────────────────────────
+     BRAND ACCENTS — promo materials only, ≤ 5% area
+     Never in deliverables, never in UI.
+     ──────────────────────────────────────────────── */
+  --accent-cyan:   #20C0C0;
+  --accent-violet: #A050FF;
+
+  /* ────────────────────────────────────────────────
+     TYPOGRAPHY
+     ──────────────────────────────────────────────── */
+  --ff-sans:  "Source Han Sans SC", "Noto Sans SC", "PingFang SC",
+              "Microsoft YaHei", -apple-system, BlinkMacSystemFont,
+              "Segoe UI", sans-serif;
+  --ff-serif: "Source Han Serif SC", "Noto Serif SC", "SimSun",
+              "Songti SC", serif;
+  --ff-mono:  "Roboto Mono", "JetBrains Mono", "SF Mono",
+              "Courier New", monospace;
+
+  /* Document type scale (Word / PPT) */
+  --fs-h1-doc:    22pt;
+  --fs-h2-doc:    15pt;
+  --fs-h3-doc:    12pt;
+  --fs-body-doc:  10.5pt;
+  --fs-table-doc: 9pt;
+  --fs-callout:   9.5pt;
+  --fs-caption:   8.5pt;
+  --fs-footer:    8pt;
+
+  /* PPT scale */
+  --fs-ppt-cover:        40pt;
+  --fs-ppt-action-title: 22pt;
+  --fs-ppt-subtitle:     15pt;
+  --fs-ppt-body:         12pt;
+
+  /* UI scale (web admin) */
+  --fs-page-title: 30px;
+  --fs-h2:         24px;
+  --fs-h3:         20px;
+  --fs-h4:         16px;
+  --fs-lg:         16px;
+  --fs-body:       14px;
+  --fs-sm:         12px;
+
+  /* Field — PDA */
+  --fs-pda-micro:  12px;
+  --fs-pda-body:   14px;
+  --fs-pda-title:  16px;
+  --fs-pda-page:   18px;
+  --fs-pda-kpi:    24px;
+
+  /* Field — Pad */
+  --fs-pad-small: 14px;
+  --fs-pad-body:  16px;
+  --fs-pad-title: 16px;
+  --fs-pad-page:  20px;
+  --fs-pad-kpi:   28px;
+
+  /* ────────────────────────────────────────────────
+     SPACING (8pt baseline)
+     ──────────────────────────────────────────────── */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+
+  /* ────────────────────────────────────────────────
+     RADIUS
+     Brand / prototype / field stay ≤ 6px.
+     Platform (Ant 5) goes up to 8px.
+     ──────────────────────────────────────────────── */
+  --radius-xs:       2px;
+  --radius-sm:       4px;
+  --radius-md:       6px;     /* Ant default */
+  --radius-lg:       8px;     /* Ant card / Modal */
+
+  /* ────────────────────────────────────────────────
+     CONTROL HEIGHTS
+     ──────────────────────────────────────────────── */
+  --h-control-sm:    24px;
+  --h-control:       32px;     /* default UI */
+  --h-control-lg:    40px;
+  --h-field:         40px;     /* field track input */
+  --h-btn-field:     48px;     /* field standard button */
+  --h-btn-field-sm:  38px;
+  --h-row:           44px;     /* min touch row */
+
+  --h-statusbar: 24px;
+  --h-topbar:    56px;
+  --h-appbar:    56px;
+  --h-tabbar:    56px;
+  --h-bottombar: 48px;
+
+  /* ────────────────────────────────────────────────
+     SHADOWS (use sparingly)
+     ──────────────────────────────────────────────── */
+  --shadow-sheet:  0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-dialog: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-mobile: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-modal:  0 12px 48px rgba(0, 0, 0, 0.12);
+
+  /* ────────────────────────────────────────────────
+     OTHERS
+     ──────────────────────────────────────────────── */
+  --mask:          rgba(0, 0, 0, 0.5);
+  --border-1:      1px solid var(--ink-200);
+  --border-strong: 1px solid var(--ink-300);
+
+  /* Animation tokens — minimal use only */
+  --motion-fast:   0.15s ease;
+  --motion-normal: 0.2s ease;
+}
+
+/* ============================================================
+   SEMANTIC SHORTCUTS
+   ============================================================ */
+.fg-1 { color: var(--ink-800); }   /* primary text */
+.fg-2 { color: var(--ink-700); }   /* body */
+.fg-3 { color: var(--ink-600); }   /* subtitle */
+.fg-4 { color: var(--ink-500); }   /* helper */
+.fg-disabled { color: var(--ink-400); }
+.fg-accent { color: var(--blue-500); }
+
+/* ============================================================
+   BASELINE
+   ============================================================ */
+body {
+  font-family: var(--ff-sans);
+  font-size: var(--fs-body);
+  color: var(--ink-700);
+  background: var(--ink-0);
+  -webkit-font-smoothing: antialiased;
+}
+
+.num, .mono, code, kbd { font-family: var(--ff-mono); }
+.serif { font-family: var(--ff-serif); }
+
+/* Document semantic classes */
+h1.doc, .h1-doc { font-family: var(--ff-sans); font-weight: 700; font-size: var(--fs-h1-doc); color: var(--ink-800); }
+h2.doc, .h2-doc { font-family: var(--ff-sans); font-weight: 700; font-size: var(--fs-h2-doc); color: var(--ink-800); border-bottom: 0.5pt solid var(--ink-300); padding-bottom: 4px; }
+h3.doc, .h3-doc { font-family: var(--ff-sans); font-weight: 700; font-size: var(--fs-h3-doc); color: var(--ink-600); }
+p.doc, .p-doc   { font-family: var(--ff-serif); font-weight: 400; font-size: var(--fs-body-doc); color: var(--ink-700); line-height: 1.4; text-indent: 2em; }
+
+/* PPT Action Title */
+.ppt-action-title {
+  font-family: var(--ff-serif);
+  font-weight: 700;
+  font-size: var(--fs-ppt-action-title);
+  color: var(--ink-800);
+  border-left: 3pt solid var(--blue-500);
+  padding-left: 12px;
+}
