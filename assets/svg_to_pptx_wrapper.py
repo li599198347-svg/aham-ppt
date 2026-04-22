@@ -29,7 +29,7 @@ from typing import Optional
 def svg_to_native_pptx(
     svg_files: list[Path],
     output_path: Path,
-    canvas_format: str = 'ppt169',
+    canvas_format: str = 'auto',
     verbose: bool = True,
     notes: Optional[dict[str, str]] = None,
 ) -> bool:
@@ -39,7 +39,10 @@ def svg_to_native_pptx(
     Args:
         svg_files: SVG 文件路径列表(按顺序对应 PPT 的各页)
         output_path: 输出 PPTX 路径
-        canvas_format: 画布格式(默认 ppt169 即 16:9)
+        canvas_format: 画布格式。默认 'auto' 会从 SVG 的 viewBox 自动推导画布尺寸,
+                      保证内容不被裁切。其他可选值:
+                        - 'ppt169' (强制 1280×720 · 16:9)
+                        - None (同 'auto')
         verbose: 是否输出转换日志
         notes: 可选的讲稿字典,key 为 SVG stem,value 为 markdown 讲稿
 
@@ -51,12 +54,17 @@ def svg_to_native_pptx(
         - use_compat_mode=False:不生成 PNG 后备(纯矢量)
         - transition=None:不添加页面切换动画(客户可以自己加)
     """
+    # 'auto' 等价于 None,触发底层 viewBox 自动检测
+    if canvas_format == 'auto':
+        canvas_format = None
+
     # 确保能找到底层工具链
     wrapper_dir = Path(__file__).parent
     if str(wrapper_dir) not in sys.path:
         sys.path.insert(0, str(wrapper_dir))
 
     from svg_to_pptx.pptx_builder import create_pptx_with_native_svg
+
 
     # 转换为 Path 对象(以防传入的是字符串)
     svg_files = [Path(p) if not isinstance(p, Path) else p for p in svg_files]
