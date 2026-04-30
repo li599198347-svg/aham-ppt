@@ -54,7 +54,7 @@
       font-size="44" font-weight="bold" fill="#1A1A1A">[declaration_line_2]</text>
 
 <!-- 品牌蓝短线点缀 -->
-<line x1="580" y1="440" x2="700" y2="440" stroke="#003D7A" stroke-width="2.5"/>
+<line x1="580" y1="440" x2="700" y2="440" stroke="var(--brand-primary)" stroke-width="2.5"/>
 
 <!-- 副注（小字） -->
 <text x="640" y="490" text-anchor="middle" font-size="16" fill="#666">[sub_note]</text>
@@ -75,11 +75,11 @@
 <text x="100" y="300" font-size="14" fill="#555">[summary_of_previous]</text>
 
 <!-- 中间：大号章节切换 -->
-<text x="640" y="420" text-anchor="middle" font-size="14" fill="#003D7A" letter-spacing="4">
+<text x="640" y="420" text-anchor="middle" font-size="14" fill="var(--brand-primary)" letter-spacing="4">
   NEXT PART</text>
 <text x="640" y="470" text-anchor="middle" font-family="Songti SC,SimSun,serif"
-      font-size="40" font-weight="bold" fill="#003D7A">[Part 2 标题]</text>
-<line x1="540" y1="510" x2="740" y2="510" stroke="#003D7A" stroke-width="2"/>
+      font-size="40" font-weight="bold" fill="var(--brand-primary)">[Part 2 标题]</text>
+<line x1="540" y1="510" x2="740" y2="510" stroke="var(--brand-primary)" stroke-width="2"/>
 <text x="640" y="550" text-anchor="middle" font-size="16" fill="#555">[Part 2 引言]</text>
 
 <!-- 底部小字：Part 编号导航 -->

@@ -10,7 +10,7 @@
 <!-- V-01与S-09结构相同，颜色语义更严格 -->
 <!-- 标准Chrome -->
 
-<!-- 说明：正向指标用 #1A7A42，负向用 #B01C1C，中性用 #003D7A -->
+<!-- 说明：正向指标用 #1A7A42，负向用 #B01C1C，中性用 var(--brand-primary) -->
 <!-- 参照 S-09 骨架，替换颜色语义即可 -->
 <!-- 卡片1（正向） -->
 <rect x="40" y="120" width="360" height="160" rx="4" fill="#FFFFFF" stroke="#E2E2E2" stroke-width="0.5"/>
@@ -28,16 +28,16 @@
 
 <!-- 卡片3（中性） -->
 <rect x="840" y="120" width="400" height="160" rx="4" fill="#FFFFFF" stroke="#E2E2E2" stroke-width="0.5"/>
-<rect x="840" y="120" width="4" height="160" fill="#003D7A"/>
+<rect x="840" y="120" width="4" height="160" fill="var(--brand-primary)"/>
 <text x="856" y="152" font-family="Microsoft YaHei,sans-serif" font-size="12" fill="#888888">[kpi3_label]</text>
-<text x="856" y="214" font-family="Songti SC,SimSun,serif" font-size="44" font-weight="bold" fill="#003D7A">[kpi3_value]</text>
+<text x="856" y="214" font-family="Songti SC,SimSun,serif" font-size="44" font-weight="bold" fill="var(--brand-primary)">[kpi3_value]</text>
 <text x="856" y="268" font-family="Microsoft YaHei,sans-serif" font-size="12" fill="#555555">[kpi3_trend]</text>
 
 <!-- 行2 y=320，同上规律，替换kpi4/5/6内容 -->
 <rect x="40" y="320" width="360" height="160" rx="4" fill="#FFFFFF" stroke="#E2E2E2" stroke-width="0.5"/>
-<rect x="40" y="320" width="4" height="160" fill="#003D7A"/>
+<rect x="40" y="320" width="4" height="160" fill="var(--brand-primary)"/>
 <text x="56" y="352" font-family="Microsoft YaHei,sans-serif" font-size="12" fill="#888888">[kpi4_label]</text>
-<text x="56" y="414" font-family="Songti SC,SimSun,serif" font-size="44" font-weight="bold" fill="#003D7A">[kpi4_value]</text>
+<text x="56" y="414" font-family="Songti SC,SimSun,serif" font-size="44" font-weight="bold" fill="var(--brand-primary)">[kpi4_value]</text>
 <text x="56" y="468" font-family="Microsoft YaHei,sans-serif" font-size="12" fill="#555555">[kpi4_trend]</text>
 
 <rect x="440" y="320" width="360" height="160" rx="4" fill="#FFFFFF" stroke="#E2E2E2" stroke-width="0.5"/>
@@ -78,15 +78,15 @@
 <text x="440" y="378" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="13" fill="#AAAAAA">[此处替换为chart-impl.md折线图代码]</text>
 
 <!-- 右侧洞察区：x=860 y=100 w=380 h=540 -->
-<text x="860" y="140" font-family="Microsoft YaHei,sans-serif" font-size="11" fill="#003D7A" letter-spacing="2">KEY INSIGHT</text>
-<line x1="860" y1="152" x2="1000" y2="152" stroke="#003D7A" stroke-width="1.5"/>
+<text x="860" y="140" font-family="Microsoft YaHei,sans-serif" font-size="11" fill="var(--brand-primary)" letter-spacing="2">KEY INSIGHT</text>
+<line x1="860" y1="152" x2="1000" y2="152" stroke="var(--brand-primary)" stroke-width="1.5"/>
 <text x="860" y="192" font-family="Songti SC,SimSun,serif" font-size="22" font-weight="bold" fill="#1A1A1A">[insight_title]</text>
 <text x="860" y="230" font-family="Microsoft YaHei,sans-serif" font-size="13" fill="#555555">[insight_desc1]</text>
 <text x="860" y="254" font-family="Microsoft YaHei,sans-serif" font-size="13" fill="#555555">[insight_desc2]</text>
 <text x="860" y="278" font-family="Microsoft YaHei,sans-serif" font-size="13" fill="#555555">[insight_desc3]</text>
 
 <!-- 关键数字强调 -->
-<text x="860" y="360" font-family="Songti SC,SimSun,serif" font-size="48" font-weight="bold" fill="#003D7A">[key_number]</text>
+<text x="860" y="360" font-family="Songti SC,SimSun,serif" font-size="48" font-weight="bold" fill="var(--brand-primary)">[key_number]</text>
 <text x="860" y="400" font-family="Microsoft YaHei,sans-serif" font-size="13" fill="#888888">[key_number_label]</text>
 
 <!-- 数据来源 -->
@@ -101,11 +101,11 @@
 
 <!-- 左图区：x=40 y=100 w=590 h=540 -->
 <rect x="40" y="100" width="590" height="540" rx="4" fill="#FAFAFA" stroke="#E2E2E2" stroke-width="0.5"/>
-<text x="56" y="128" font-family="Microsoft YaHei,sans-serif" font-size="13" font-weight="bold" fill="#003D7A">[left_chart_title]</text>
+<text x="56" y="128" font-family="Microsoft YaHei,sans-serif" font-size="13" font-weight="bold" fill="var(--brand-primary)">[left_chart_title]</text>
 <text x="335" y="388" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="13" fill="#AAAAAA">[此处替换为左侧图表代码]</text>
 
 <!-- 右图区：x=646 y=100 w=594 h=540 -->
 <rect x="646" y="100" width="594" height="540" rx="4" fill="#FAFAFA" stroke="#E2E2E2" stroke-width="0.5"/>
-<text x="662" y="128" font-family="Microsoft YaHei,sans-serif" font-size="13" font-weight="bold" fill="#003D7A">[right_chart_title]</text>
+<text x="662" y="128" font-family="Microsoft YaHei,sans-serif" font-size="13" font-weight="bold" fill="var(--brand-primary)">[right_chart_title]</text>
 <text x="943" y="388" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="13" fill="#AAAAAA">[此处替换为右侧图表代码]</text>
 ```

@@ -40,7 +40,7 @@
 <text x="640" y="366" text-anchor="middle" font-family="Songti SC,SimSun,serif" font-size="44" font-weight="bold" fill="#1A1A1A">[declaration_line_2]</text>
 
 <!-- 品牌蓝短线 -->
-<line x1="580" y1="410" x2="700" y2="410" stroke="#003D7A" stroke-width="2.5"/>
+<line x1="580" y1="410" x2="700" y2="410" stroke="var(--brand-primary)" stroke-width="2.5"/>
 
 <!-- 副注小字 -->
 <text x="640" y="456" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="16" fill="#666666">[sub_note]</text>
@@ -67,9 +67,9 @@
 <line x1="520" y1="160" x2="520" y2="560" stroke="#E2E2E2" stroke-width="0.5"/>
 
 <!-- 右侧：即将进入 -->
-<text x="580" y="200" font-family="Microsoft YaHei,sans-serif" font-size="11" fill="#003D7A" letter-spacing="3">NEXT PART</text>
-<line x1="580" y1="220" x2="700" y2="220" stroke="#003D7A" stroke-width="1.5"/>
-<text x="580" y="320" font-family="Songti SC,SimSun,serif" font-size="36" font-weight="bold" fill="#003D7A">[next_part_title]</text>
+<text x="580" y="200" font-family="Microsoft YaHei,sans-serif" font-size="11" fill="var(--brand-primary)" letter-spacing="3">NEXT PART</text>
+<line x1="580" y1="220" x2="700" y2="220" stroke="var(--brand-primary)" stroke-width="1.5"/>
+<text x="580" y="320" font-family="Songti SC,SimSun,serif" font-size="36" font-weight="bold" fill="var(--brand-primary)">[next_part_title]</text>
 <text x="580" y="380" font-family="Microsoft YaHei,sans-serif" font-size="16" fill="#555555">[next_part_intro]</text>
 
 <!-- 底部导航 -->

@@ -39,10 +39,10 @@
 
 ```svg
 <!-- 主时间轴 y=240 -->
-<line x1="80" y1="240" x2="1200" y2="240" stroke="#003D7A" stroke-width="2"/>
+<line x1="80" y1="240" x2="1200" y2="240" stroke="var(--brand-primary)" stroke-width="2"/>
 
 <!-- N个节点，cx 等距分布 -->
-<circle cx="[cx]" cy="240" r="20" fill="#003D7A"/>
+<circle cx="[cx]" cy="240" r="20" fill="var(--brand-primary)"/>
 <text x="[cx]" y="246" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFF">[M]</text>
 
 <!-- 下方卡片 -->
@@ -95,7 +95,7 @@
 
 ```svg
 <text x="320" y="180" text-anchor="middle" font-size="13" fill="#888" letter-spacing="4">[left_header]</text>
-<text x="960" y="180" text-anchor="middle" font-size="13" fill="#003D7A" letter-spacing="4">[right_header]</text>
+<text x="960" y="180" text-anchor="middle" font-size="13" fill="var(--brand-primary)" letter-spacing="4">[right_header]</text>
 <line x1="640" y1="240" x2="640" y2="600" stroke="#E2E2E2" stroke-dasharray="4,4"/>
 <!-- 左右对仗三行内容 -->
 ```

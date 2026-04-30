@@ -5,6 +5,25 @@ Phase 7 每页SVG设计的执行规范。
 **颜色唯一来源：brand.md §2。禁止自定义色值，包括在本文件中写死色值。**
 **语义色必须颜色+符号双通道（brand.md §2.3）。**
 
+## CSS 变量映射（SVG 生成时必须在 `<defs><style>` 块中声明）
+
+```svg
+<defs><style>
+  :root {
+    --brand-primary:   [从 BRAND_RULES 取主色，如 #1677FF];
+    --brand-near-black: #1A1A1A;
+    --brand-gray:       #888888;
+    --brand-light-bg:   #F5F5F5;
+    --brand-border:     #E2E2E2;
+    --semantic-success: #2E6B3E;
+    --semantic-warning: #8A5A00;
+    --semantic-danger:  #9C2B2B;
+  }
+</style></defs>
+```
+
+> `var(--brand-primary)` 在骨架代码中统一使用；具体色值从 Phase 1 加载的 BRAND_RULES 填入。
+
 ---
 
 ---
@@ -84,7 +103,7 @@ Step 6  执行输出前自检（含PPTX兼容性5条负面约束）
 
 **字体关键规则**（brand.md 7.2节）：
 - Action Title：`font-family="Songti SC,SimSun,serif"` Bold
-- 内容小标题：`font-family="Microsoft YaHei,sans-serif"` Bold，fill=#003D7A
+- 内容小标题：`font-family="Microsoft YaHei,sans-serif"` Bold，fill=var(--brand-primary)
 - 正文说明：`font-family="Microsoft YaHei,sans-serif"` Regular，fill=#555555
 - 数字/KPI：`font-family="Microsoft YaHei,sans-serif"` Bold，fill=状态色（impact 类用 Songti SC）
 
@@ -101,24 +120,24 @@ Step 6  执行输出前自检（含PPTX兼容性5条负面约束）
 
 **强调卡（深蓝底）**：
 ```svg
-<rect rx="4" fill="#003D7A"/>
+<rect rx="4" fill="var(--brand-primary)"/>
 <!-- 内部所有文字改为 fill="white" -->
 ```
 
 **浅蓝底卡（Callout/信息型）**：
 ```svg
-<rect rx="4" fill="#E8F0FA" stroke="#003D7A" stroke-width="0.5"/>
+<rect rx="4" fill="#E8F0FA" stroke="var(--brand-primary)" stroke-width="0.5"/>
 ```
 
 ### B-4：卡片内容元素
 
 **卡片内边距**：16px
 
-**卡片标题**：y=卡片y+28，微软雅黑 Bold 14px，#003D7A
+**卡片标题**：y=卡片y+28，微软雅黑 Bold 14px，var(--brand-primary)
 
 **Bullets**（起始y=卡片y+52，间距24px）：
 ```svg
-<rect x="[cx+16]" y="[itemY-10]" width="3" height="14" rx="1" fill="#003D7A"/>
+<rect x="[cx+16]" y="[itemY-10]" width="3" height="14" rx="1" fill="var(--brand-primary)"/>
 <text x="[cx+26]" y="[itemY]" font-family="Microsoft YaHei,sans-serif"
       font-size="13" fill="#333333">[bullet文字]</text>
 ```
@@ -127,7 +146,7 @@ Step 6  执行输出前自检（含PPTX兼容性5条负面约束）
 ```svg
 <text x="[卡片中心x]" y="[卡片中心y]" text-anchor="middle"
       font-family="Songti SC,SimSun,serif" font-size="[140-180]"
-      font-weight="bold" fill="#003D7A">[big_number]</text>
+      font-weight="bold" fill="var(--brand-primary)">[big_number]</text>
 ```
 
 **数据来源标注**（有 data_points 时必须）：
@@ -163,7 +182,7 @@ Step 6  执行输出前自检（含PPTX兼容性5条负面约束）
 ### AI 最常见的三种失守方式
 
 1. **多色相分类滥用**:为了区分模块擅自引入绿/红/蓝等多种色相
-2. **擅自定义色值**:在 Skill 里写"深蓝 #003D7A"这种具体色值,形成第二套"事实标准",与 brand.md 分裂
+2. **擅自定义色值**:在 Skill 里写"深蓝 var(--brand-primary)"这种具体色值,形成第二套"事实标准",与 brand.md 分裂
 3. **擅自收紧/放宽规范**:比如"不用绿色""最多 3 种色相"——这些限制如果 brand.md 没有,就是 AI 的臆造
 
 ### 正确做法
@@ -327,8 +346,8 @@ SVG文字内容中，以下字符必须使用XML转义：
 <path d="M100,100 L300,100" marker-end="url(#arrow)"/>
 
 <!-- ✅ 正确：polygon多边形直接画箭头 -->
-<line x1="100" y1="100" x2="290" y2="100" stroke="#003D7A" stroke-width="2"/>
-<polygon points="285,94 300,100 285,106" fill="#003D7A"/>
+<line x1="100" y1="100" x2="290" y2="100" stroke="var(--brand-primary)" stroke-width="2"/>
+<polygon points="285,94 300,100 285,106" fill="var(--brand-primary)"/>
 ```
 
 注：`<line>` 元素上的 `marker-end` 有部分支持，但仍推荐用 `<polygon>` 确保100%可靠。

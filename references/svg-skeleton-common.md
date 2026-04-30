@@ -11,15 +11,15 @@
 <svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
 
 <!-- ① 顶部品牌色线 -->
-<rect x="0" y="0" width="1280" height="3" fill="#003D7A"/>
+<rect x="0" y="0" width="1280" height="3" fill="var(--brand-primary)"/>
 
 <!-- ② 页眉 -->
 <text x="40" y="22" font-family="Microsoft YaHei,sans-serif" font-size="11" fill="#888888">[section_path]</text>
-<text x="1240" y="22" text-anchor="end" font-family="Microsoft YaHei,sans-serif" font-size="11" font-weight="bold" fill="#003D7A">AHAM</text>
+<text x="1240" y="22" text-anchor="end" font-family="Microsoft YaHei,sans-serif" font-size="11" font-weight="bold" fill="var(--brand-primary)">[brand_name]</text>
 <line x1="40" y1="30" x2="1240" y2="30" stroke="#E2E2E2" stroke-width="0.5"/>
 
 <!-- ③ Action Title（单行） -->
-<rect x="40" y="36" width="3" height="52" fill="#003D7A"/>
+<rect x="40" y="36" width="3" height="52" fill="var(--brand-primary)"/>
 <text x="52" y="70" font-family="Songti SC,SimSun,serif" font-size="22" font-weight="bold" fill="#1A1A1A">[title]</text>
 <line x1="40" y1="94" x2="1240" y2="94" stroke="#E2E2E2" stroke-width="0.5"/>
 
@@ -36,7 +36,7 @@
 
 **双行标题时，替换③为：**
 ```svg
-<rect x="40" y="36" width="3" height="52" fill="#003D7A"/>
+<rect x="40" y="36" width="3" height="52" fill="var(--brand-primary)"/>
 <text x="52" y="56" font-family="Songti SC,SimSun,serif" font-size="20" font-weight="bold" fill="#1A1A1A">[title_line_1]</text>
 <text x="52" y="82" font-family="Songti SC,SimSun,serif" font-size="20" font-weight="bold" fill="#1A1A1A">[title_line_2]</text>
 <line x1="40" y1="94" x2="1240" y2="94" stroke="#E2E2E2" stroke-width="0.5"/>
@@ -60,18 +60,18 @@
 ```svg
 <rect x="[cx]" y="[cy]" width="[cw]" height="[ch]" rx="4" fill="#FFFFFF" stroke="#E2E2E2" stroke-width="0.5"/>
 <!-- 卡片标题 -->
-<text x="[cx+16]" y="[cy+28]" font-family="Microsoft YaHei,sans-serif" font-size="14" font-weight="bold" fill="#003D7A">[card_title]</text>
+<text x="[cx+16]" y="[cy+28]" font-family="Microsoft YaHei,sans-serif" font-size="14" font-weight="bold" fill="var(--brand-primary)">[card_title]</text>
 <!-- Bullet 1 -->
-<rect x="[cx+16]" y="[cy+42]" width="3" height="14" rx="1" fill="#003D7A"/>
+<rect x="[cx+16]" y="[cy+42]" width="3" height="14" rx="1" fill="var(--brand-primary)"/>
 <text x="[cx+26]" y="[cy+52]" font-family="Microsoft YaHei,sans-serif" font-size="13" fill="#333333">[bullet_1]</text>
 <!-- Bullet 2（y += 24） -->
-<rect x="[cx+16]" y="[cy+66]" width="3" height="14" rx="1" fill="#003D7A"/>
+<rect x="[cx+16]" y="[cy+66]" width="3" height="14" rx="1" fill="var(--brand-primary)"/>
 <text x="[cx+26]" y="[cy+76]" font-family="Microsoft YaHei,sans-serif" font-size="13" fill="#333333">[bullet_2]</text>
 ```
 
 ### 深蓝强调卡
 ```svg
-<rect x="[cx]" y="[cy]" width="[cw]" height="[ch]" rx="4" fill="#003D7A"/>
+<rect x="[cx]" y="[cy]" width="[cw]" height="[ch]" rx="4" fill="var(--brand-primary)"/>
 <text x="[cx+16]" y="[cy+28]" font-family="Microsoft YaHei,sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">[card_title]</text>
 <rect x="[cx+16]" y="[cy+42]" width="3" height="14" rx="1" fill="#FFFFFF"/>
 <text x="[cx+26]" y="[cy+52]" font-family="Microsoft YaHei,sans-serif" font-size="13" fill="#FFFFFF">[bullet_1]</text>
@@ -80,6 +80,6 @@
 ### 箭头（替代marker，用polygon）
 ```svg
 <!-- 水平箭头：从(x1,y)到(x2,y) -->
-<line x1="[x1]" y1="[y]" x2="[x2-12]" y2="[y]" stroke="#003D7A" stroke-width="2"/>
-<polygon points="[x2-12],[y-6] [x2],[y] [x2-12],[y+6]" fill="#003D7A"/>
+<line x1="[x1]" y1="[y]" x2="[x2-12]" y2="[y]" stroke="var(--brand-primary)" stroke-width="2"/>
+<polygon points="[x2-12],[y-6] [x2],[y] [x2-12],[y+6]" fill="var(--brand-primary)"/>
 ```

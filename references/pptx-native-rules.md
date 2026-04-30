@@ -138,8 +138,8 @@ assert success, "转换失败,检查 SVG 是否规范"
 
 ```svg
 <!-- 替换方案：polygon画箭头 -->
-<line x1="100" y1="200" x2="390" y2="200" stroke="#003D7A" stroke-width="2"/>
-<polygon points="385,194 400,200 385,206" fill="#003D7A"/>
+<line x1="100" y1="200" x2="390" y2="200" stroke="var(--brand-primary)" stroke-width="2"/>
+<polygon points="385,194 400,200 385,206" fill="var(--brand-primary)"/>
 ```
 
 ### 问题 3 · 元素位置偏移

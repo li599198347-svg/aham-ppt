@@ -11,7 +11,7 @@
 <text x="40" y="40" font-family="Microsoft YaHei,sans-serif" font-size="10" fill="#AAAAAA" letter-spacing="2">[section_path]</text>
 
 <!-- 大数字 -->
-<text x="140" y="380" font-family="Songti SC,SimSun,serif" font-size="180" font-weight="bold" fill="#003D7A">[big_number]</text>
+<text x="140" y="380" font-family="Songti SC,SimSun,serif" font-size="180" font-weight="bold" fill="var(--brand-primary)">[big_number]</text>
 
 <!-- 细分隔线 -->
 <line x1="140" y1="410" x2="420" y2="410" stroke="#1A1A1A" stroke-width="1.2"/>
@@ -85,7 +85,7 @@
 <text x="40" y="40" font-family="Microsoft YaHei,sans-serif" font-size="10" fill="#AAAAAA" letter-spacing="2">[section_path]</text>
 
 <!-- 左侧大数字 -->
-<text x="140" y="380" font-family="Songti SC,SimSun,serif" font-size="170" font-weight="bold" fill="#003D7A">[big_number]</text>
+<text x="140" y="380" font-family="Songti SC,SimSun,serif" font-size="170" font-weight="bold" fill="var(--brand-primary)">[big_number]</text>
 <line x1="140" y1="400" x2="440" y2="400" stroke="#1A1A1A" stroke-width="1.5"/>
 <text x="140" y="440" font-family="Songti SC,SimSun,serif" font-size="28" font-weight="bold" fill="#1A1A1A">[assertion]</text>
 

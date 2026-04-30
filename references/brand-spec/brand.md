@@ -29,7 +29,7 @@ Aham's design system is **multi-channel** with several parallel sub-specs that s
 | **Aham Platform V1.0** — Ant-Design-5 based platform | `#1677FF` | `6/4/8 px` | Customer projects built ON the Aham platform |
 | **Field Design V1.0** — on-site mobile/PDA & industrial Pad | `#1677FF` | `2/4/6 px` | PDA scanners, ruggedized tablets for on-site operators |
 
-> ⚠ Two distinct primary blues exist intentionally. **Never mix them in one artifact.** Brand & Prototype use `#1677FF`; the Aham platform inherits Ant Design's `#1677FF`.
+> ✅ 品牌蓝统一为 `#1677FF`（`--blue-500`），所有轨道（Brand / Prototype / Platform / Field）共用同一主色，无需区分。
 
 ## Sources (originals on disk)
 

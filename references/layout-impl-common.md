@@ -19,7 +19,7 @@ viewBox：0 0 1280 720
 
 Chrome 层次（每页固定）：
   顶部3pt品牌蓝线    y=0   h=3
-  页眉区             y=3   h=27   （Section路径 + AHAM标识）
+  页眉区             y=3   h=27   （Section路径 + 品牌标识）
   页眉分割线         y=30
   Action Title区     y=36  h=58   （品牌蓝竖线 + 宋体-简Bold标题）
   AT分割线           y=94
@@ -32,15 +32,15 @@ Chrome 层次（每页固定）：
 
 ```svg
 <!-- 顶部品牌蓝线 -->
-<rect x="0" y="0" width="1280" height="3" fill="#003D7A"/>
+<rect x="0" y="0" width="1280" height="3" fill="var(--brand-primary)"/>
 <!-- 页眉 -->
 <text x="40" y="22" font-family="Microsoft YaHei,sans-serif"
       font-size="11" fill="#888888">[section_path]</text>
 <text x="1240" y="22" text-anchor="end" font-family="Microsoft YaHei,sans-serif"
-      font-size="11" font-weight="bold" fill="#003D7A">AHAM</text>
+      font-size="11" font-weight="bold" fill="var(--brand-primary)">[brand_name]</text>
 <line x1="40" y1="30" x2="1240" y2="30" stroke="#E2E2E2" stroke-width="0.5"/>
 <!-- Action Title区 -->
-<rect x="40" y="36" width="3" height="52" fill="#003D7A"/>
+<rect x="40" y="36" width="3" height="52" fill="var(--brand-primary)"/>
 <text x="52" y="70" font-family="Songti SC,SimSun,serif"
       font-size="22" font-weight="bold" fill="#1A1A1A">[title 单行]</text>
 <line x1="40" y1="94" x2="1240" y2="94" stroke="#E2E2E2" stroke-width="0.5"/>
@@ -111,11 +111,11 @@ Chrome 层次（每页固定）：
 # 卡片内容元素规范（沿用原规格）
 
 **卡片内边距**：16px  
-**卡片标题**：y=卡片y+28，微软雅黑 Bold 14px，#003D7A  
+**卡片标题**：y=卡片y+28，微软雅黑 Bold 14px，var(--brand-primary)  
 **Bullets 起始 y**：卡片y+52，间距 24px  
 
 ```svg
-<rect x="[cx+16]" y="[itemY-10]" width="3" height="14" rx="1" fill="#003D7A"/>
+<rect x="[cx+16]" y="[itemY-10]" width="3" height="14" rx="1" fill="var(--brand-primary)"/>
 <text x="[cx+26]" y="[itemY]" font-family="Microsoft YaHei,sans-serif"
       font-size="13" fill="#333333">[bullet文字]</text>
 ```

@@ -23,8 +23,8 @@
 <!-- 三步行动卡 -->
 <!-- STEP 1 -->
 <rect x="40" y="200" width="400" height="360" fill="#F5F5F5"/>
-<rect x="40" y="200" width="4" height="360" fill="#003D7A"/>
-<text x="60" y="232" font-size="11" fill="#003D7A" letter-spacing="3">STEP 01 · 本周</text>
+<rect x="40" y="200" width="4" height="360" fill="var(--brand-primary)"/>
+<text x="60" y="232" font-size="11" fill="var(--brand-primary)" letter-spacing="3">STEP 01 · 本周</text>
 <text x="60" y="272" font-family="Songti SC,SimSun,serif"
       font-size="22" font-weight="bold" fill="#1A1A1A">[step_1_action]</text>
 <text x="60" y="300" font-size="13" fill="#555">[step_1_detail]</text>
@@ -41,8 +41,8 @@
 ```svg
 <!-- 上半：选择 A -->
 <rect x="40" y="140" width="1200" height="240" fill="#E8F0FA"/>
-<rect x="40" y="140" width="4" height="240" fill="#003D7A"/>
-<text x="60" y="172" font-size="11" fill="#003D7A" letter-spacing="3">OPTION A · 推荐</text>
+<rect x="40" y="140" width="4" height="240" fill="var(--brand-primary)"/>
+<text x="60" y="172" font-size="11" fill="var(--brand-primary)" letter-spacing="3">OPTION A · 推荐</text>
 <text x="60" y="220" font-family="Songti SC,SimSun,serif"
       font-size="28" font-weight="bold" fill="#1A1A1A">[option_a]</text>
 <text x="60" y="262" font-size="14" fill="#555">[pros_and_cons_a]</text>

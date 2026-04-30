@@ -54,7 +54,7 @@
       stroke="#9A5200" stroke-width="4.5" fill="none"/>
 <!-- 成功路径虚线 -->
 <path d="M 580 360 Q 650 320, 720 270" 
-      stroke="#003D7A" stroke-width="4.5" fill="none" stroke-dasharray="6,4"/>
+      stroke="var(--brand-primary)" stroke-width="4.5" fill="none" stroke-dasharray="6,4"/>
 
 <!-- 关键节点 -->
 <circle cx="580" cy="360" r="11" fill="#B01C1C"/>
@@ -64,7 +64,7 @@
 <!-- 阶段标签 -->
 <text x="240" y="570" font-size="14" font-weight="bold" fill="#1A7A42">[阶段1]</text>
 <text x="440" y="570" font-size="14" font-weight="bold" fill="#9A5200">[阶段2]</text>
-<text x="640" y="570" font-size="14" font-weight="bold" fill="#003D7A">[阶段3]</text>
+<text x="640" y="570" font-size="14" font-weight="bold" fill="var(--brand-primary)">[阶段3]</text>
 
 <!-- 右侧判断文字 -->
 <text x="900" y="300" font-family="Songti SC,SimSun,serif"
@@ -82,14 +82,14 @@
 ```svg
 <!-- 多阶段流程框 + 箭头 -->
 <!-- 阶段1 -->
-<rect x="80" y="280" width="180" height="80" fill="#F5F5F5" stroke="#003D7A" stroke-width="1.5"/>
-<text x="170" y="308" text-anchor="middle" font-size="12" font-weight="bold" fill="#003D7A">STAGE 1</text>
+<rect x="80" y="280" width="180" height="80" fill="#F5F5F5" stroke="var(--brand-primary)" stroke-width="1.5"/>
+<text x="170" y="308" text-anchor="middle" font-size="12" font-weight="bold" fill="var(--brand-primary)">STAGE 1</text>
 <text x="170" y="332" text-anchor="middle" font-size="14" font-weight="bold" fill="#1A1A1A">[阶段1]</text>
 <text x="170" y="350" text-anchor="middle" font-size="10" fill="#555">[说明]</text>
 
 <!-- 箭头到阶段2 -->
-<line x1="260" y1="320" x2="330" y2="320" stroke="#003D7A" stroke-width="2"/>
-<polygon points="330,320 322,316 322,324" fill="#003D7A"/>
+<line x1="260" y1="320" x2="330" y2="320" stroke="var(--brand-primary)" stroke-width="2"/>
+<polygon points="330,320 322,316 322,324" fill="var(--brand-primary)"/>
 
 <!-- 阶段2... -->
 ```
@@ -102,13 +102,13 @@
 
 ```svg
 <!-- 顶层 -->
-<rect x="240" y="140" width="800" height="110" fill="#003D7A"/>
+<rect x="240" y="140" width="800" height="110" fill="var(--brand-primary)"/>
 <text x="640" y="180" text-anchor="middle" font-size="12" fill="#FFF" letter-spacing="3">[TOP_LAYER_TAG]</text>
 <text x="640" y="212" text-anchor="middle" font-family="Songti SC,SimSun,serif"
       font-size="22" font-weight="bold" fill="#FFF">[顶层]</text>
 
 <!-- 箭头 -->
-<line x1="640" y1="250" x2="640" y2="310" stroke="#003D7A" stroke-width="2"/>
+<line x1="640" y1="250" x2="640" y2="310" stroke="var(--brand-primary)" stroke-width="2"/>
 
 <!-- 中层 -->
 <rect x="240" y="310" width="800" height="110" fill="#B01C1C"/>
@@ -118,8 +118,8 @@
 <rect x="240" y="480" width="800" height="110" fill="#3A7FC1"/>
 
 <!-- 双向箭头 + 侧边说明卡 -->
-<rect x="60" y="330" width="160" height="60" fill="#FFF" stroke="#003D7A"/>
-<text x="140" y="356" text-anchor="middle" font-size="11" font-weight="bold" fill="#003D7A">[下发说明]</text>
+<rect x="60" y="330" width="160" height="60" fill="#FFF" stroke="var(--brand-primary)"/>
+<text x="140" y="356" text-anchor="middle" font-size="11" font-weight="bold" fill="var(--brand-primary)">[下发说明]</text>
 ```
 
 **信息密度**：65%

@@ -186,7 +186,7 @@ from pathlib import Path
 
 # ⚠️ 请将下一行替换为你本地 aham-ppt/assets 的绝对路径
 # 示例（Claude 标准技能路径）：/mnt/skills/user/aham-ppt/assets
-sys.path.insert(0, '/path/to/aham-ppt/assets')
+sys.path.insert(0, '/mnt/skills/user/aham-ppt/assets')
 
 from svg_to_pptx_wrapper import svg_to_native_pptx
 

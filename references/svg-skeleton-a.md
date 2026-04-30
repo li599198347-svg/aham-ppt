@@ -11,8 +11,8 @@
 
 <!-- STEP 1：x=40 y=160 w=380 h=400 -->
 <rect x="40" y="160" width="380" height="400" rx="4" fill="#F5F5F5"/>
-<rect x="40" y="160" width="4" height="400" fill="#003D7A"/>
-<text x="60" y="192" font-family="Microsoft YaHei,sans-serif" font-size="11" fill="#003D7A" letter-spacing="3">STEP 01 · [step1_time]</text>
+<rect x="40" y="160" width="4" height="400" fill="var(--brand-primary)"/>
+<text x="60" y="192" font-family="Microsoft YaHei,sans-serif" font-size="11" fill="var(--brand-primary)" letter-spacing="3">STEP 01 · [step1_time]</text>
 <text x="60" y="236" font-family="Songti SC,SimSun,serif" font-size="22" font-weight="bold" fill="#1A1A1A">[step1_action]</text>
 <text x="60" y="268" font-family="Microsoft YaHei,sans-serif" font-size="13" fill="#555555">[step1_detail1]</text>
 <text x="60" y="292" font-family="Microsoft YaHei,sans-serif" font-size="13" fill="#555555">[step1_detail2]</text>
@@ -20,15 +20,15 @@
 
 <!-- STEP 2：x=450 y=160 w=380 h=400 -->
 <rect x="450" y="160" width="380" height="400" rx="4" fill="#F5F5F5"/>
-<rect x="450" y="160" width="4" height="400" fill="#003D7A"/>
-<text x="470" y="192" font-family="Microsoft YaHei,sans-serif" font-size="11" fill="#003D7A" letter-spacing="3">STEP 02 · [step2_time]</text>
+<rect x="450" y="160" width="4" height="400" fill="var(--brand-primary)"/>
+<text x="470" y="192" font-family="Microsoft YaHei,sans-serif" font-size="11" fill="var(--brand-primary)" letter-spacing="3">STEP 02 · [step2_time]</text>
 <text x="470" y="236" font-family="Songti SC,SimSun,serif" font-size="22" font-weight="bold" fill="#1A1A1A">[step2_action]</text>
 <text x="470" y="268" font-family="Microsoft YaHei,sans-serif" font-size="13" fill="#555555">[step2_detail1]</text>
 <text x="470" y="292" font-family="Microsoft YaHei,sans-serif" font-size="13" fill="#555555">[step2_detail2]</text>
 <text x="470" y="316" font-family="Microsoft YaHei,sans-serif" font-size="13" fill="#555555">[step2_detail3]</text>
 
 <!-- STEP 3：x=860 y=160 w=380 h=400 -->
-<rect x="860" y="160" width="380" height="400" rx="4" fill="#003D7A"/>
+<rect x="860" y="160" width="380" height="400" rx="4" fill="var(--brand-primary)"/>
 <rect x="860" y="160" width="4" height="400" fill="#8AAED0"/>
 <text x="880" y="192" font-family="Microsoft YaHei,sans-serif" font-size="11" fill="#8AAED0" letter-spacing="3">STEP 03 · [step3_time]</text>
 <text x="880" y="236" font-family="Songti SC,SimSun,serif" font-size="22" font-weight="bold" fill="#FFFFFF">[step3_action]</text>
@@ -45,8 +45,8 @@
 
 <!-- 选项A（推荐）：x=40 y=140 w=1200 h=220 -->
 <rect x="40" y="140" width="1200" height="220" rx="4" fill="#E8F0FA"/>
-<rect x="40" y="140" width="5" height="220" fill="#003D7A"/>
-<text x="62" y="174" font-family="Microsoft YaHei,sans-serif" font-size="11" fill="#003D7A" letter-spacing="3">OPTION A · 推荐</text>
+<rect x="40" y="140" width="5" height="220" fill="var(--brand-primary)"/>
+<text x="62" y="174" font-family="Microsoft YaHei,sans-serif" font-size="11" fill="var(--brand-primary)" letter-spacing="3">OPTION A · 推荐</text>
 <text x="62" y="222" font-family="Songti SC,SimSun,serif" font-size="28" font-weight="bold" fill="#1A1A1A">[option_a_title]</text>
 <text x="62" y="260" font-family="Microsoft YaHei,sans-serif" font-size="14" fill="#555555">[option_a_desc1]</text>
 <text x="62" y="284" font-family="Microsoft YaHei,sans-serif" font-size="14" fill="#555555">[option_a_desc2]</text>

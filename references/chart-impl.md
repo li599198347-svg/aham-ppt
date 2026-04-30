@@ -44,7 +44,7 @@
 
 <!-- 数据柱（每根柱）-->
 <rect x="[bar_x]" y="[bar_y]" width="[bar_w]" height="[bar_h]"
-      fill="#003D7A"/>
+      fill="var(--brand-primary)"/>
 <!-- 柱顶数值标注 -->
 <text x="[bar_x+bar_w/2]" y="[bar_y-6]" text-anchor="middle"
       font-family="Microsoft YaHei,sans-serif" font-size="11" font-weight="bold"
@@ -56,15 +56,15 @@
 <!-- Callout（当callout_needed=true时，圈出关键柱） -->
 <rect x="[target_x-4]" y="[target_y-4]"
       width="[target_w+8]" height="[target_h+8]"
-      rx="2" fill="none" stroke="#003D7A" stroke-width="1.5"/>
+      rx="2" fill="none" stroke="var(--brand-primary)" stroke-width="1.5"/>
 <rect x="[callout_bx]" y="[callout_by]" width="[callout_bw]" height="24"
-      rx="3" fill="#E8F0FA" stroke="#003D7A" stroke-width="1"/>
+      rx="3" fill="#E8F0FA" stroke="var(--brand-primary)" stroke-width="1"/>
 <text x="[callout_bx+callout_bw/2]" y="[callout_by+16]" text-anchor="middle"
       font-family="Microsoft YaHei,sans-serif" font-size="11" font-weight="bold"
-      fill="#003D7A">[annotation]</text>
+      fill="var(--brand-primary)">[annotation]</text>
 <line x1="[callout_connect_x]" y1="[callout_by+24]"
       x2="[callout_connect_x]" y2="[target_y-4]"
-      stroke="#003D7A" stroke-width="0.5" stroke-dasharray="3,2"/>
+      stroke="var(--brand-primary)" stroke-width="0.5" stroke-dasharray="3,2"/>
 ```
 
 **柱宽计算规则：**
@@ -91,7 +91,7 @@ bar_x[i] = cx+60 + i * (plot_w/n) + bar_gap/2
       stroke="#888888" stroke-width="0.5"/>
 <!-- 每条横柱 -->
 <rect x="[cx+120]" y="[bar_y]" width="[bar_w]" height="[bar_h]"
-      fill="#003D7A"/>
+      fill="var(--brand-primary)"/>
 <!-- 右侧数值标注 -->
 <text x="[cx+120+bar_w+6]" y="[bar_y+bar_h/2+4]"
       font-family="Microsoft YaHei,sans-serif" font-size="12" font-weight="bold"
@@ -117,9 +117,9 @@ bar_x[i] = cx+60 + i * (plot_w/n) + bar_gap/2
 
 <!-- 折线（polyline） -->
 <polyline points="[x1,y1 x2,y2 x3,y3 ...]"
-          fill="none" stroke="#003D7A" stroke-width="2" stroke-linejoin="round"/>
+          fill="none" stroke="var(--brand-primary)" stroke-width="2" stroke-linejoin="round"/>
 <!-- 数据节点 -->
-<circle cx="[xi]" cy="[yi]" r="4" fill="#003D7A" stroke="#FFFFFF" stroke-width="1.5"/>
+<circle cx="[xi]" cy="[yi]" r="4" fill="var(--brand-primary)" stroke="#FFFFFF" stroke-width="1.5"/>
 <!-- 节点数值（关键节点标注，非全部） -->
 <text x="[xi]" y="[yi-10]" text-anchor="middle"
       font-family="Microsoft YaHei,sans-serif" font-size="11" font-weight="bold"
@@ -148,7 +148,7 @@ bar_x[i] = cx+60 + i * (plot_w/n) + bar_gap/2
       stroke="#888888" stroke-width="0.5"/>
 
 <!-- 起始总量柱（深蓝） -->
-<rect x="[bar0_x]" y="[bar0_y]" width="[bar_w]" height="[bar0_h]" fill="#003D7A"/>
+<rect x="[bar0_x]" y="[bar0_y]" width="[bar_w]" height="[bar0_h]" fill="var(--brand-primary)"/>
 
 <!-- 增量柱（正向=绿色，负向=红色，浮动） -->
 <!-- 正向增量 -->
@@ -160,7 +160,7 @@ bar_x[i] = cx+60 + i * (plot_w/n) + bar_gap/2
       stroke="#E2E2E2" stroke-width="0.5" stroke-dasharray="2,2"/>
 
 <!-- 结果总量柱（深蓝） -->
-<rect x="[bar_last_x]" y="[bar_last_y]" width="[bar_w]" height="[bar_last_h]" fill="#003D7A"/>
+<rect x="[bar_last_x]" y="[bar_last_y]" width="[bar_w]" height="[bar_last_h]" fill="var(--brand-primary)"/>
 
 <!-- 柱顶数值 -->
 <text x="[bar_x+bar_w/2]" y="[bar_y-6]" text-anchor="middle"
@@ -176,9 +176,9 @@ bar_x[i] = cx+60 + i * (plot_w/n) + bar_gap/2
 
 ```svg
 <!-- 时间刻度表头 -->
-<rect x="[cx+240]" y="[cy+44]" width="[月宽]" height="30" fill="#003D7A" opacity="0.1"/>
+<rect x="[cx+240]" y="[cy+44]" width="[月宽]" height="30" fill="var(--brand-primary)" opacity="0.1"/>
 <text x="[月中心x]" y="[cy+64]" text-anchor="middle"
-      font-family="Microsoft YaHei,sans-serif" font-size="12" fill="#003D7A">[月份]</text>
+      font-family="Microsoft YaHei,sans-serif" font-size="12" fill="var(--brand-primary)">[月份]</text>
 
 <!-- 任务行背景（奇偶交替） -->
 <rect x="[cx+240]" y="[row_y]" width="[plot_w]" height="44"
@@ -186,7 +186,7 @@ bar_x[i] = cx+60 + i * (plot_w/n) + bar_gap/2
 
 <!-- 任务条 -->
 <rect x="[task_x]" y="[row_y+10]" width="[task_w]" height="24"
-      rx="3" fill="[一期#003D7A / 二期#0056A8 / 三期#3A7FC1]"/>
+      rx="3" fill="[一期var(--brand-primary) / 二期#0056A8 / 三期#3A7FC1]"/>
 <text x="[task_x+task_w/2]" y="[row_y+26]" text-anchor="middle"
       font-family="Microsoft YaHei,sans-serif" font-size="11" fill="#FFFFFF">[task_name]</text>
 
@@ -211,7 +211,7 @@ bar_x[i] = cx+60 + i * (plot_w/n) + bar_gap/2
 <!-- 卡片底色 -->
 <rect x="[cx]" y="[cy]" width="[cw]" height="[ch]"
       rx="4" fill="#F5F5F5"/>
-<!-- 顶部色条（4px，颜色=问题#B01C1C/警告#9A5200/计划#003D7A/达标#1A7A42） -->
+<!-- 顶部色条（4px，颜色=问题#B01C1C/警告#9A5200/计划var(--brand-primary)/达标#1A7A42） -->
 <rect x="[cx]" y="[cy]" width="[cw]" height="4" rx="2" fill="[status_color]"/>
 <!-- 指标名称 -->
 <text x="[cx+16]" y="[cy+28]"
@@ -259,7 +259,7 @@ bar_x[i] = cx+60 + i * (plot_w/n) + bar_gap/2
 <!-- 象限标题（左上角） -->
 <text x="[各象限左上角x+8]" y="[各象限左上角y+20]"
       font-family="Microsoft YaHei,sans-serif" font-size="13" font-weight="bold"
-      fill="#003D7A">[quadrant_title]</text>
+      fill="var(--brand-primary)">[quadrant_title]</text>
 <!-- 内容项 -->
 <rect x="[item_x-4]" y="[item_y-14]" width="[item_w+8]" height="20"
       rx="3" fill="#F5F5F5"/>
@@ -275,19 +275,19 @@ bar_x[i] = cx+60 + i * (plot_w/n) + bar_gap/2
 <!-- 1. 圈框（圈住目标元素） -->
 <rect x="[target_x-6]" y="[target_y-6]"
       width="[target_w+12]" height="[target_h+12]"
-      rx="3" fill="none" stroke="#003D7A" stroke-width="1.5"/>
+      rx="3" fill="none" stroke="var(--brand-primary)" stroke-width="1.5"/>
 
 <!-- 2. 连接线（虚线，从气泡到圈框） -->
 <line x1="[bubble_cx]" y1="[bubble_bottom_y]"
       x2="[circle_cx]" y2="[target_y-6]"
-      stroke="#003D7A" stroke-width="0.5" stroke-dasharray="3,2"/>
+      stroke="var(--brand-primary)" stroke-width="0.5" stroke-dasharray="3,2"/>
 
 <!-- 3. 标注气泡 -->
 <rect x="[bubble_x]" y="[bubble_y]" width="[bubble_w]" height="26"
-      rx="3" fill="#E8F0FA" stroke="#003D7A" stroke-width="1"/>
+      rx="3" fill="#E8F0FA" stroke="var(--brand-primary)" stroke-width="1"/>
 <text x="[bubble_x+bubble_w/2]" y="[bubble_y+17]" text-anchor="middle"
       font-family="Microsoft YaHei,sans-serif" font-size="11" font-weight="bold"
-      fill="#003D7A">[annotation_text]</text>
+      fill="var(--brand-primary)">[annotation_text]</text>
 ```
 
 **位置决策规则（优先级从高到低）：**

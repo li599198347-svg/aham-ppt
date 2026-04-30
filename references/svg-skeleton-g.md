@@ -10,18 +10,18 @@
 <!-- 标准Chrome -->
 
 <!-- 顶层节点：居中，x=490 y=120 w=300 h=60 -->
-<rect x="490" y="120" width="300" height="60" rx="4" fill="#003D7A"/>
+<rect x="490" y="120" width="300" height="60" rx="4" fill="var(--brand-primary)"/>
 <text x="640" y="156" text-anchor="middle" font-family="Songti SC,SimSun,serif" font-size="18" font-weight="bold" fill="#FFFFFF">[root_title]</text>
 
 <!-- 竖线：从顶层底部到分支行 -->
-<line x1="640" y1="180" x2="640" y2="240" stroke="#003D7A" stroke-width="1.5"/>
+<line x1="640" y1="180" x2="640" y2="240" stroke="var(--brand-primary)" stroke-width="1.5"/>
 <!-- 横线：连接三个分支 -->
-<line x1="200" y1="240" x2="1080" y2="240" stroke="#003D7A" stroke-width="1.5"/>
+<line x1="200" y1="240" x2="1080" y2="240" stroke="var(--brand-primary)" stroke-width="1.5"/>
 
 <!-- 分支1竖线+节点：x=140 y=240 w=220 h=60 -->
-<line x1="200" y1="240" x2="200" y2="270" stroke="#003D7A" stroke-width="1.5"/>
-<rect x="90" y="270" width="220" height="60" rx="4" fill="#E8F0FA" stroke="#003D7A" stroke-width="1"/>
-<text x="200" y="306" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="14" font-weight="bold" fill="#003D7A">[branch1_title]</text>
+<line x1="200" y1="240" x2="200" y2="270" stroke="var(--brand-primary)" stroke-width="1.5"/>
+<rect x="90" y="270" width="220" height="60" rx="4" fill="#E8F0FA" stroke="var(--brand-primary)" stroke-width="1"/>
+<text x="200" y="306" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="14" font-weight="bold" fill="var(--brand-primary)">[branch1_title]</text>
 
 <!-- 分支1子节点1：x=90 y=370 w=100 h=48 -->
 <line x1="140" y1="330" x2="140" y2="370" stroke="#AAAAAA" stroke-width="1"/>
@@ -34,9 +34,9 @@
 <text x="250" y="399" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="12" fill="#333333">[leaf1_2]</text>
 
 <!-- 分支2竖线+节点：居中 x=530 y=270 w=220 h=60 -->
-<line x1="640" y1="240" x2="640" y2="270" stroke="#003D7A" stroke-width="1.5"/>
-<rect x="530" y="270" width="220" height="60" rx="4" fill="#E8F0FA" stroke="#003D7A" stroke-width="1"/>
-<text x="640" y="306" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="14" font-weight="bold" fill="#003D7A">[branch2_title]</text>
+<line x1="640" y1="240" x2="640" y2="270" stroke="var(--brand-primary)" stroke-width="1.5"/>
+<rect x="530" y="270" width="220" height="60" rx="4" fill="#E8F0FA" stroke="var(--brand-primary)" stroke-width="1"/>
+<text x="640" y="306" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="14" font-weight="bold" fill="var(--brand-primary)">[branch2_title]</text>
 
 <!-- 分支2子节点1 -->
 <line x1="580" y1="330" x2="580" y2="370" stroke="#AAAAAA" stroke-width="1"/>
@@ -49,9 +49,9 @@
 <text x="690" y="399" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="12" fill="#333333">[leaf2_2]</text>
 
 <!-- 分支3竖线+节点：x=970 y=270 w=220 h=60 -->
-<line x1="1080" y1="240" x2="1080" y2="270" stroke="#003D7A" stroke-width="1.5"/>
-<rect x="970" y="270" width="220" height="60" rx="4" fill="#E8F0FA" stroke="#003D7A" stroke-width="1"/>
-<text x="1080" y="306" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="14" font-weight="bold" fill="#003D7A">[branch3_title]</text>
+<line x1="1080" y1="240" x2="1080" y2="270" stroke="var(--brand-primary)" stroke-width="1.5"/>
+<rect x="970" y="270" width="220" height="60" rx="4" fill="#E8F0FA" stroke="var(--brand-primary)" stroke-width="1"/>
+<text x="1080" y="306" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="14" font-weight="bold" fill="var(--brand-primary)">[branch3_title]</text>
 
 <!-- 分支3子节点1 -->
 <line x1="1020" y1="330" x2="1020" y2="370" stroke="#AAAAAA" stroke-width="1"/>
@@ -83,59 +83,59 @@
 
 <!-- 支柱1：x=40 y=130 w=370 h=520，左侧竖线强调 -->
 <rect x="40" y="130" width="370" height="520" rx="4" fill="#F5F5F5"/>
-<rect x="40" y="130" width="5" height="520" fill="#003D7A"/>
+<rect x="40" y="130" width="5" height="520" fill="var(--brand-primary)"/>
 
 <!-- 支柱1顶部标签+大字 -->
-<text x="225" y="170" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="11" fill="#003D7A" letter-spacing="2">[pillar1_tag]</text>
+<text x="225" y="170" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="11" fill="var(--brand-primary)" letter-spacing="2">[pillar1_tag]</text>
 <text x="225" y="230" text-anchor="middle" font-family="Songti SC,SimSun,serif" font-size="36" font-weight="bold" fill="#1A1A1A">[pillar1_title]</text>
 <line x1="65" y1="250" x2="390" y2="250" stroke="#CCCCCC" stroke-width="0.5"/>
 
 <!-- 支柱1要点（每条y递增32） -->
-<rect x="65" y="268" width="3" height="14" rx="1" fill="#003D7A"/>
+<rect x="65" y="268" width="3" height="14" rx="1" fill="var(--brand-primary)"/>
 <text x="76" y="279" font-family="Microsoft YaHei,sans-serif" font-size="13" fill="#333333">[pillar1_point1]</text>
-<rect x="65" y="300" width="3" height="14" rx="1" fill="#003D7A"/>
+<rect x="65" y="300" width="3" height="14" rx="1" fill="var(--brand-primary)"/>
 <text x="76" y="311" font-family="Microsoft YaHei,sans-serif" font-size="13" fill="#333333">[pillar1_point2]</text>
-<rect x="65" y="332" width="3" height="14" rx="1" fill="#003D7A"/>
+<rect x="65" y="332" width="3" height="14" rx="1" fill="var(--brand-primary)"/>
 <text x="76" y="343" font-family="Microsoft YaHei,sans-serif" font-size="13" fill="#333333">[pillar1_point3]</text>
-<rect x="65" y="364" width="3" height="14" rx="1" fill="#003D7A"/>
+<rect x="65" y="364" width="3" height="14" rx="1" fill="var(--brand-primary)"/>
 <text x="76" y="375" font-family="Microsoft YaHei,sans-serif" font-size="13" fill="#333333">[pillar1_point4]</text>
 
 <!-- 支柱1底部结论 -->
-<rect x="55" y="570" width="340" height="60" rx="3" fill="#003D7A"/>
+<rect x="55" y="570" width="340" height="60" rx="3" fill="var(--brand-primary)"/>
 <text x="225" y="606" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">[pillar1_conclusion]</text>
 
 <!-- 支柱2：x=455 y=130 w=370 h=520 -->
 <rect x="455" y="130" width="370" height="520" rx="4" fill="#F5F5F5"/>
-<rect x="455" y="130" width="5" height="520" fill="#003D7A"/>
-<text x="640" y="170" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="11" fill="#003D7A" letter-spacing="2">[pillar2_tag]</text>
+<rect x="455" y="130" width="5" height="520" fill="var(--brand-primary)"/>
+<text x="640" y="170" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="11" fill="var(--brand-primary)" letter-spacing="2">[pillar2_tag]</text>
 <text x="640" y="230" text-anchor="middle" font-family="Songti SC,SimSun,serif" font-size="36" font-weight="bold" fill="#1A1A1A">[pillar2_title]</text>
 <line x1="480" y1="250" x2="805" y2="250" stroke="#CCCCCC" stroke-width="0.5"/>
-<rect x="480" y="268" width="3" height="14" rx="1" fill="#003D7A"/>
+<rect x="480" y="268" width="3" height="14" rx="1" fill="var(--brand-primary)"/>
 <text x="491" y="279" font-family="Microsoft YaHei,sans-serif" font-size="13" fill="#333333">[pillar2_point1]</text>
-<rect x="480" y="300" width="3" height="14" rx="1" fill="#003D7A"/>
+<rect x="480" y="300" width="3" height="14" rx="1" fill="var(--brand-primary)"/>
 <text x="491" y="311" font-family="Microsoft YaHei,sans-serif" font-size="13" fill="#333333">[pillar2_point2]</text>
-<rect x="480" y="332" width="3" height="14" rx="1" fill="#003D7A"/>
+<rect x="480" y="332" width="3" height="14" rx="1" fill="var(--brand-primary)"/>
 <text x="491" y="343" font-family="Microsoft YaHei,sans-serif" font-size="13" fill="#333333">[pillar2_point3]</text>
-<rect x="480" y="364" width="3" height="14" rx="1" fill="#003D7A"/>
+<rect x="480" y="364" width="3" height="14" rx="1" fill="var(--brand-primary)"/>
 <text x="491" y="375" font-family="Microsoft YaHei,sans-serif" font-size="13" fill="#333333">[pillar2_point4]</text>
-<rect x="470" y="570" width="340" height="60" rx="3" fill="#003D7A"/>
+<rect x="470" y="570" width="340" height="60" rx="3" fill="var(--brand-primary)"/>
 <text x="640" y="606" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">[pillar2_conclusion]</text>
 
 <!-- 支柱3：x=870 y=130 w=370 h=520 -->
 <rect x="870" y="130" width="370" height="520" rx="4" fill="#F5F5F5"/>
-<rect x="870" y="130" width="5" height="520" fill="#003D7A"/>
-<text x="1055" y="170" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="11" fill="#003D7A" letter-spacing="2">[pillar3_tag]</text>
+<rect x="870" y="130" width="5" height="520" fill="var(--brand-primary)"/>
+<text x="1055" y="170" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="11" fill="var(--brand-primary)" letter-spacing="2">[pillar3_tag]</text>
 <text x="1055" y="230" text-anchor="middle" font-family="Songti SC,SimSun,serif" font-size="36" font-weight="bold" fill="#1A1A1A">[pillar3_title]</text>
 <line x1="895" y1="250" x2="1220" y2="250" stroke="#CCCCCC" stroke-width="0.5"/>
-<rect x="895" y="268" width="3" height="14" rx="1" fill="#003D7A"/>
+<rect x="895" y="268" width="3" height="14" rx="1" fill="var(--brand-primary)"/>
 <text x="906" y="279" font-family="Microsoft YaHei,sans-serif" font-size="13" fill="#333333">[pillar3_point1]</text>
-<rect x="895" y="300" width="3" height="14" rx="1" fill="#003D7A"/>
+<rect x="895" y="300" width="3" height="14" rx="1" fill="var(--brand-primary)"/>
 <text x="906" y="311" font-family="Microsoft YaHei,sans-serif" font-size="13" fill="#333333">[pillar3_point2]</text>
-<rect x="895" y="332" width="3" height="14" rx="1" fill="#003D7A"/>
+<rect x="895" y="332" width="3" height="14" rx="1" fill="var(--brand-primary)"/>
 <text x="906" y="343" font-family="Microsoft YaHei,sans-serif" font-size="13" fill="#333333">[pillar3_point3]</text>
-<rect x="895" y="364" width="3" height="14" rx="1" fill="#003D7A"/>
+<rect x="895" y="364" width="3" height="14" rx="1" fill="var(--brand-primary)"/>
 <text x="906" y="375" font-family="Microsoft YaHei,sans-serif" font-size="13" fill="#333333">[pillar3_point4]</text>
-<rect x="885" y="570" width="340" height="60" rx="3" fill="#003D7A"/>
+<rect x="885" y="570" width="340" height="60" rx="3" fill="var(--brand-primary)"/>
 <text x="1055" y="606" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">[pillar3_conclusion]</text>
 ```
 
@@ -153,7 +153,7 @@
 
 <!-- 金字塔层1（顶层·最重要）：梯形 用polygon -->
 <!-- 顶层梯形：上宽400，下宽560，居中于x=640，y=120，高=110 -->
-<polygon points="440,120 840,120 870,230 410,230" fill="#003D7A"/>
+<polygon points="440,120 840,120 870,230 410,230" fill="var(--brand-primary)"/>
 <text x="640" y="165" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="11" fill="#8AAED0" letter-spacing="2">[layer1_tag]</text>
 <text x="640" y="200" text-anchor="middle" font-family="Songti SC,SimSun,serif" font-size="22" font-weight="bold" fill="#FFFFFF">[layer1_title]</text>
 
