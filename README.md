@@ -1,5 +1,7 @@
 # Aham PPT 技能
 
+![Aham PPT — 咨询级 AI 演示制作技能](assets/social-preview.png)
+
 一套对标麦肯锡/德勤标准的 AI PPT 制作技能，含完整八阶段流程 + 原生 PPTX 输出工具链。
 
 > 📘 **Aham 是虚构的示例品牌。** 你可以直接使用本技能生成"Aham 风格"的 PPT，
