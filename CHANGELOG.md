@@ -7,6 +7,8 @@
 
 ## [Unreleased]
 
+## [2.0.1] - 2026-06-21
+
 ### 新增
 - 示例新增 3 种版式：**流程闭环**（E-03）、**VS 对照**（S-08）、**深色过渡**（T-01），示例增至 11 页。
 - README 加「示例预览」图墙——11 页真实渲染截图（2× 高清），存 `assets/shots/`。
@@ -44,6 +46,7 @@
 ### 修复
 - 修复版式命名冲突、品牌色硬编码等 8 项问题。
 
-[Unreleased]: https://github.com/li599198347-svg/aham-ppt/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/li599198347-svg/aham-ppt/compare/v2.0.1...HEAD
+[2.0.1]: https://github.com/li599198347-svg/aham-ppt/releases/tag/v2.0.1
 [2.0.0]: https://github.com/li599198347-svg/aham-ppt/releases/tag/v2.0.0
 [1.1.0]: https://github.com/li599198347-svg/aham-ppt/releases/tag/v1.1.0
