@@ -218,9 +218,10 @@ aham-ppt/
 
 ## 版本与许可
 
-- [Releases](https://github.com/li599198347-svg/aham-ppt/releases) — 版本下载与发布说明
-- [CHANGELOG.md](CHANGELOG.md) — 版本变更记录（Keep a Changelog）
-- [LICENSE](LICENSE) — MIT 许可证
+- 版本与下载：[Releases](https://github.com/li599198347-svg/aham-ppt/releases)
+- 变更记录：[CHANGELOG.md](CHANGELOG.md)（Keep a Changelog · SemVer）
+- 参与贡献：[CONTRIBUTING.md](CONTRIBUTING.md)
+- 许可：[MIT](LICENSE)
 
 ---
 
