@@ -1,11 +1,13 @@
-# Aham PPT 技能
+# Aham PPT — 咨询级 AI PPT 制作技能
 
 [![Release](https://img.shields.io/github/v/release/li599198347-svg/aham-ppt?color=336EE8)](https://github.com/li599198347-svg/aham-ppt/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-336EE8.svg)](LICENSE)
 [![Design](https://img.shields.io/badge/Design-Aham%20UI%20v6.1-336EE8.svg)](https://github.com/li599198347-svg/aham-ui)
-[![Changelog](https://img.shields.io/badge/changelog-Keep%20a%20Changelog-336EE8.svg)](CHANGELOG.md)
+[![Type](https://img.shields.io/badge/type-Claude%20Skill-336EE8.svg)](#)
 
-![Aham PPT — 咨询级 AI 演示制作技能](assets/social-preview.png)
+![Aham PPT — 咨询级 AI PPT 制作技能](assets/social-preview.png)
+
+> **Aham 应用矩阵**：[Aham UI](https://github.com/li599198347-svg/aham-ui) · [Aham Survey](https://github.com/li599198347-svg/aham-survey) · [Aham Voice](https://github.com/li599198347-svg/aham-voice) · **Aham PPT**
 
 一套对标麦肯锡/德勤标准的 AI PPT 制作技能，含完整八阶段流程 + 原生 PPTX 输出工具链。
 
@@ -29,7 +31,7 @@ Aham 来自 *aha moment*。每个工具只把一件事做利落。
 
 ---
 
-## 示例预览
+## 预览
 
 > 用本技能（Aham UI v6.1）生成的 11 页样张：**底永远纯白 · 蓝是点缀 · 文档式表格 · 留白分隔 · 数字 mono · 状态点+文字**。
 > 可编辑版 → [aham-ppt-v6.1-demo.pptx](examples/aham-ppt-v6.1-demo.pptx)　·　一键生成 → [build_examples.py](examples/build_examples.py)
@@ -65,21 +67,21 @@ Aham 来自 *aha moment*。每个工具只把一件事做利落。
 
 ### 1. 安装技能
 
-将整个 `aham-ppt/` 目录放到你的 Claude 技能路径下。
+将整个 `aham-ppt/` 目录放到你的 AI 助手技能路径下。
 
-**Claude Code 或 Claude 桌面版的标准路径**：
+**本地客户端（如 CLI / 桌面版）的标准路径**：
 ```
 ~/.claude/skills/user/aham-ppt/
 ```
 
-**Claude.ai Web 的标准路径**：
+**Web 版的标准路径**：
 ```
 /mnt/skills/user/aham-ppt/
 ```
 
 ### 2. 触发技能
 
-在 Claude 对话中，说出以下任一触发词即可：
+在 AI 助手对话中，说出以下任一触发词即可：
 
 - 帮我做 PPT
 - 做演示文稿
@@ -207,7 +209,7 @@ aham-ppt/
 
 ## 设计哲学（四个支柱）
 
-北极星是 Claude 桌面版的气质——极简、克制、留白、内容优先；性格「冷色的纸」。
+北极星是顶级 AI 助手的极简气质——极简、克制、留白、内容优先；性格「冷色的纸」。
 本规范的四条核心原则：
 
 1. **清晰优先** — 内容是主角；用留白与字号建立秩序，先加间距再考虑加线
@@ -219,10 +221,16 @@ aham-ppt/
 
 ---
 
+## 版本与许可
+
+- [Releases](https://github.com/li599198347-svg/aham-ppt/releases) — 版本下载与发布说明
+- [CHANGELOG.md](CHANGELOG.md) — 版本变更记录（Keep a Changelog）
+- [LICENSE](LICENSE) — MIT 许可证
+
+---
+
 ## 相关资源
 
-- [CHANGELOG.md](CHANGELOG.md) — 版本变更记录（Keep a Changelog）
-- [Releases](https://github.com/li599198347-svg/aham-ppt/releases) — 版本下载与发布说明
 - `ORIGIN.md` — 本技能的来源与脱敏说明
 - `LESSONS.md` — 24 个场景化经验，供人工翻阅
 - `references/brand-spec/brand.md` — 品牌规范完整文档
