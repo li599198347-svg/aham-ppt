@@ -1,11 +1,13 @@
-# Aham PPT 技能
+# Aham PPT — 咨询级 AI PPT 制作技能
 
 [![Release](https://img.shields.io/github/v/release/li599198347-svg/aham-ppt?color=336EE8)](https://github.com/li599198347-svg/aham-ppt/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-336EE8.svg)](LICENSE)
 [![Design](https://img.shields.io/badge/Design-Aham%20UI%20v6.1-336EE8.svg)](https://github.com/li599198347-svg/aham-ui)
-[![Changelog](https://img.shields.io/badge/changelog-Keep%20a%20Changelog-336EE8.svg)](CHANGELOG.md)
+[![Type](https://img.shields.io/badge/type-Claude%20Skill-336EE8.svg)](#)
 
-![Aham PPT — 咨询级 AI 演示制作技能](assets/social-preview.png)
+![Aham PPT — 咨询级 AI PPT 制作技能](assets/social-preview.png)
+
+> **Aham 应用矩阵**：[Aham UI](https://github.com/li599198347-svg/aham-ui) · [Aham Survey](https://github.com/li599198347-svg/aham-survey) · [Aham Voice](https://github.com/li599198347-svg/aham-voice) · **Aham PPT**
 
 一套对标麦肯锡/德勤标准的 AI PPT 制作技能，含完整八阶段流程 + 原生 PPTX 输出工具链。
 
@@ -14,22 +16,7 @@
 >
 > 关于本技能的来源与脱敏说明，见 `ORIGIN.md`。
 
-## 关于 Aham
-
-> **把灵光一现，做成能用的 AI 工具。**
-
-Aham 来自 *aha moment*。每个工具只把一件事做利落。
-
-| 应用 | 一句话 |
-|---|---|
-| [Aham UI](https://github.com/li599198347-svg/aham-ui) | 供 AI 消费的设计系统——写一次规范，AI 产出处处一致 |
-| [Aham Survey](https://github.com/li599198347-svg/aham-survey) | 现场调研工具（macOS）——聊一圈，调研结果自己长出来 |
-| [Aham Voice](https://github.com/li599198347-svg/aham-voice) | 录音转写与会议纪要（macOS）——录一段会，纪要已经写好 |
-| [Aham PPT](https://github.com/li599198347-svg/aham-ppt) | 咨询级 AI PPT 制作技能——丢一堆素材，幻灯片出来了 |
-
----
-
-## 示例预览
+## 预览
 
 > 用本技能（Aham UI v6.1）生成的 11 页样张：**底永远纯白 · 蓝是点缀 · 文档式表格 · 留白分隔 · 数字 mono · 状态点+文字**。
 > 可编辑版 → [aham-ppt-v6.1-demo.pptx](examples/aham-ppt-v6.1-demo.pptx)　·　一键生成 → [build_examples.py](examples/build_examples.py)
@@ -207,7 +194,7 @@ aham-ppt/
 
 ## 设计哲学（四个支柱）
 
-北极星是 Claude 桌面版的气质——极简、克制、留白、内容优先；性格「冷色的纸」。
+北极星是极简、克制、留白、内容优先的桌面 AI 气质；性格「冷色的纸」。
 本规范的四条核心原则：
 
 1. **清晰优先** — 内容是主角；用留白与字号建立秩序，先加间距再考虑加线
@@ -221,16 +208,32 @@ aham-ppt/
 
 ## 相关资源
 
-- [CHANGELOG.md](CHANGELOG.md) — 版本变更记录（Keep a Changelog）
-- [Releases](https://github.com/li599198347-svg/aham-ppt/releases) — 版本下载与发布说明
 - `ORIGIN.md` — 本技能的来源与脱敏说明
 - `LESSONS.md` — 24 个场景化经验，供人工翻阅
 - `references/brand-spec/brand.md` — 品牌规范完整文档
 - `references/designer-rules.md` — 设计师执行细则
+- 参与贡献与发版流程见 [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ---
 
-## 反馈与贡献
+## 版本与许可
 
-本技能为开放分发版本，欢迎修改、重组、二次开发。
-如果你在使用中发现方法论缺陷或工具链 bug，欢迎通过任何渠道反馈。
+- 版本与下载：[Releases](https://github.com/li599198347-svg/aham-ppt/releases)
+- 变更记录：[CHANGELOG.md](CHANGELOG.md)（Keep a Changelog · SemVer）
+- 参与贡献：[CONTRIBUTING.md](CONTRIBUTING.md)
+- 许可：[MIT](LICENSE)
+
+---
+
+## 关于 Aham
+
+> **把灵光一现，做成能用的 AI 工具。**
+
+Aham 来自 *aha moment*。每个工具只把一件事做利落。
+
+| 应用 | 一句话 |
+|---|---|
+| [Aham UI](https://github.com/li599198347-svg/aham-ui) | 供 AI 消费的设计系统——写一次规范，AI 产出处处一致 |
+| [Aham Survey](https://github.com/li599198347-svg/aham-survey) | 现场调研工具（macOS）——聊一圈，调研结果自己长出来 |
+| [Aham Voice](https://github.com/li599198347-svg/aham-voice) | 录音转写与会议纪要（macOS）——录一段会，纪要已经写好 |
+| [Aham PPT](https://github.com/li599198347-svg/aham-ppt) | 咨询级 AI PPT 制作技能——丢一堆素材，幻灯片出来了 |
