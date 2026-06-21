@@ -1,5 +1,10 @@
 # Aham PPT 技能
 
+[![Release](https://img.shields.io/github/v/release/li599198347-svg/aham-ppt?color=336EE8)](https://github.com/li599198347-svg/aham-ppt/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-336EE8.svg)](LICENSE)
+[![Design](https://img.shields.io/badge/Design-Aham%20UI%20v6.1-336EE8.svg)](https://github.com/li599198347-svg/aham-ui)
+[![Changelog](https://img.shields.io/badge/changelog-Keep%20a%20Changelog-336EE8.svg)](CHANGELOG.md)
+
 ![Aham PPT — 咨询级 AI 演示制作技能](assets/social-preview.png)
 
 一套对标麦肯锡/德勤标准的 AI PPT 制作技能，含完整八阶段流程 + 原生 PPTX 输出工具链。
@@ -184,6 +189,8 @@ aham-ppt/
 
 ## 相关资源
 
+- [CHANGELOG.md](CHANGELOG.md) — 版本变更记录（Keep a Changelog）
+- [Releases](https://github.com/li599198347-svg/aham-ppt/releases) — 版本下载与发布说明
 - `ORIGIN.md` — 本技能的来源与脱敏说明
 - `LESSONS.md` — 24 个场景化经验，供人工翻阅
 - `references/brand-spec/brand.md` — 品牌规范完整文档
