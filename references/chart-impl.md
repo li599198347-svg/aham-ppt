@@ -3,6 +3,8 @@
 对应 brand.md 第7.5节的图表规范，提供各图表类型的精确SVG绘制代码。
 **图表类型选择规则和颜色语义以 brand.md 7.5节为准，本文件只管「怎么画」。**
 
+> **图表配色（硬规则）**：所有数据元素**灰阶** `#9B9B9B`（主）/ `#C8C8C8`（次），**至多一个 `#336EE8` 蓝**高亮当前/重点项；坐标轴 `#E7E7E7`、刻度标签 `#6E6E6E`、网格线 `#F3F3F3`。**绝不多色**、无 3D/阴影/渐变、**无饼图/环形图**。阈值只染**文字**，不铺整行整列底色。下方模板里的柱/条/线默认填 `#9B9B9B`，把要强调的那一个改成 `#336EE8`。
+
 ---
 
 ## 图表区坐标系统
@@ -14,8 +16,8 @@
   坐标轴原点偏移：左侧轴标签区 w=60，底部轴标签区 h=40
   实际绘图区：x=宿主x+60，y=宿主y+20，w=宿主w-80，h=宿主h-70
   轴线：x轴 y=绘图区底边，y轴 x=绘图区左边
-  轴颜色：stroke="#888888" stroke-width="0.5"
-  网格线（水平）：stroke="#E2E2E2" stroke-width="0.5" stroke-dasharray="2,2"
+  轴颜色：stroke="#9B9B9B" stroke-width="0.5"
+  网格线（水平）：stroke="#E7E7E7" stroke-width="0.5" stroke-dasharray="2,2"
 ```
 
 ---
@@ -29,42 +31,42 @@
 
 <!-- Y轴（强制从0开始） -->
 <line x1="[cx+60]" y1="[cy+20]" x2="[cx+60]" y2="[cy+ch-50]"
-      stroke="#888888" stroke-width="0.5"/>
+      stroke="#9B9B9B" stroke-width="0.5"/>
 <!-- X轴 -->
 <line x1="[cx+60]" y1="[cy+ch-50]" x2="[cx+cw-20]" y2="[cy+ch-50]"
-      stroke="#888888" stroke-width="0.5"/>
+      stroke="#9B9B9B" stroke-width="0.5"/>
 
 <!-- 水平网格线（3~5条，等间距） -->
 <line x1="[cx+60]" y1="[grid_y]" x2="[cx+cw-20]" y2="[grid_y]"
-      stroke="#E2E2E2" stroke-width="0.5" stroke-dasharray="2,2"/>
+      stroke="#E7E7E7" stroke-width="0.5" stroke-dasharray="2,2"/>
 
 <!-- Y轴刻度标签 -->
 <text x="[cx+54]" y="[grid_y+4]" text-anchor="end"
-      font-family="Microsoft YaHei,sans-serif" font-size="11" fill="#888888">[value]</text>
+      font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#9B9B9B">[value]</text>
 
-<!-- 数据柱（每根柱）-->
+<!-- 数据柱（每根柱）：默认灰 #9B9B9B，要强调的那一根改 #336EE8 -->
 <rect x="[bar_x]" y="[bar_y]" width="[bar_w]" height="[bar_h]"
-      fill="var(--brand-primary)"/>
-<!-- 柱顶数值标注 -->
+      fill="#9B9B9B"/>
+<!-- 柱顶数值标注（数字 mono） -->
 <text x="[bar_x+bar_w/2]" y="[bar_y-6]" text-anchor="middle"
-      font-family="Microsoft YaHei,sans-serif" font-size="11" font-weight="bold"
-      fill="#1A1A1A">[value]</text>
+      font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" font-weight="bold"
+      fill="#262626">[value]</text>
 <!-- X轴标签 -->
 <text x="[bar_x+bar_w/2]" y="[cy+ch-32]" text-anchor="middle"
-      font-family="Microsoft YaHei,sans-serif" font-size="11" fill="#555555">[label]</text>
+      font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#6E6E6E">[label]</text>
 
 <!-- Callout（当callout_needed=true时，圈出关键柱） -->
 <rect x="[target_x-4]" y="[target_y-4]"
       width="[target_w+8]" height="[target_h+8]"
-      rx="2" fill="none" stroke="var(--brand-primary)" stroke-width="1.5"/>
+      rx="2" fill="none" stroke="#9B9B9B" stroke-width="1.5"/>
 <rect x="[callout_bx]" y="[callout_by]" width="[callout_bw]" height="24"
-      rx="3" fill="#E8F0FA" stroke="var(--brand-primary)" stroke-width="1"/>
+      rx="3" fill="#F3F3F3" stroke="#9B9B9B" stroke-width="1"/>
 <text x="[callout_bx+callout_bw/2]" y="[callout_by+16]" text-anchor="middle"
-      font-family="Microsoft YaHei,sans-serif" font-size="11" font-weight="bold"
-      fill="var(--brand-primary)">[annotation]</text>
+      font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" font-weight="bold"
+      fill="#262626">[annotation]</text>
 <line x1="[callout_connect_x]" y1="[callout_by+24]"
       x2="[callout_connect_x]" y2="[target_y-4]"
-      stroke="var(--brand-primary)" stroke-width="0.5" stroke-dasharray="3,2"/>
+      stroke="#9B9B9B" stroke-width="0.5" stroke-dasharray="3,2"/>
 ```
 
 **柱宽计算规则：**
@@ -88,17 +90,17 @@ bar_x[i] = cx+60 + i * (plot_w/n) + bar_gap/2
 ```svg
 <!-- X轴（从0开始） -->
 <line x1="[cx+120]" y1="[cy+ch-30]" x2="[cx+cw-20]" y2="[cy+ch-30]"
-      stroke="#888888" stroke-width="0.5"/>
-<!-- 每条横柱 -->
+      stroke="#9B9B9B" stroke-width="0.5"/>
+<!-- 每条横柱：默认灰 #9B9B9B，要强调的那一条改 #336EE8 -->
 <rect x="[cx+120]" y="[bar_y]" width="[bar_w]" height="[bar_h]"
-      fill="var(--brand-primary)"/>
+      fill="#9B9B9B"/>
 <!-- 右侧数值标注 -->
 <text x="[cx+120+bar_w+6]" y="[bar_y+bar_h/2+4]"
-      font-family="Microsoft YaHei,sans-serif" font-size="12" font-weight="bold"
-      fill="#1A1A1A">[value]</text>
+      font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="bold"
+      fill="#262626">[value]</text>
 <!-- 左侧标签 -->
 <text x="[cx+114]" y="[bar_y+bar_h/2+4]" text-anchor="end"
-      font-family="Microsoft YaHei,sans-serif" font-size="12" fill="#555555">[label]</text>
+      font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6E6E6E">[label]</text>
 ```
 
 ---
@@ -111,29 +113,29 @@ bar_x[i] = cx+60 + i * (plot_w/n) + bar_gap/2
 <!-- 坐标轴（同纵向柱状图，但Y轴起点可不为0） -->
 <!-- Y轴标注范围说明（当不从0开始时必须） -->
 <text x="[cx+60]" y="[cy+16]" text-anchor="middle"
-      font-family="Microsoft YaHei,sans-serif" font-size="10" fill="#888888">▲</text>
+      font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#9B9B9B">▲</text>
 <text x="[cx+58]" y="[cy+28]" text-anchor="end"
-      font-family="Microsoft YaHei,sans-serif" font-size="10" fill="#888888">[y_max]</text>
+      font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#9B9B9B">[y_max]</text>
 
 <!-- 折线（polyline） -->
 <polyline points="[x1,y1 x2,y2 x3,y3 ...]"
-          fill="none" stroke="var(--brand-primary)" stroke-width="2" stroke-linejoin="round"/>
+          fill="none" stroke="#9B9B9B" stroke-width="2" stroke-linejoin="round"/>
 <!-- 数据节点 -->
-<circle cx="[xi]" cy="[yi]" r="4" fill="var(--brand-primary)" stroke="#FFFFFF" stroke-width="1.5"/>
+<circle cx="[xi]" cy="[yi]" r="4" fill="#262626" stroke="#FFFFFF" stroke-width="1.5"/>
 <!-- 节点数值（关键节点标注，非全部） -->
 <text x="[xi]" y="[yi-10]" text-anchor="middle"
-      font-family="Microsoft YaHei,sans-serif" font-size="11" font-weight="bold"
-      fill="#1A1A1A">[value]</text>
+      font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" font-weight="bold"
+      fill="#262626">[value]</text>
 
 <!-- 目标线（如有） -->
 <line x1="[cx+60]" y1="[target_y]" x2="[cx+cw-20]" y2="[target_y]"
-      stroke="#1A7A42" stroke-width="1.5" stroke-dasharray="6,3"/>
+      stroke="#5A7A60" stroke-width="1.5" stroke-dasharray="6,3"/>
 <text x="[cx+cw-18]" y="[target_y-4]" text-anchor="end"
-      font-family="Microsoft YaHei,sans-serif" font-size="11" fill="#1A7A42">目标</text>
+      font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#5A7A60">目标</text>
 
 <!-- 基准线（如有） -->
 <line x1="[cx+60]" y1="[baseline_y]" x2="[cx+cw-20]" y2="[baseline_y]"
-      stroke="#888888" stroke-width="1" stroke-dasharray="4,3"/>
+      stroke="#9B9B9B" stroke-width="1" stroke-dasharray="4,3"/>
 ```
 
 ---
@@ -145,27 +147,27 @@ bar_x[i] = cx+60 + i * (plot_w/n) + bar_gap/2
 ```svg
 <!-- 基线 -->
 <line x1="[cx+60]" y1="[baseline_y]" x2="[cx+cw-20]" y2="[baseline_y]"
-      stroke="#888888" stroke-width="0.5"/>
+      stroke="#9B9B9B" stroke-width="0.5"/>
 
 <!-- 起始总量柱（深蓝） -->
-<rect x="[bar0_x]" y="[bar0_y]" width="[bar_w]" height="[bar0_h]" fill="var(--brand-primary)"/>
+<rect x="[bar0_x]" y="[bar0_y]" width="[bar_w]" height="[bar0_h]" fill="#262626"/>
 
 <!-- 增量柱（正向=绿色，负向=红色，浮动） -->
 <!-- 正向增量 -->
-<rect x="[bar_x]" y="[float_y]" width="[bar_w]" height="[delta_h]" fill="#1A7A42"/>
+<rect x="[bar_x]" y="[float_y]" width="[bar_w]" height="[delta_h]" fill="#5A7A60"/>
 <!-- 负向增量 -->
-<rect x="[bar_x]" y="[float_y]" width="[bar_w]" height="[delta_h]" fill="#B01C1C"/>
+<rect x="[bar_x]" y="[float_y]" width="[bar_w]" height="[delta_h]" fill="#9E3D31"/>
 <!-- 浮动连接虚线 -->
 <line x1="[prev_bar_x+bar_w]" y1="[prev_top_y]" x2="[bar_x]" y2="[prev_top_y]"
-      stroke="#E2E2E2" stroke-width="0.5" stroke-dasharray="2,2"/>
+      stroke="#E7E7E7" stroke-width="0.5" stroke-dasharray="2,2"/>
 
 <!-- 结果总量柱（深蓝） -->
-<rect x="[bar_last_x]" y="[bar_last_y]" width="[bar_w]" height="[bar_last_h]" fill="var(--brand-primary)"/>
+<rect x="[bar_last_x]" y="[bar_last_y]" width="[bar_w]" height="[bar_last_h]" fill="#262626"/>
 
 <!-- 柱顶数值 -->
 <text x="[bar_x+bar_w/2]" y="[bar_y-6]" text-anchor="middle"
-      font-family="Microsoft YaHei,sans-serif" font-size="11" font-weight="bold"
-      fill="#1A1A1A">[±value]</text>
+      font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" font-weight="bold"
+      fill="#262626">[±value]</text>
 ```
 
 ---
@@ -176,29 +178,29 @@ bar_x[i] = cx+60 + i * (plot_w/n) + bar_gap/2
 
 ```svg
 <!-- 时间刻度表头 -->
-<rect x="[cx+240]" y="[cy+44]" width="[月宽]" height="30" fill="var(--brand-primary)" opacity="0.1"/>
+<rect x="[cx+240]" y="[cy+44]" width="[月宽]" height="30" fill="#F3F3F3"/>
 <text x="[月中心x]" y="[cy+64]" text-anchor="middle"
-      font-family="Microsoft YaHei,sans-serif" font-size="12" fill="var(--brand-primary)">[月份]</text>
+      font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#262626">[月份]</text>
 
 <!-- 任务行背景（奇偶交替） -->
 <rect x="[cx+240]" y="[row_y]" width="[plot_w]" height="44"
-      fill="[奇行#FFFFFF / 偶行#F5F5F5]"/>
+      fill="[奇行#FFFFFF / 偶行#F3F3F3]"/>
 
 <!-- 任务条 -->
 <rect x="[task_x]" y="[row_y+10]" width="[task_w]" height="24"
-      rx="3" fill="[一期var(--brand-primary) / 二期#0056A8 / 三期#3A7FC1]"/>
+      rx="3" fill="[一期#336EE8 / 二期#9B9B9B / 三期#C8C8C8]"/>
 <text x="[task_x+task_w/2]" y="[row_y+26]" text-anchor="middle"
-      font-family="Microsoft YaHei,sans-serif" font-size="11" fill="#FFFFFF">[task_name]</text>
+      font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#FFFFFF">[task_name]</text>
 
 <!-- 里程碑（菱形） -->
 <polygon points="[mx],[my-10] [mx+10],[my] [mx],[my+10] [mx-10],[my]"
-         fill="#1A1A1A"/>
+         fill="#262626"/>
 <text x="[mx]" y="[my-14]" text-anchor="middle"
-      font-family="Microsoft YaHei,sans-serif" font-size="10" fill="#1A1A1A">[milestone]</text>
+      font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#262626">[milestone]</text>
 
 <!-- 左侧任务名称 -->
 <text x="[cx+230]" y="[row_y+26]" text-anchor="end"
-      font-family="Microsoft YaHei,sans-serif" font-size="12" fill="#1A1A1A">[task_name]</text>
+      font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#262626">[task_name]</text>
 ```
 
 ---
@@ -208,27 +210,22 @@ bar_x[i] = cx+60 + i * (plot_w/n) + bar_gap/2
 适用：B05执行摘要顶部、D15数据看板，也可内嵌于其他版式
 
 ```svg
-<!-- 卡片底色 -->
+<!-- 卡片底（无边框无阴影；优先不画卡、直接留白排版，需成块才用面板） -->
 <rect x="[cx]" y="[cy]" width="[cw]" height="[ch]"
-      rx="4" fill="#F5F5F5"/>
-<!-- 顶部色条（4px，颜色=问题#B01C1C/警告#9A5200/计划var(--brand-primary)/达标#1A7A42） -->
-<rect x="[cx]" y="[cy]" width="[cw]" height="4" rx="2" fill="[status_color]"/>
+      rx="12" fill="#F3F3F3"/>
 <!-- 指标名称 -->
-<text x="[cx+16]" y="[cy+28]"
-      font-family="Microsoft YaHei,sans-serif" font-size="12" fill="#555555">[metric_name]</text>
-<!-- 核心数字 -->
-<text x="[cx+16]" y="[cy+ch/2+16]"
-      font-family="Microsoft YaHei,sans-serif" font-size="36" font-weight="bold"
-      fill="[status_color]">[value]</text>
-<text x="[cx+16+数字宽+4]" y="[cy+ch/2+10]"
-      font-family="Microsoft YaHei,sans-serif" font-size="14" fill="#888888">[unit]</text>
-<!-- 趋势箭头（可选） -->
-<!-- 上升：▲ fill=#1A7A42；下降：▼ fill=#B01C1C -->
-<text x="[cx+cw-20]" y="[cy+ch/2+16]" text-anchor="end"
-      font-family="Microsoft YaHei,sans-serif" font-size="18" fill="[trend_color]">[▲/▼]</text>
-<!-- 描述文字 -->
-<text x="[cx+16]" y="[cy+ch-16]"
-      font-family="Microsoft YaHei,sans-serif" font-size="11" fill="#888888">[description]</text>
+<text x="[cx+16]" y="[cy+30]"
+      font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#9B9B9B">[metric_name]</text>
+<!-- 核心数字（mono · 墨色；唯一关键指标可用 #336EE8，绝不用红绿染数字） -->
+<text x="[cx+16]" y="[cy+ch/2+18]"
+      font-family="'JetBrains Mono', Consolas, monospace" font-size="40" font-weight="bold"
+      fill="#262626">[value]</text>
+<text x="[cx+16+数字宽+6]" y="[cy+ch/2+12]"
+      font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="14" fill="#9B9B9B">[unit]</text>
+<!-- 同比/环比 = 6px 状态点 + 文字（达标#5A7A60 / 预警#8A7333 / 风险#9E3D31 / 中性#9B9B9B） -->
+<circle cx="[cx+21]" cy="[cy+ch-19]" r="3.5" fill="[status_color]"/>
+<text x="[cx+34]" y="[cy+ch-14]"
+      font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#6E6E6E">[趋势文字 · 如 同比 −3.1 pt]</text>
 ```
 
 ---
@@ -242,29 +239,29 @@ bar_x[i] = cx+60 + i * (plot_w/n) + bar_gap/2
 <rect x="[cx]" y="[cy]" width="[cw]" height="[ch]" fill="#FFFFFF"/>
 <!-- 纵轴 -->
 <line x1="[cx+cw/2]" y1="[cy+20]" x2="[cx+cw/2]" y2="[cy+ch-40]"
-      stroke="#888888" stroke-width="1"/>
+      stroke="#9B9B9B" stroke-width="1"/>
 <!-- 横轴 -->
 <line x1="[cx+20]" y1="[cy+ch/2]" x2="[cx+cw-20]" y2="[cy+ch/2]"
-      stroke="#888888" stroke-width="1"/>
+      stroke="#9B9B9B" stroke-width="1"/>
 <!-- 轴端箭头 -->
 <!-- 轴标签 -->
 <text x="[cx+cw/2]" y="[cy+14]" text-anchor="middle"
-      font-family="Microsoft YaHei,sans-serif" font-size="11" fill="#555555">[y_high_label]</text>
+      font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#6E6E6E">[y_high_label]</text>
 <text x="[cx+cw/2]" y="[cy+ch-26]" text-anchor="middle"
-      font-family="Microsoft YaHei,sans-serif" font-size="11" fill="#555555">[y_low_label]</text>
+      font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#6E6E6E">[y_low_label]</text>
 <text x="[cx+cw-18]" y="[cy+ch/2+14]" text-anchor="end"
-      font-family="Microsoft YaHei,sans-serif" font-size="11" fill="#555555">[x_high_label]</text>
+      font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#6E6E6E">[x_high_label]</text>
 <text x="[cx+22]" y="[cy+ch/2+14]"
-      font-family="Microsoft YaHei,sans-serif" font-size="11" fill="#555555">[x_low_label]</text>
+      font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#6E6E6E">[x_low_label]</text>
 <!-- 象限标题（左上角） -->
 <text x="[各象限左上角x+8]" y="[各象限左上角y+20]"
-      font-family="Microsoft YaHei,sans-serif" font-size="13" font-weight="bold"
-      fill="var(--brand-primary)">[quadrant_title]</text>
+      font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="bold"
+      fill="#262626">[quadrant_title]</text>
 <!-- 内容项 -->
 <rect x="[item_x-4]" y="[item_y-14]" width="[item_w+8]" height="20"
-      rx="3" fill="#F5F5F5"/>
+      rx="3" fill="#F3F3F3"/>
 <text x="[item_x]" y="[item_y]"
-      font-family="Microsoft YaHei,sans-serif" font-size="12" fill="#1A1A1A">[item_text]</text>
+      font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#262626">[item_text]</text>
 ```
 
 ---
@@ -275,19 +272,19 @@ bar_x[i] = cx+60 + i * (plot_w/n) + bar_gap/2
 <!-- 1. 圈框（圈住目标元素） -->
 <rect x="[target_x-6]" y="[target_y-6]"
       width="[target_w+12]" height="[target_h+12]"
-      rx="3" fill="none" stroke="var(--brand-primary)" stroke-width="1.5"/>
+      rx="3" fill="none" stroke="#9B9B9B" stroke-width="1.5"/>
 
 <!-- 2. 连接线（虚线，从气泡到圈框） -->
 <line x1="[bubble_cx]" y1="[bubble_bottom_y]"
       x2="[circle_cx]" y2="[target_y-6]"
-      stroke="var(--brand-primary)" stroke-width="0.5" stroke-dasharray="3,2"/>
+      stroke="#9B9B9B" stroke-width="0.5" stroke-dasharray="3,2"/>
 
 <!-- 3. 标注气泡 -->
 <rect x="[bubble_x]" y="[bubble_y]" width="[bubble_w]" height="26"
-      rx="3" fill="#E8F0FA" stroke="var(--brand-primary)" stroke-width="1"/>
+      rx="3" fill="#F3F3F3" stroke="#9B9B9B" stroke-width="1"/>
 <text x="[bubble_x+bubble_w/2]" y="[bubble_y+17]" text-anchor="middle"
-      font-family="Microsoft YaHei,sans-serif" font-size="11" font-weight="bold"
-      fill="var(--brand-primary)">[annotation_text]</text>
+      font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" font-weight="bold"
+      fill="#262626">[annotation_text]</text>
 ```
 
 **位置决策规则（优先级从高到低）：**

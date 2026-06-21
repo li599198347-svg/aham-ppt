@@ -26,11 +26,11 @@
 
 单卡内部：
   指标名称：x=卡x+20, y=卡y+30，13px，--brand-gray
-  大数字：  x=卡x+20, y=卡y+90，48px Bold，等宽字体，var(--brand-primary)
+  大数字：  x=卡x+20, y=卡y+90，48px Bold，等宽字体，#336EE8
   单位/说明：x=卡x+20, y=卡y+118，12px，--brand-gray
   环比变化：x=卡x+20, y=卡y+148，12px（↑绿 ↓红）
-  来源：    x=卡x+360, y=卡y+168，text-anchor=end，9px，#AAAAAA
-  卡片边框：stroke=#E2E2E2，stroke-width=0.5，rx=4
+  来源：    x=卡x+360, y=卡y+168，text-anchor=end，9px，#9B9B9B
+  卡片边框：stroke=#E7E7E7，stroke-width=0.5，rx=4
 ```
 
 **信息密度**：80%
@@ -50,11 +50,11 @@
 
 图表下方 Callout（可选，有关键数字时使用）：
   x=40, y=612, w=1200, h=60
-  背景：fill=#F5F5F5，rx=4
+  背景：fill=#F3F3F3，rx=4
   文字：x=56, y=648，13px Bold，关键结论句（≤30字）
 
 来源标注：
-  x=1240, y=690, text-anchor=end，10px，#AAAAAA
+  x=1240, y=690, text-anchor=end，10px，#9B9B9B
   格式：「来源：[来源名]，[YYYY-MM]」
 
 坐标轴规范（读 chart-impl.md 对应图表类型）：
@@ -79,19 +79,19 @@
   坐标轴、折线、数据点全部在此绘制
 
 竖分隔线：
-  x=856, y1=120, y2=670, stroke=#E2E2E2，stroke-width=0.5
+  x=856, y1=120, y2=670, stroke=#E7E7E7，stroke-width=0.5
 
 右侧洞察区（右）：
   x=872, y=120, w=368, h=540
-  洞察标题：x=872, y=150，12px，var(--brand-primary)，letter-spacing=2，全大写
-  分割线：  x1=872, y=168, x2=1040, stroke=var(--brand-primary), stroke-width=1.5
-  洞察数字（大）：x=872, y=230，48px Bold 等宽字体，var(--brand-primary)
+  洞察标题：x=872, y=150，12px，#336EE8，letter-spacing=2，全大写
+  分割线：  x1=872, y=168, x2=1040, stroke=#336EE8, stroke-width=1.5
+  洞察数字（大）：x=872, y=230，48px Bold 等宽字体，#336EE8
   洞察单位：x=872, y=260，13px，--brand-gray
   洞察说明：x=872, y=295，13px，--brand-near-black（≤15字/行，最多3行）
   次要数据1：x=872, y=370，数字+说明（24px数字，12px说明）
   次要数据2：x=872, y=450，同上
 
-来源标注：x=1240, y=690，text-anchor=end，10px，#AAAAAA
+来源标注：x=1240, y=690，text-anchor=end，10px，#9B9B9B
 ```
 
 **占位符说明**：
@@ -116,20 +116,20 @@
   图表内边距：上20/右20/下40/左60
 
 竖分隔线：
-  x=636, y1=120, y2=670，stroke=#E2E2E2，stroke-width=0.5
+  x=636, y1=120, y2=670，stroke=#E7E7E7，stroke-width=0.5
 
 右图区：
   x=646, y=100, w=594, h=540
   图表内边距：上20/右20/下40/左60
 
 左图标签（左图顶部）：
-  x=56, y=128，12px Bold，var(--brand-primary)，letter-spacing=2
+  x=56, y=128，12px Bold，#336EE8，letter-spacing=2
 右图标签（右图顶部）：
   x=662, y=128，12px Bold，--brand-gray（或第二颜色），letter-spacing=2
 
 来源标注：
-  左图：x=620, y=690，text-anchor=end，9px，#AAAAAA
-  右图：x=1240, y=690，text-anchor=end，9px，#AAAAAA
+  左图：x=620, y=690，text-anchor=end，9px，#9B9B9B
+  右图：x=1240, y=690，text-anchor=end，9px，#9B9B9B
 ```
 
 **占位符说明**：

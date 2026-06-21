@@ -138,8 +138,8 @@ assert success, "转换失败,检查 SVG 是否规范"
 
 ```svg
 <!-- 替换方案：polygon画箭头 -->
-<line x1="100" y1="200" x2="390" y2="200" stroke="var(--brand-primary)" stroke-width="2"/>
-<polygon points="385,194 400,200 385,206" fill="var(--brand-primary)"/>
+<line x1="100" y1="200" x2="390" y2="200" stroke="#9B9B9B" stroke-width="2"/>
+<polygon points="385,194 400,200 385,206" fill="#262626"/>
 ```
 
 ### 问题 3 · 元素位置偏移
@@ -162,9 +162,10 @@ assert success, "转换失败,检查 SVG 是否规范"
 
 ### 问题 6 · 字体显示异常（Windows 上）
 
-**原因**：SVG 里用了 macOS 专有字体（`Songti SC`、`PingFang SC` 等），Windows 映射为备用字体后宽度不同。
-**处置**：工具链已内置映射表（`Songti SC` → `SimSun`），但大字号下仍有轻微差异。
-建议字体声明改为 `"SimSun, Songti SC, serif"` 顺序，Windows 优先用 `SimSun`。
+**原因**：SVG 里用了 macOS 专有衬线字体，Windows 映射为备用字体后宽度不一致。
+**处置**：标题统一用无衬线栈 `Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif`，
+数字用 `'JetBrains Mono', Consolas, monospace`；不再使用衬线/宋体。
+单一无衬线 + 等宽数字，跨平台宽度一致、层级靠字号字重而非字形。
 
 ### 问题 7 · 转换成功但 PPT 文字无法编辑
 

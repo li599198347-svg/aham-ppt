@@ -17,51 +17,49 @@ viewBox：0 0 1280 720
 页面背景：#FFFFFF
 安全边距：左右各40px，上下各20px
 
-Chrome 层次（每页固定）：
-  顶部3pt品牌蓝线    y=0   h=3
-  页眉区             y=3   h=27   （Section路径 + 品牌标识）
-  页眉分割线         y=30
-  Action Title区     y=36  h=58   （品牌蓝竖线 + 宋体-简Bold标题）
+Chrome 层次（每页固定 · 无顶部蓝条）：
+  页眉区             y=0   h=32   （Section路径 + 品牌标识 + 蓝点）
+  页眉分割线         y=32          stroke=#E7E7E7
+  Action Title区     y=32  h=62   （无衬线 bold 标题 · 无蓝竖线）
   AT分割线           y=94
   内容区             y=100 h=590  （各版式在此变化）
   页脚分割线         y=690
-  页脚区             y=690 h=30   （来源 + 页码）
+  页脚区             y=690 h=30   （来源 + 页码 mono）
 ```
 
 ## 标准 Chrome 模板
 
 ```svg
-<!-- 顶部品牌蓝线 -->
-<rect x="0" y="0" width="1280" height="3" fill="var(--brand-primary)"/>
-<!-- 页眉 -->
-<text x="40" y="22" font-family="Microsoft YaHei,sans-serif"
-      font-size="11" fill="#888888">[section_path]</text>
-<text x="1240" y="22" text-anchor="end" font-family="Microsoft YaHei,sans-serif"
-      font-size="11" font-weight="bold" fill="var(--brand-primary)">[brand_name]</text>
-<line x1="40" y1="30" x2="1240" y2="30" stroke="#E2E2E2" stroke-width="0.5"/>
-<!-- Action Title区 -->
-<rect x="40" y="36" width="3" height="52" fill="var(--brand-primary)"/>
-<text x="52" y="70" font-family="Songti SC,SimSun,serif"
-      font-size="22" font-weight="bold" fill="#1A1A1A">[title 单行]</text>
-<line x1="40" y1="94" x2="1240" y2="94" stroke="#E2E2E2" stroke-width="0.5"/>
+<rect x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+<!-- 页眉（无顶部蓝条；品牌右侧蓝点为唯一蓝点缀） -->
+<text x="40" y="24" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif"
+      font-size="11" letter-spacing="1" fill="#9B9B9B">[section_path]</text>
+<rect x="1198" y="16" width="9" height="9" rx="2" fill="#336EE8"/>
+<text x="1240" y="24" text-anchor="end" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif"
+      font-size="12" font-weight="600" fill="#262626">[brand_name]</text>
+<line x1="40" y1="32" x2="1240" y2="32" stroke="#E7E7E7" stroke-width="1"/>
+<!-- Action Title（整句结论 · 无衬线 bold · 无蓝竖线） -->
+<text x="40" y="78" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif"
+      font-size="32" font-weight="700" fill="#262626">[title 单行]</text>
+<line x1="40" y1="94" x2="1240" y2="94" stroke="#E7E7E7" stroke-width="1"/>
 <!-- 页脚 -->
-<line x1="40" y1="690" x2="1240" y2="690" stroke="#E2E2E2" stroke-width="0.5"/>
-<text x="40" y="708" font-family="Microsoft YaHei,sans-serif"
-      font-size="11" fill="#888888">来源：[source] · [date]</text>
-<text x="1240" y="708" text-anchor="end" font-family="Microsoft YaHei,sans-serif"
-      font-size="11" fill="#888888">[page_index] / [total_pages]</text>
+<line x1="40" y1="690" x2="1240" y2="690" stroke="#E7E7E7" stroke-width="1"/>
+<text x="40" y="709" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif"
+      font-size="11" fill="#9B9B9B">来源：[source] · [date]</text>
+<text x="1240" y="709" text-anchor="end" font-family="'JetBrains Mono', Consolas, monospace"
+      font-size="11" fill="#9B9B9B">[page_index] / [total_pages]</text>
 ```
 
 **极简 Chrome（用于 impact / transition 类，更少装饰）**：
 
 ```svg
 <!-- 不要顶部蓝线，不要 Action Title 竖线和分隔线 -->
-<text x="40" y="40" font-family="Microsoft YaHei,sans-serif"
-      font-size="10" fill="#AAAAAA" letter-spacing="2">[section_path]</text>
-<text x="40" y="690" font-family="Microsoft YaHei,sans-serif"
-      font-size="10" fill="#AAAAAA">来源：[source]</text>
-<text x="1240" y="690" text-anchor="end" font-family="Microsoft YaHei,sans-serif"
-      font-size="10" fill="#AAAAAA">[page_index]</text>
+<text x="40" y="40" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif"
+      font-size="10" fill="#9B9B9B" letter-spacing="2">[section_path]</text>
+<text x="40" y="690" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif"
+      font-size="10" fill="#9B9B9B">来源：[source]</text>
+<text x="1240" y="690" text-anchor="end" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif"
+      font-size="10" fill="#9B9B9B">[page_index]</text>
 ```
 
 **内容区可用范围：x=40~1240，y=100~690，宽1200px，高590px**
@@ -108,23 +106,24 @@ Chrome 层次（每页固定）：
 
 ---
 
-# 卡片内容元素规范（沿用原规格）
+# 卡片内容元素规范（Aham UI v6.1）
 
-**卡片内边距**：16px  
-**卡片标题**：y=卡片y+28，微软雅黑 Bold 14px，var(--brand-primary)  
-**Bullets 起始 y**：卡片y+52，间距 24px  
+**卡片**：无边框无阴影。成块用 `rx=12 fill=#F3F3F3` 面板（少用），否则只留白 + `#E7E7E7` 细横线分隔。
+**卡片内边距**：16px
+**卡片标题**：y=卡片y+30，无衬线 600 15px，**#262626（墨色，非蓝）**
+**Bullets 起始 y**：卡片y+58，间距 26px（• 点 + 文字，非蓝竖条）
 
 ```svg
-<rect x="[cx+16]" y="[itemY-10]" width="3" height="14" rx="1" fill="var(--brand-primary)"/>
-<text x="[cx+26]" y="[itemY]" font-family="Microsoft YaHei,sans-serif"
-      font-size="13" fill="#333333">[bullet文字]</text>
+<circle cx="[cx+19]" cy="[itemY-4]" r="3" fill="#9B9B9B"/>
+<text x="[cx+32]" y="[itemY]" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif"
+      font-size="14" fill="#262626">[bullet文字]</text>
 ```
 
-**大数字显示**：按 intent_visual_instruction 的字号执行，默认 48px，impact 类 80-180px。
+**大数字显示**：数字用 mono `'JetBrains Mono', Consolas, monospace`，墨色 #262626（唯一关键数可用 #336EE8）；默认 48px，impact 类 80-160px。
 
 **数据来源标注**（右下角）：
 ```svg
-<text x="[cx+cw-16]" y="[cy+ch-10]" text-anchor="end" font-size="9" fill="#AAAAAA">
+<text x="[cx+cw-16]" y="[cy+ch-10]" text-anchor="end" font-size="9" fill="#9B9B9B">
   来源：[source]，[date]</text>
 ```
 

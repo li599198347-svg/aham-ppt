@@ -19,23 +19,23 @@
 **适用**：章节间过渡、情绪承接、关键观点引言
 
 ```svg
-<rect width="1280" height="720" fill="#0A1F3A"/>
+<rect width="1280" height="720" fill="#1C1C1C"/>
 
 <!-- 顶部装饰：仅一条细线 -->
 <rect x="80" y="80" width="40" height="2" fill="#4A6680"/>
 
 <!-- 主引言（居中偏左） -->
-<text x="120" y="320" font-family="Songti SC,SimSun,serif"
+<text x="120" y="320" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif"
       font-size="36" font-weight="bold" fill="#FFFFFF">[quote_line_1]</text>
-<text x="120" y="370" font-family="Songti SC,SimSun,serif"
+<text x="120" y="370" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif"
       font-size="36" font-weight="bold" fill="#FFFFFF">[quote_line_2]</text>
 
 <!-- 副注 -->
-<text x="120" y="450" font-family="Songti SC,SimSun,serif"
-      font-size="24" fill="#B8C8D8">[sub_line]</text>
+<text x="120" y="450" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif"
+      font-size="24" fill="#A8A8A8">[sub_line]</text>
 
 <!-- 右下角引用源 -->
-<text x="1200" y="640" text-anchor="end" font-size="13" fill="#6B86A8">—— [source]</text>
+<text x="1200" y="640" text-anchor="end" font-size="13" fill="#A8A8A8">—— [source]</text>
 ```
 
 **信息密度**：15%
@@ -48,13 +48,13 @@
 <!-- 极简 Chrome（只有页眉和页脚） -->
 
 <!-- 居中大字宣言 -->
-<text x="640" y="340" text-anchor="middle" font-family="Songti SC,SimSun,serif"
-      font-size="44" font-weight="bold" fill="#1A1A1A">[declaration_line_1]</text>
-<text x="640" y="394" text-anchor="middle" font-family="Songti SC,SimSun,serif"
-      font-size="44" font-weight="bold" fill="#1A1A1A">[declaration_line_2]</text>
+<text x="640" y="340" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif"
+      font-size="44" font-weight="bold" fill="#262626">[declaration_line_1]</text>
+<text x="640" y="394" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif"
+      font-size="44" font-weight="bold" fill="#262626">[declaration_line_2]</text>
 
 <!-- 品牌蓝短线点缀 -->
-<line x1="580" y1="440" x2="700" y2="440" stroke="var(--brand-primary)" stroke-width="2.5"/>
+<line x1="580" y1="440" x2="700" y2="440" stroke="#9B9B9B" stroke-width="2.5"/>
 
 <!-- 副注（小字） -->
 <text x="640" y="490" text-anchor="middle" font-size="16" fill="#666">[sub_note]</text>
@@ -70,16 +70,16 @@
 <!-- 左侧：刚才讲了什么 -->
 <text x="100" y="180" font-size="11" fill="#888" letter-spacing="3">JUST COMPLETED</text>
 <line x1="100" y1="206" x2="200" y2="206" stroke="#888" stroke-width="1"/>
-<text x="100" y="260" font-family="Songti SC,SimSun,serif"
+<text x="100" y="260" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif"
       font-size="22" font-weight="bold" fill="#888">[Part 1 · 回顾]</text>
 <text x="100" y="300" font-size="14" fill="#555">[summary_of_previous]</text>
 
 <!-- 中间：大号章节切换 -->
-<text x="640" y="420" text-anchor="middle" font-size="14" fill="var(--brand-primary)" letter-spacing="4">
+<text x="640" y="420" text-anchor="middle" font-size="14" fill="#262626" letter-spacing="4">
   NEXT PART</text>
-<text x="640" y="470" text-anchor="middle" font-family="Songti SC,SimSun,serif"
-      font-size="40" font-weight="bold" fill="var(--brand-primary)">[Part 2 标题]</text>
-<line x1="540" y1="510" x2="740" y2="510" stroke="var(--brand-primary)" stroke-width="2"/>
+<text x="640" y="470" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif"
+      font-size="40" font-weight="bold" fill="#262626">[Part 2 标题]</text>
+<line x1="540" y1="510" x2="740" y2="510" stroke="#9B9B9B" stroke-width="2"/>
 <text x="640" y="550" text-anchor="middle" font-size="16" fill="#555">[Part 2 引言]</text>
 
 <!-- 底部小字：Part 编号导航 -->

@@ -16,8 +16,8 @@
 **Aham 是一个虚构的品牌名**，仅作为演示载体使用。
 本技能中出现的所有：
 - 公司名（`Aham`）
-- 品牌色值（`#1677FF`）
-- 字体栈（思源黑体 / 思源宋体 / Roboto Mono）
+- 品牌色值（`#336EE8`）
+- 字体栈（Inter / 微软雅黑 / JetBrains Mono，无衬线，数字 mono）
 - 轨道划分（A Brand / B Prototype / C Platform / D Field）
 
 都是**示范配置**。你可以并且应该将它们替换为你自己的品牌配置。
