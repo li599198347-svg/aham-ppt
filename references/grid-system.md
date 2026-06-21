@@ -24,13 +24,11 @@ viewBox：0 0 1280 720
 
 ```
 ┌──────────────────────────────────────────┐  y=0
-│  顶部品牌蓝线  h=3                        │  y=0~3
-├──────────────────────────────────────────┤  y=3
-│  页眉区  h=27                             │  y=3~30
-│  （Section路径左对齐，品牌标识右对齐）    │
-├──────────────────────────────────────────┤  y=30（分割线）
-│  Action Title区  h=64                     │  y=30~94
-│  （品牌蓝竖线 + 标题文字）               │
+│  页眉区  h=32（无顶部蓝条）               │  y=0~32
+│  （Section路径左 · 品牌标识+蓝点右）      │
+├──────────────────────────────────────────┤  y=32（分割线 #E7E7E7）
+│  Action Title区  h=62                     │  y=32~94
+│  （无衬线 bold 32px 标题 · 无蓝竖线）     │
 ├──────────────────────────────────────────┤  y=94（分割线）
 │                                          │
 │  内容区  h=590                            │  y=100~690
@@ -144,36 +142,37 @@ y=200, h=280
 ### Action Title（标题区）
 
 ```
-单行标题：
-  竖线：x=40, y=36, w=3, h=52, fill=品牌色
-  文字：x=52, y=70, font-size=22, font-weight=bold
+单行标题（无衬线 bold · 无蓝竖线）：
+  文字：x=40, y=78, font-size=32, font-weight=700, fill=#262626
 
-双行标题（≤14字/行）：
-  竖线：x=40, y=36, w=3, h=52, fill=品牌色
-  第一行：x=52, y=56, font-size=20
-  第二行：x=52, y=82, font-size=20
+双行标题（≤15字/行）：
+  第一行：x=40, y=60, font-size=22, font-weight=700, fill=#262626
+  第二行：x=40, y=86, font-size=22, font-weight=700, fill=#262626
 ```
 
 ### 页眉
 
 ```
-Section路径：x=40, y=22, font-size=11, fill=#888888
-品牌标识：x=1240, y=22, text-anchor=end, font-size=11, font-weight=bold, fill=品牌色
-分割线：x1=40, y1=30, x2=1240, y2=30, stroke=#E2E2E2, stroke-width=0.5
+Section路径：x=40, y=24, font-size=11, fill=#9B9B9B
+品牌标识：x=1240, y=24, text-anchor=end, font-size=12, font-weight=600, fill=#262626
+品牌蓝点：x=1198, y=16, w=9, h=9, rx=2, fill=#336EE8（唯一蓝点缀，紧贴品牌字左侧）
+分割线：x1=40, y1=32, x2=1240, y2=32, stroke=#E7E7E7, stroke-width=1
 ```
 
 ### 页脚
 
 ```
-分割线：x1=40, y1=690, x2=1240, y2=690, stroke=#E2E2E2, stroke-width=0.5
-来源：x=40, y=708, font-size=11, fill=#888888
-页码：x=1240, y=708, text-anchor=end, font-size=11, fill=#888888
+分割线：x1=40, y1=690, x2=1240, y2=690, stroke=#E7E7E7, stroke-width=1
+来源：x=40, y=709, font-size=11, fill=#9B9B9B
+页码：x=1240, y=709, text-anchor=end, font-size=11, fill=#9B9B9B, font-family=mono
 ```
 
-### 顶部品牌线
+### 品牌点缀（替代旧顶部蓝条）
 
 ```
-rect：x=0, y=0, width=1280, height=3, fill=品牌色
+无顶部蓝条。品牌蓝只点缀：
+  ① 页眉右侧 9×9 蓝点（见上）
+  ② 关键页可选左下短条：rect x=40, y=672, w=84, h=2, fill=#336EE8（全页唯一蓝面）
 ```
 
 ---
@@ -183,37 +182,39 @@ rect：x=0, y=0, width=1280, height=3, fill=品牌色
 卡片是内容区里的子容器，以下是卡片内部的固定排版：
 
 ```
+卡片底：无边框无阴影。成块才用 rx=12 fill=#F3F3F3 面板，否则只留白 + #E7E7E7 细横线分隔。
 内边距：所有方向 16px
 
-标题行：y=卡片顶+28, font-size=14, font-weight=bold, fill=品牌色
+标题行：y=卡片顶+30, font-size=15, font-weight=600, fill=#262626（墨色，非蓝）
 
-品牌色竖线（卡片内左侧强调）：
-  x=卡片左+16, y=卡片顶+16, w=3, h=14, fill=品牌色
+Bullet起始：y=卡片顶+58
+Bullet间距：26px
+Bullet圆点（• 点，非蓝竖条）：cx=卡片左+19, cy=itemY-4, r=3, fill=#9B9B9B
+Bullet文字：x=卡片左+32, font-size=14, fill=#262626
 
-Bullet起始：y=卡片顶+52
-Bullet间距：24px
-Bullet圆点/方块：x=卡片左+16, w=3, h=14
-Bullet文字：x=卡片左+26, font-size=13, fill=#333333
+强调/Callout：面板 + 左侧 rect w=3 fill=#336EE8 细条点缀，不铺蓝底。
 
 数据来源标注（右下角）：
-  x=卡片右-16, y=卡片底-10, text-anchor=end, font-size=9, fill=#AAAAAA
+  x=卡片右-16, y=卡片底-12, text-anchor=end, font-size=9, fill=#9B9B9B
 ```
 
 ---
 
 ## 七、字号与行高规范
 
+> 全部文字用无衬线栈 `Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif`；**数字一律 mono** `'JetBrains Mono', Consolas, monospace`。层级靠字号+字重，不靠衬线、不靠颜色。
+
 | 用途 | 字号 | 行高 | 字体 |
 |------|------|------|------|
-| 章节路径 / 页脚 | 11px | — | 微软雅黑 |
-| 卡片标签（小标题） | 11-12px | — | 微软雅黑 |
-| Bullet正文 | 13px | 24px | 微软雅黑 |
-| 卡片标题 | 14px | — | 微软雅黑 Bold |
-| 说明文字 | 14-16px | 24px | 微软雅黑 |
-| 判断句（中等强调） | 20-24px | — | 宋体-简 Bold |
-| Action Title | 22px | — | 宋体-简 Bold |
-| 大字宣言 | 28-44px | — | 宋体-简 Bold |
-| 震撼数字 | 60-180px | — | 宋体-简 Bold |
+| 章节路径 / 页脚 | 11px | — | 无衬线 |
+| 卡片标签（小标题） | 12-13px | — | 无衬线 |
+| Bullet正文 | 14px | 26px | 无衬线 |
+| 卡片标题 | 15px | — | 无衬线 600 |
+| 说明文字 | 14-16px | 26px | 无衬线 |
+| 判断句（中等强调） | 20-24px | — | 无衬线 Bold |
+| Action Title | 32px | — | 无衬线 Bold |
+| 大字宣言 | 28-44px | — | 无衬线 Bold |
+| 震撼数字 | 48-160px | — | **数字 mono** Bold |
 
 ---
 

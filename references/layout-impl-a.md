@@ -17,16 +17,16 @@
 
 ```svg
 <!-- 顶部标题 -->
-<text x="40" y="140" font-family="Songti SC,SimSun,serif"
-      font-size="24" font-weight="bold" fill="#1A1A1A">[title]</text>
+<text x="40" y="140" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif"
+      font-size="24" font-weight="bold" fill="#262626">[title]</text>
 
 <!-- 三步行动卡 -->
 <!-- STEP 1 -->
-<rect x="40" y="200" width="400" height="360" fill="#F5F5F5"/>
-<rect x="40" y="200" width="4" height="360" fill="var(--brand-primary)"/>
-<text x="60" y="232" font-size="11" fill="var(--brand-primary)" letter-spacing="3">STEP 01 · 本周</text>
-<text x="60" y="272" font-family="Songti SC,SimSun,serif"
-      font-size="22" font-weight="bold" fill="#1A1A1A">[step_1_action]</text>
+<rect x="40" y="200" width="400" height="360" fill="#F3F3F3"/>
+<rect x="40" y="200" width="4" height="360" fill="#262626"/>
+<text x="60" y="232" font-size="11" fill="#262626" letter-spacing="3">STEP 01 · 本周</text>
+<text x="60" y="272" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif"
+      font-size="22" font-weight="bold" fill="#262626">[step_1_action]</text>
 <text x="60" y="300" font-size="13" fill="#555">[step_1_detail]</text>
 
 <!-- STEP 2, STEP 3 类似 -->
@@ -40,15 +40,15 @@
 
 ```svg
 <!-- 上半：选择 A -->
-<rect x="40" y="140" width="1200" height="240" fill="#E8F0FA"/>
-<rect x="40" y="140" width="4" height="240" fill="var(--brand-primary)"/>
-<text x="60" y="172" font-size="11" fill="var(--brand-primary)" letter-spacing="3">OPTION A · 推荐</text>
-<text x="60" y="220" font-family="Songti SC,SimSun,serif"
-      font-size="28" font-weight="bold" fill="#1A1A1A">[option_a]</text>
+<rect x="40" y="140" width="1200" height="240" fill="#F3F3F3"/>
+<rect x="40" y="140" width="4" height="240" fill="#262626"/>
+<text x="60" y="172" font-size="11" fill="#262626" letter-spacing="3">OPTION A · 推荐</text>
+<text x="60" y="220" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif"
+      font-size="28" font-weight="bold" fill="#262626">[option_a]</text>
 <text x="60" y="262" font-size="14" fill="#555">[pros_and_cons_a]</text>
 
 <!-- 下半：选择 B -->
-<rect x="40" y="420" width="1200" height="240" fill="#F5F5F5"/>
+<rect x="40" y="420" width="1200" height="240" fill="#F3F3F3"/>
 <rect x="40" y="420" width="4" height="240" fill="#888"/>
 <text x="60" y="452" font-size="11" fill="#888" letter-spacing="3">OPTION B · 备选</text>
 <!-- 类似 A -->
@@ -62,17 +62,17 @@
 
 ```svg
 <!-- 表头 -->
-<rect x="40" y="140" width="1200" height="44" fill="#1A1A1A"/>
+<rect x="40" y="140" width="1200" height="44" fill="#262626"/>
 <text x="60" y="168" font-size="12" font-weight="bold" fill="#FFF">行动</text>
 <text x="660" y="168" font-size="12" font-weight="bold" fill="#FFF">责任方</text>
 <text x="960" y="168" font-size="12" font-weight="bold" fill="#FFF">截止时间</text>
 
 <!-- N 行（每行 y 递增 60） -->
-<rect x="40" y="184" width="1200" height="60" fill="#FAFAFA"/>
-<text x="60" y="212" font-size="14" font-weight="bold" fill="#1A1A1A">[action_1]</text>
+<rect x="40" y="184" width="1200" height="60" fill="#FFFFFF"/>
+<text x="60" y="212" font-size="14" font-weight="bold" fill="#262626">[action_1]</text>
 <text x="60" y="230" font-size="11" fill="#555">[action_1_detail]</text>
 <text x="660" y="218" font-size="13" fill="#333">[owner_1]</text>
-<text x="960" y="218" font-size="13" font-weight="bold" fill="#B01C1C">[deadline_1]</text>
+<text x="960" y="218" font-size="13" font-weight="bold" fill="#9E3D31">[deadline_1]</text>
 ```
 
 **信息密度**：65%
