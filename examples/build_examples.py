@@ -43,7 +43,7 @@ def status(x, y, color, label, size=14):
 def chrome(section, title, page, total, bluebar=False):
     e = [R(0, 0, 1280, 720, "#FFFFFF")]
     e += [T(40, 24, section, 11, INK3, ls=1),
-          R(1198, 16, 9, 9, ACC, rx=2),
+          R(1188, 16, 9, 9, ACC, rx=2),
           T(1240, 24, "Aham", 12, INK1, w=600, anchor="end"),
           L(40, 32, 1240, 32)]
     e += [T(40, 78, title, 32, INK1, w=700), L(40, 94, 1240, 94)]
@@ -92,7 +92,7 @@ slides["slide-01-cover.svg"] = cover()
 # ── 02 KPI 看板 ──────────────────────────────────────────
 def dashboard():
     section_src[2] = "MES 系统 · 2026-Q1 现场测算"
-    e = chrome("产线运营诊断　·　第一部分 现状", "综合效率 71.2%，低于行业基准 14 个百分点", 2, 8)
+    e = chrome("产线运营诊断　·　第一部分 现状", "综合效率 71.2%，低于行业基准 14 个百分点", 2, 11)
     # KPI 带
     cols = [40, 340, 640, 940]
     for x in (316, 616, 916):
@@ -160,7 +160,7 @@ slides["slide-02-dashboard.svg"] = dashboard()
 # ── 03 方案选型对照 ──────────────────────────────────────
 def options():
     section_src[3] = "方案投入产出测算 · 2026-06"
-    e = chrome("改善方案　·　第三部分 选型", "方案 B 系统升级综合性价比最高，建议优先实施", 3, 8)
+    e = chrome("改善方案　·　第三部分 选型", "方案 B 系统升级综合性价比最高，建议优先实施", 3, 11)
     e.append(R(654, 150, 300, 452, PANEL, rx=12))  # 推荐列灰底
     e.append(T(804, 178, "推荐", 14, ACC, w=600, anchor="middle"))
     e.append(R(784, 186, 40, 2, ACC))
@@ -204,7 +204,7 @@ slides["slide-03-options.svg"] = options()
 # ── 04 证据 · 趋势图 ────────────────────────────────────
 def evidence():
     section_src[4] = "MES OEE 月报 2025-11 至 2026-06"
-    e = chrome("根因分析　·　第二部分 证据", "OEE 连续 8 个月低于 75%，自然爬坡无法收敛缺口", 4, 8)
+    e = chrome("根因分析　·　第二部分 证据", "OEE 连续 8 个月低于 75%，自然爬坡无法收敛缺口", 4, 11)
     e.append(T(110, 138, "月度综合效率 OEE（%）", 14, INK3))
     base, top = 560, 180  # y for 60% and 90%
     def yv(v): return base - (v - 60) * (base - top) / 30.0
@@ -246,7 +246,7 @@ slides["slide-04-evidence.svg"] = evidence()
 # ── 05 实施路线 + 责任矩阵 ──────────────────────────────
 def roadmap():
     section_src[5] = "改善项目实施计划 v2 · 2026-06"
-    e = chrome("实施路径　·　第四部分 落地", "90 天三阶段推进：先治瓶颈、再稳系统、后固标准", 5, 8)
+    e = chrome("实施路径　·　第四部分 落地", "90 天三阶段推进：先治瓶颈、再稳系统、后固标准", 5, 11)
     e.append(L(242, 158, 1038, 158, LINE, 2))
     for cx, on in ((242, True), (640, False), (1038, False)):
         e.append(CIR(cx, 158, 6, ACC if on else INK4))
@@ -323,14 +323,14 @@ def bignum():
     e.append(CIR(844, iy + 6, 3, ACC))
     e.append(T(860, iy + 12, "三项合计可改善空间 ¥340 万 / 年", 15, INK1))
     e.append(T(40, 700, "来源：停机工时台账 × 边际贡献测算 · 2026-Q1", 11, INK3))
-    e.append(M(1240, 700, "06 / 08", 11, INK3, anchor="end"))
+    e.append(M(1240, 700, "06 / 11", 11, INK3, anchor="end"))
     return svg(e)
 slides["slide-06-bignumber.svg"] = bignum()
 
 # ── 07 架构层次图（E-04）· 三层 + 模块面板，层间中性箭头 ──
 def architecture2():
     section_src[7] = "改善体系设计 · 2026-06"
-    e = chrome("改善方案　·　体系架构", "三层改善体系：目标对齐、过程管理、现场执行", 7, 8)
+    e = chrome("改善方案　·　体系架构", "三层改善体系：目标对齐、过程管理、现场执行", 7, 11)
     layers = [("战略层", "目标与对标", ["OEE 目标 85%", "对标行业基准", "投入产出测算"]),
               ("管理层", "过程与机制", ["日清会机制", "OEE 看板", "标准作业体系", "月度改善例会"]),
               ("执行层", "现场与动作", ["SMED 换型", "设备点检", "配送节拍", "备件预置", "培训认证"])]
@@ -358,7 +358,7 @@ slides["slide-07-architecture.svg"] = architecture2()
 # ── 08 2×2 优先级矩阵（S-02）────────────────────────────
 def matrix():
     section_src[8] = "改善举措排序 · 2026-06"
-    e = chrome("改善方案　·　优先级", "先做高影响低投入：SMED 与停机采集是首选", 8, 8)
+    e = chrome("改善方案　·　优先级", "先做高影响低投入：SMED 与停机采集是首选", 8, 11)
     ox, oy, w, h = 200, 120, 880, 540
     cx, cy = ox + w / 2, oy + h / 2
     # 轴
@@ -392,6 +392,87 @@ def matrix():
     return svg(e)
 slides["slide-08-matrix.svg"] = matrix()
 
+# ── 09 流程闭环（E-03）──────────────────────────────────
+def flow():
+    e = chrome("改善方案　·　运行机制", "改善以四步闭环推进，月度复盘驱动持续迭代", 9, 11)
+    steps = [("01", "测量", "Measure", "OEE/停机/不良采集", "采集率 ≥95%"),
+             ("02", "诊断", "Diagnose", "根因定位、瓶颈识别", "锁定 Top3"),
+             ("03", "改善", "Improve", "SMED/点检/看板", "换型 −25min"),
+             ("04", "标准化", "Standardize", "标准作业+培训", "稽核 ≥90"),
+             ("05", "复盘", "Review", "月度例会+迭代", "OEE 月升")]
+    bw, gap, by, bh = 192, 60, 200, 150
+    cxs = []
+    for i, (num, zh, en, sub, metric) in enumerate(steps):
+        x = 40 + i * (bw + gap); cxs.append(x + bw / 2)
+        e.append(R(x, by, bw, bh, PANEL, rx=12))
+        e.append(M(x + 18, by + 40, num, 22, INK4, w=700))
+        e.append(T(x + 18, by + 80, zh, 18, INK1, w=600))
+        e.append(T(x + 18, by + 102, en, 12, INK3))
+        e.append(T(x + 18, by + 130, sub, 13, INK2))
+        e.append(T(x + 18, by + bh + 30, "交付", 11, INK3))
+        e.append(M(x + 18, by + bh + 52, metric, 14, INK1, w=600))
+        if i < len(steps) - 1:
+            ax = x + bw
+            e.append(L(ax + 10, by + bh / 2, ax + gap - 14, by + bh / 2, INK3, 2))
+            e.append(f'<polygon points="{ax+gap-14},{by+bh/2-5} {ax+gap-6},{by+bh/2} {ax+gap-14},{by+bh/2+5}" fill="{INK3}"/>')
+    loopy = by + bh + 92
+    e.append(L(cxs[-1], by + bh + 66, cxs[-1], loopy, INK3, 1.5))
+    e.append(L(cxs[-1], loopy, cxs[0], loopy, INK3, 1.5))
+    e.append(L(cxs[0], loopy, cxs[0], by + bh + 66, INK3, 1.5))
+    e.append(f'<polygon points="{cxs[0]-5},{by+bh+74} {cxs[0]},{by+bh+66} {cxs[0]+5},{by+bh+74}" fill="{INK3}"/>')
+    e.append(T((cxs[0] + cxs[-1]) / 2, loopy + 22, "每月复盘 · 持续迭代，避免回潮", 14, INK2, anchor="middle"))
+    e.append(CIR(44, 626, 3, ACC))
+    e.append(T(60, 632, "闭环每月跑一轮：数据驱动诊断、诊断驱动改善、改善沉淀为标准。", 15, INK1))
+    return svg(e)
+slides["slide-09-flow.svg"] = flow()
+
+# ── 10 VS 对照（S-08）──────────────────────────────────
+def versus():
+    e = chrome("改善方案　·　决策", "维持现状年损 ¥420 万，立即改善 12 周回本", 10, 11)
+    e.append(R(660, 150, 580, 432, PANEL, rx=12))
+    e.append(T(70, 198, "维持现状", 22, INK1, w=700))
+    e.append(T(70, 222, "DO NOTHING", 12, INK3))
+    e.append(T(700, 198, "立即改善", 22, INK1, w=700))
+    e.append(T(820, 198, "推荐", 14, ACC, w=600))
+    e.append(R(820, 206, 40, 2, ACC))
+    e.append(T(700, 222, "ACT NOW", 12, INK3))
+    e.append(f'<circle cx="640" cy="206" r="26" fill="#FFFFFF" stroke="{LINE}" stroke-width="1.5"/>')
+    e.append(T(640, 213, "VS", 16, INK3, w=700, anchor="middle"))
+    rows = [("综合 OEE", "71%", "85%+", RISK, OK, True),
+            ("年停机损失", "¥420 万", "省 ¥340 万", RISK, OK, False),
+            ("效率趋势", "持续下滑", "12 周回本", RISK, OK, False),
+            ("实施风险", "风险累积", "中等可控", WARN, OK, False),
+            ("12 个月后", "进一步恶化", "进入良性循环", RISK, OK, False)]
+    ry = 296
+    for lab, lv, rv, lc, rc, isnum in rows:
+        e.append(T(70, ry, lab, 14, INK2))
+        e.append(CIR(286, ry - 5, 4, lc))
+        e.append((M if isnum else T)(302, ry, lv, 17, INK1))
+        e.append(T(700, ry, lab, 14, INK2))
+        e.append(CIR(916, ry - 5, 4, rc))
+        e.append((M if isnum else T)(932, ry, rv, 17, INK1))
+        e.append(L(70, ry + 18, 600, ry + 18, LINE, 0.75))
+        e.append(L(700, ry + 18, 1216, ry + 18, LINE, 0.75))
+        ry += 56
+    e.append(CIR(44, 626, 3, ACC))
+    e.append(T(60, 632, "同样 12 周：要么继续亏 ¥420 万/年，要么省下 ¥340 万——选择显而易见。", 15, INK1))
+    return svg(e)
+slides["slide-10-versus.svg"] = versus()
+
+# ── 11 深色过渡（T-01）· 章节切换，暗色提案调色板 ──
+def darktransition():
+    BG, D1, D2, D3, DACC = "#1C1C1C", "#F5F5F5", "#A8A8A8", "#767676", "#5C8BED"
+    e = [R(0, 0, 1280, 720, BG)]
+    e.append(T(40, 80, "PART 03　—　改善方案", 13, D3, ls=3))
+    e.append(T(40, 332, "已经看清问题在哪，", 44, D1, w=700))
+    e.append(T(40, 402, "接下来是怎么把它解决。", 44, D1, w=700))
+    e.append(R(42, 432, 116, 3, DACC))
+    e.append(T(40, 480, "从根因到闭环：方案选型、体系架构、90 天落地。", 18, D2))
+    e.append(T(40, 700, "Aham · 运营改善咨询", 11, D3))
+    e.append(M(1240, 700, "11 / 11", 11, D3, anchor="end"))
+    return svg(e)
+slides["slide-11-dark.svg"] = darktransition()
+
 for name, content in slides.items():
     (OUT / name).write_text(content, encoding="utf-8")
 print("wrote:", ", ".join(sorted(slides)))
@@ -400,7 +481,9 @@ print("wrote:", ", ".join(sorted(slides)))
 CAPS = {"slide-01-cover.svg": "01 · 封面 Cover", "slide-02-dashboard.svg": "02 · KPI 看板",
         "slide-03-options.svg": "03 · 方案选型对照", "slide-04-evidence.svg": "04 · 证据 · 趋势图",
         "slide-05-roadmap.svg": "05 · 实施路线 + 责任矩阵", "slide-06-bignumber.svg": "06 · 大数字冲击",
-        "slide-07-architecture.svg": "07 · 三层架构图", "slide-08-matrix.svg": "08 · 2×2 优先级矩阵"}
+        "slide-07-architecture.svg": "07 · 三层架构图", "slide-08-matrix.svg": "08 · 2×2 优先级矩阵",
+        "slide-09-flow.svg": "09 · 流程闭环 Flow", "slide-10-versus.svg": "10 · VS 对照",
+        "slide-11-dark.svg": "11 · 深色过渡"}
 figs = "\n".join(f'<figure class="slide"><figcaption>{c}</figcaption><div class="canvas">{slides[f]}</div></figure>'
                  for f, c in CAPS.items())
 deck = ('<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">'

@@ -26,7 +26,7 @@
 
 <!-- ① 页眉：Section 路径（左） + 品牌（右，唯一蓝点） -->
 <text x="40" y="24" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" letter-spacing="1" fill="#9B9B9B">[section_path]</text>
-<rect x="1198" y="16" width="9" height="9" rx="2" fill="#336EE8"/>
+<rect x="1188" y="16" width="9" height="9" rx="2" fill="#336EE8"/>
 <text x="1240" y="24" text-anchor="end" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="600" fill="#262626">[brand_name]</text>
 <line x1="40" y1="32" x2="1240" y2="32" stroke="#E7E7E7" stroke-width="1"/>
 

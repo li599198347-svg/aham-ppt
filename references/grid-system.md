@@ -155,7 +155,7 @@ y=200, h=280
 ```
 Section路径：x=40, y=24, font-size=11, fill=#9B9B9B
 品牌标识：x=1240, y=24, text-anchor=end, font-size=12, font-weight=600, fill=#262626
-品牌蓝点：x=1198, y=16, w=9, h=9, rx=2, fill=#336EE8（唯一蓝点缀，紧贴品牌字左侧）
+品牌蓝点：x=1188, y=16, w=9, h=9, rx=2, fill=#336EE8（唯一蓝点缀，紧贴品牌字左侧）
 分割线：x1=40, y1=32, x2=1240, y2=32, stroke=#E7E7E7, stroke-width=1
 ```
 

@@ -7,6 +7,14 @@
 
 ## [Unreleased]
 
+### 新增
+- 示例新增 3 种版式：**流程闭环**（E-03）、**VS 对照**（S-08）、**深色过渡**（T-01），示例增至 11 页。
+- README 加「示例预览」图墙——11 页真实渲染截图（2× 高清），存 `assets/shots/`。
+- `examples/render_shots.py`：用 Playwright/Chromium 把示例 SVG 渲染成 PNG（Inter/JetBrains 网络字体 + 系统 CJK）。
+
+### 变更
+- Action Title 字号统一为 24pt（32px）；品牌蓝点位置微调（与品牌字留清晰间距）。
+
 ## [2.0.0] - 2026-06-21
 
 设计语言换血：从旧规范（McKinsey 风 · `#1677FF` 重蓝 · 衬线标题 · 描边大卡）

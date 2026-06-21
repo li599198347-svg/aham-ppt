@@ -1,14 +1,14 @@
 <svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
 <rect x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
 <text x="40" y="24" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" letter-spacing="1" fill="#9B9B9B">根因分析　·　第二部分 证据</text>
-<rect x="1198" y="16" width="9" height="9" rx="2" fill="#336EE8"/>
+<rect x="1188" y="16" width="9" height="9" rx="2" fill="#336EE8"/>
 <text x="1240" y="24" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="600" text-anchor="end" fill="#262626">Aham</text>
 <line x1="40" y1="32" x2="1240" y2="32" stroke="#E7E7E7" stroke-width="1"/>
 <text x="40" y="78" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="32" font-weight="700" fill="#262626">OEE 连续 8 个月低于 75%，自然爬坡无法收敛缺口</text>
 <line x1="40" y1="94" x2="1240" y2="94" stroke="#E7E7E7" stroke-width="1"/>
 <line x1="40" y1="690" x2="1240" y2="690" stroke="#E7E7E7" stroke-width="1"/>
 <text x="40" y="709" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#9B9B9B">来源：MES OEE 月报 2025-11 至 2026-06</text>
-<text x="1240" y="709" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" text-anchor="end" fill="#9B9B9B">04 / 08</text>
+<text x="1240" y="709" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" text-anchor="end" fill="#9B9B9B">04 / 11</text>
 <text x="110" y="138" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="14" fill="#9B9B9B">月度综合效率 OEE（%）</text>
 <line x1="110" y1="560.0" x2="720" y2="560.0" stroke="#F3F3F3" stroke-width="1"/>
 <text x="98" y="564.0" font-family="'JetBrains Mono', Consolas, monospace" font-size="12" text-anchor="end" fill="#9B9B9B">60</text>

@@ -29,6 +29,38 @@ Aham 来自 *aha moment*。每个工具只把一件事做利落。
 
 ---
 
+## 示例预览
+
+> 用本技能（Aham UI v6.1）生成的 11 页样张：**底永远纯白 · 蓝是点缀 · 文档式表格 · 留白分隔 · 数字 mono · 状态点+文字**。
+> 可编辑版 → [aham-ppt-v6.1-demo.pptx](examples/aham-ppt-v6.1-demo.pptx)　·　一键生成 → [build_examples.py](examples/build_examples.py)
+
+<img src="assets/shots/slide-01-cover.png" alt="封面" width="100%">
+
+<table>
+<tr>
+<td width="50%"><img src="assets/shots/slide-02-dashboard.png" alt="KPI 看板"><br><sub><b>02</b> · KPI 看板（指标条 + 文档表 + 关键发现 + Top3）</sub></td>
+<td width="50%"><img src="assets/shots/slide-03-options.png" alt="方案选型对照"><br><sub><b>03</b> · 方案选型对照（推荐列=灰底非蓝 + 蓝「推荐」点缀）</sub></td>
+</tr>
+<tr>
+<td><img src="assets/shots/slide-04-evidence.png" alt="趋势图"><br><sub><b>04</b> · 证据 · 趋势图（灰阶柱 + 一抹蓝高亮）</sub></td>
+<td><img src="assets/shots/slide-05-roadmap.png" alt="实施路线"><br><sub><b>05</b> · 实施路线 + 责任矩阵（里程碑轴 + 三阶段 + 表）</sub></td>
+</tr>
+<tr>
+<td><img src="assets/shots/slide-06-bignumber.png" alt="大数字冲击"><br><sub><b>06</b> · 大数字冲击（mono 巨号 + 损失拆解）</sub></td>
+<td><img src="assets/shots/slide-07-architecture.png" alt="三层架构图"><br><sub><b>07</b> · 三层架构图（战略/管理/执行 × 模块面板）</sub></td>
+</tr>
+<tr>
+<td><img src="assets/shots/slide-08-matrix.png" alt="2×2 优先级矩阵"><br><sub><b>08</b> · 2×2 优先级矩阵（蓝只染「优先实施」象限）</sub></td>
+<td><img src="assets/shots/slide-09-flow.png" alt="流程闭环"><br><sub><b>09</b> · 流程闭环（五步 + 反馈回路）</sub></td>
+</tr>
+<tr>
+<td><img src="assets/shots/slide-10-versus.png" alt="VS 对照"><br><sub><b>10</b> · VS 对照（现状 vs 改善 · 点+文字双通道）</sub></td>
+<td><img src="assets/shots/slide-11-dark.png" alt="深色过渡"><br><sub><b>11</b> · 深色过渡（暗色提案调色板，章节切换）</sub></td>
+</tr>
+</table>
+
+---
+
 ## 快速开始
 
 ### 1. 安装技能
