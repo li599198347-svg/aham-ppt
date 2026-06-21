@@ -1,6 +1,6 @@
 # Aham Design System（v6.1 · PPT/Office 轨）
 
-> **北极星**：Claude desktop 气质——极简、克制、留白、内容优先。性格：**冷色的纸、克制的金属感、对话式**。
+> **北极星**：极简、克制、留白、内容优先的桌面 AI 气质。性格：**冷色的纸、克制的金属感、对话式**。
 > 取值唯一事实源：`tokens.css`（镜像自 aham-ui/tokens.json）。本技能只产出 PPT，属 **Office 轨 · PPT 子模型**，落地细则见 `aham-ui-office.md`。
 
 **Brand**: Aham（示例品牌 · Demo Brand）
