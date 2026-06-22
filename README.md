@@ -50,6 +50,37 @@
 
 ---
 
+## 视觉档（风格切换）
+
+开始做 PPT 时技能会先问你选**视觉档**（[`SKILL.md`](SKILL.md) Step 1.5，回车默认 **B**）。两档**共用同一份内容与组件，只切换视觉层**（封面 / 目录 / 章节模板 + 页眉皮肤），都坚持单一主色 + 中性灰、不引入多色。
+
+| 档 | 气质 | 适用 |
+|---|---|---|
+| **A · 克制档** | 纯白白皮书、安静权威 | 高层正式汇报、严谨决策 |
+| **B · 现代专业档（默认）** | 图标 + 关系图、设计化封面 / 目录 / 章节 | 多数客户方案、汇报 + 会后阅读 |
+
+同一份封面，两种档：
+
+<table>
+<tr>
+<td width="50%"><img src="assets/shots/theme-a-cover.png" alt="A 克制档封面"><br><sub><b>A · 克制档</b> · 极简标题 + 竖排目录</sub></td>
+<td width="50%"><img src="assets/shots/theme-b-cover.png" alt="B 现代专业档封面"><br><sub><b>B · 现代专业档（默认）</b> · Hero + 章节图标块</sub></td>
+</tr>
+</table>
+
+B 档的设计化目录 / 章节页：
+
+<table>
+<tr>
+<td width="50%"><img src="assets/shots/theme-b-toc.png" alt="B 目录"><br><sub>目录 · 图标圆 + 编号 + 描述</sub></td>
+<td width="50%"><img src="assets/shots/theme-b-section.png" alt="B 章节页"><br><sub>章节页 · 水印编号 + 本章内容</sub></td>
+</tr>
+</table>
+
+> 上面「预览」的 11 页是**内容页版式**（两档通用）；这里展示的是两档在**封面 / 目录 / 章节**上的差异。完整规则见 [`references/theme-tiers.md`](references/theme-tiers.md)。
+
+---
+
 ## 快速开始
 
 ### 1. 安装技能
