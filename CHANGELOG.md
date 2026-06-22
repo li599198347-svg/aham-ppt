@@ -7,6 +7,22 @@
 
 ## [Unreleased]
 
+## [2.1.0] - 2026-06-22 — 双档主题 + 工具链修复
+
+### 新增
+- **双档主题系统**：A 克制档 / B 现代专业档（默认 B）。共用内容与组件，仅切换封面/目录/章节模板与页眉皮肤；两档均坚持单一主色 + 中性灰，不引入多色体系。见 `references/theme-tiers.md`。
+- **启动选档步骤**（SKILL.md Step 1.5）：规范加载后、解析材料前询问一次，回车默认 B。
+- **图标与组件库**（`assets/components/`）：`icons.py`（~40 线性图标 + icon_circle/num_badge/num_ring）、`components.py`（泳道/蓝图/箭头/KPI/状态/设备屏/手机/占位框）、`themes.py`（A/B 封面/目录/章节/页眉模板）。
+- 设计规则：**强调色语义** QC 项（禁无语义单点强调色）、真实照片**占位框**（禁 AI 图/网图）、**样张先行**。
+- 内容方法论：一手材料优先、措辞分寸、show-don't-tell、脱敏固定步骤、流程先确认形态。见 `references/enhancements.md`。
+
+### 修复
+- **转换器文本宽度估算偏窄导致折行**（`assets/svg_to_pptx/drawingml_utils.py` 的 `estimate_text_width`）：窄字符 0.3→0.5、基准 0.55→0.62、mMwWOQ→0.82、CJK→1.02、整体 ×1.08。修复编号"01"、长英文串被 LibreOffice 拆行的问题。
+
+### 变更
+- 规范微调：放开"内容区线性单色图标"为 B 档允许项（原仅限导航/发送栏）。
+- 建议产物写"版本目录"、页码用 ORDER 列表统一重排（见 enhancements.md）。
+
 ## [2.0.1] - 2026-06-21
 
 ### 新增

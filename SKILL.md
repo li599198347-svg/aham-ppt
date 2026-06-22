@@ -11,6 +11,10 @@ description: >
 
 # Aham PPT 技能 — Aham UI v6.1 · Office 轨 · PPT
 
+> **版本 v2.1**（双档主题 + 工具链修复）。本版新增：A 克制档 / B 现代专业档（默认 B）、
+> 启动选档步骤、转换器字宽修复、线性图标库与关系图组件库、强调色语义 QC、内容方法论。
+> 详见 `references/theme-tiers.md`、`references/enhancements.md`、`CHANGELOG.md`。
+
 ---
 
 ## Step 1 · 加载规范（优先级顺序）
@@ -36,6 +40,31 @@ view references/phase-01.md  ← 规范加载阶段
 ```
 view /mnt/skills/public/pptx/SKILL.md
 ```
+
+**v2.1 新增规范（务必加载）：**
+```
+view references/theme-tiers.md     ← 双档主题：A 克制 / B 现代专业（默认）
+view references/enhancements.md    ← 字宽修复 / 强调色语义 QC / 图标组件 / 方法论
+```
+图标与组件资产位于 `assets/components/`：`icons.py`（~40 线性图标 + icon_circle/num_badge/num_ring）、
+`components.py`（泳道/蓝图/箭头/KPI/状态/设备屏/占位框）、`themes.py`（A/B 封面/目录/章节/页眉模板）。
+
+---
+
+## Step 1.5 · 选择视觉档（默认 B · 现代专业档）
+
+加载规范后、解析材料前，向用户确认一次视觉档（回车默认 B）：
+
+```
+这份 PPT 用哪种视觉档？
+  A 克制档     —— 纯白极简，适合高层正式汇报、严谨决策
+  B 现代专业档 —— 图标 + 关系图 + 设计化封面/目录/章节（默认，适合多数客户方案）
+直接回车 = B。
+```
+
+记录 `theme = A | B`。两档**共用同一套内容与组件，只切换主题层**（封面/目录/章节模板 + 页眉皮肤）；
+两档都坚持单一品牌主色 + 中性灰，**不引入多色体系**（多色实测"AI 感/营销感"偏重）。
+phase-05（版式）/ phase-07（出片）按 `theme` 取用 `themes.py` 对应模板。详见 `references/theme-tiers.md`。
 
 ---
 
