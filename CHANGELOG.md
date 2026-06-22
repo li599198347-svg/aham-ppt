@@ -62,7 +62,8 @@
 ### 修复
 - 修复版式命名冲突、品牌色硬编码等 8 项问题。
 
-[Unreleased]: https://github.com/li599198347-svg/aham-ppt/compare/v2.0.1...HEAD
+[Unreleased]: https://github.com/li599198347-svg/aham-ppt/compare/v2.1.0...HEAD
+[2.1.0]: https://github.com/li599198347-svg/aham-ppt/releases/tag/v2.1.0
 [2.0.1]: https://github.com/li599198347-svg/aham-ppt/releases/tag/v2.0.1
 [2.0.0]: https://github.com/li599198347-svg/aham-ppt/releases/tag/v2.0.0
 [1.1.0]: https://github.com/li599198347-svg/aham-ppt/releases/tag/v1.1.0
