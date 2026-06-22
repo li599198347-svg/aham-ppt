@@ -283,23 +283,25 @@ def is_cjk_char(ch: str) -> bool:
 
 def estimate_text_width(text: str, font_size: float, font_weight: str = '400') -> float:
     """Estimate text width in SVG pixels."""
+    # v2.1: 加宽估算，修复窄字符(1/i/l/j)与长拉丁串被 LibreOffice 折行的问题。
+    # wrap="none" 下过宽无害（单行 + 锚定不变），宁可偏宽不可偏窄。
     width = 0.0
     for ch in text:
         if is_cjk_char(ch):
-            width += font_size
+            width += font_size * 1.02
         elif ch == ' ':
-            width += font_size * 0.3
+            width += font_size * 0.32
         elif ch in 'mMwWOQ':
-            width += font_size * 0.75
-        elif ch in 'iIlj1!|':
-            width += font_size * 0.3
+            width += font_size * 0.82
+        elif ch in 'iIlj1!|.,:;\'':
+            width += font_size * 0.50
         else:
-            width += font_size * 0.55
+            width += font_size * 0.62
 
     if font_weight in ('bold', '600', '700', '800', '900'):
-        width *= 1.05
+        width *= 1.06
 
-    return width
+    return width * 1.08
 
 
 def _xml_escape(text: str) -> str:
