@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """公众号文章配图生成器（Aham PPT v2.0 发布）。
+一次性发版脚本，与技能运行时无关。
 统一用 Aham UI v6.1 视觉：三层灰 + 蓝是点缀 + 无衬线 + 数字 mono。
-产出：封面 + 品牌矩阵 + 新旧对比 + 重型流水线，渲染成 2x PNG 到桌面。
-依赖：playwright（已装）。运行：python3 examples/article_figures.py
+产出：封面 + 品牌矩阵 + 新旧对比 + 重型流水线，渲染成 2x PNG。
+依赖：playwright（已装）。运行：python3 tools/article_figures.py
+输出目录：默认 ./tools/out/article-figures/，可用环境变量 AHAM_OUT_DIR 覆盖。
 """
+import os
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
@@ -213,9 +216,9 @@ def workflow():
     return svg(e, W, H), W, H
 figs["workflow"] = workflow()
 
-# ════════════════ 渲染到桌面 ════════════════
-DESK = Path.home() / "Desktop" / "aham-ppt-2.0-公众号"
-OUTP = DESK / "配图"
+# ════════════════ 渲染输出 ════════════════
+# 默认写到仓库内 tools/out/（不锚定某人桌面）；可用 AHAM_OUT_DIR 覆盖。
+OUTP = Path(os.environ.get("AHAM_OUT_DIR", Path(__file__).resolve().parent / "out" / "article-figures"))
 OUTP.mkdir(parents=True, exist_ok=True)
 FONTS = ('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?'
          'family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">')

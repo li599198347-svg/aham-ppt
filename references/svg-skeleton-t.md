@@ -10,8 +10,8 @@
 <!-- 深色背景 -->
 <rect width="1280" height="720" fill="#1C1C1C"/>
 
-<!-- 顶部装饰细线 -->
-<rect x="80" y="80" width="40" height="2" fill="#4A6680"/>
+<!-- 顶部装饰细线（深底上唯一蓝点缀 #336EE8）-->
+<rect x="80" y="80" width="40" height="2" fill="#336EE8"/>
 
 <!-- 主引言（两行，居中偏左） -->
 <text x="120" y="310" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="36" font-weight="bold" fill="#FFFFFF">[quote_line_1]</text>
@@ -23,9 +23,9 @@
 <!-- 引用来源 -->
 <text x="1200" y="640" text-anchor="end" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#A8A8A8">—— [source]</text>
 
-<!-- 极简页脚 -->
-<text x="40" y="708" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#4A6680">来源：[source]</text>
-<text x="1240" y="708" text-anchor="end" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#4A6680">[page_index]</text>
+<!-- 极简页脚（深底弱字 #787878）-->
+<text x="40" y="708" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#787878">来源：[source]</text>
+<text x="1240" y="708" text-anchor="end" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#787878">[page_index]</text>
 ```
 
 ---

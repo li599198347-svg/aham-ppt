@@ -73,15 +73,18 @@
 
 读取以下文件，加载设计规则：
 - `svg-skeleton-common.md`：通用Chrome/卡片/箭头骨架
-- `svg-skeleton-[当前版式系].md`：当前页对应系的版式骨架（仅读对应1个）
-- `layout-impl-[当前版式系].md`：当前页版式实现细节（仅读对应1个）
+- `svg-skeleton-[当前版式系].md`：当前页对应系的版式骨架（仅读对应1个）；**系→文件例外**：SPC 系（封面/分隔/结尾）读 `svg-skeleton-common.md` 末尾特殊页模板，Ch 系（数据图）调 `charts.py`（坐标真源始终是 `grid-system.md`）
 - `designer-rules.md`：设计原则+品牌纪律+PPTX约束
-- `chart-impl.md`：图表（有图表的页面才读）。**优先 `from charts import bar, hbar, line, waterfall` 一行生成，不逐坐标手画**；charts 未覆盖的类型才用 chart-impl 手画模板
+- `chart-impl.md`：图表（有图表的页面才读）。**优先 `from charts import bar, hbar, line, waterfall, funnel, gantt, bullet, stacked, slope` 一行生成，不逐坐标手画**；charts 未覆盖的类型才用 chart-impl 手画模板
+
+**按视觉档（theme，Phase 1 记录）调用 `themes.py` 结构性页模板：**
+- A / B 档：`cover / toc / section / chrome`（B 档 chrome 可带图标/关系图）
+- C 高表现力档：`cover_dark / section_dark / quote_dark` 用于封面/章节/金句重音页，内容页仍用 `chrome`(B 皮肤)，数据页 `charts` 占主导
 
 确认以下内容已就绪：
 - 布局规划卡（来自Phase 5）
 - 视觉基调确认单（来自Phase 6）
-- BRAND_RULES（颜色/字体）
+- BRAND_RULES（颜色/字体）+ theme 视觉档
 
 ---
 
@@ -93,7 +96,7 @@
 
 ```
 [第X页 · 第X/总页数 · 设计前自检]
-版式：[版式ID]  骨架：svg-skeleton.md → [章节名]
+版式：[版式ID]  骨架：svg-skeleton-[系].md → [章节名]（SPC→svg-skeleton-common.md）
 坐标：来自Phase 5规划卡，不自行计算
 
 负面约束（全部✓才开始写代码）：
@@ -117,8 +120,8 @@
 - 语义色场景必须颜色+符号双通道（不能只靠颜色区分）
 
 标题规则：
-- Action Title≤20字，宋体-简 Bold（通用模式：微软雅黑 Bold）
-- 单行标题 y=70，双行第一行 y=56
+- Action Title≤20字，**无衬线 Bold `#262626`，无蓝竖线**（禁宋体/衬线）
+- 坐标按 `grid-system.md §五`：单行 y=78 / 32px，双行 y=60·86 / 22px
 
 图表规则（有图表时读 chart-impl.md）：
 - 禁用饼图（任何情况下）

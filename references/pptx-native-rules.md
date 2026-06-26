@@ -45,7 +45,7 @@ output = Path('./workspace/deliverables/方案.pptx')
 success = svg_to_native_pptx(
     svg_files=svg_files,
     output_path=output,
-    canvas_format='ppt169',  # 16:9,或 ppt43 / custom
+    canvas_format='auto',  # 默认按 SVG viewBox 推导（16:9 设计基准）；或显式传 'ppt169'
     verbose=True,
 )
 assert success, "转换失败,检查 SVG 是否规范"
@@ -105,6 +105,8 @@ assert success, "转换失败,检查 SVG 是否规范"
 
 ### 不支持/需规避
 
+> 完整的 SVG→PPTX 兼容雷区与正确写法以 `designer-rules.md` §PPTX兼容性硬性约束为**单一真源**；下表只列元素支持度速查。
+
 - `<marker>` on `<path>/<polyline>`：转换后静默丢失，**用 `<polygon>` 画箭头替代**
 - `<g transform="rotate(...)">` ：子元素坐标偏移，**改用元素级 rotate 或绝对坐标**
 - `<g transform="scale(-1...)">` 负数缩放：被忽略
@@ -122,7 +124,7 @@ assert success, "转换失败,检查 SVG 是否规范"
 ### 问题 1 · 整页空白（最常见）
 
 **原因A**：SVG 文字内容里有未转义的 `&`（如 "R&D"），导致 XML 解析崩溃。
-**处置**：工具链 V5.0 已内置自动修复裸露 `&`，但 `<`、`>`、`"` 仍需手动转义。
+**处置**：工具链已内置自动修复裸露 `&`，但 `<`、`>`、`"` 仍需手动转义。
 检查 SVG 里所有文字内容是否有这些特殊字符。
 
 **原因B**：SVG 文件编码非 UTF-8。
@@ -174,7 +176,7 @@ assert success, "转换失败,检查 SVG 是否规范"
 
 ---
 
-## V4.0 核心纪律
+## 核心纪律
 
 ### ✅ 应该做的
 
@@ -185,7 +187,7 @@ assert success, "转换失败,检查 SVG 是否规范"
 
 ### ❌ 不应该做的
 
-- ❌ 手写 python-pptx 代码拼形状(V3.0 老路,已废弃)
+- ❌ 手写 python-pptx 代码拼形状(老路,已废弃)
 - ❌ 用 EMF 嵌入后声称"可编辑"(场景 21 血泪教训)
 - ❌ PPT 生成后**直接改 PPT**(会和 SVG 真源漂移,场景 20)
 - ❌ "这页我手打几个字快一点"(永远不!场景 20)

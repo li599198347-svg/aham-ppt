@@ -1,20 +1,26 @@
-# LESSONS · 经验积累文档
+# LESSONS · 经验积累文档（历史经验归档）
 
 > **注意：本文件不在运行时加载链路中，不会消耗token。**
 > 本文件是供人类阅读的经验积累，包含方法论场景索引和工具链技术细节。
-> AI执行时不需要读取本文件，所有执行规则已分散到对应的Phase文件和references中。
+> AI执行时不需要读取本文件，所有执行规则已分散到对应的 Phase 文件和 references 中。
+
+> **⚠️ 历史归档说明**：本文件是**方法论经验的历史归档**。下文各章节标注的
+> `**文件**:references/xxx.md` 是**历史记录的指针**——技能演进后，这些场景的可执行规则
+> 已重构、合并并分散到现行的 `references/coach-engine.md`、`references/phase-01.md`～`phase-08.md`
+> 等文件中，**不再以独立的 references 文件单独承载**。需要落地规则时，请按下方「使用索引」的
+> 阶段映射去对应 Phase / coach-engine 文件查阅；本文件中的文件名仅供理解经验来源脉络。
 
 ---
 
 
 > 本文件是技能的**方法论索引**。24 个场景来源于多次项目实战,每个配 Trigger Point 和跳转链接。
-> **使用方式**:在对应阶段或遇到对应信号时,跳转到具体 reference 读完整内容。
+> **使用方式**:在对应阶段或遇到对应信号时,按「使用索引」跳转到对应 Phase / coach-engine 文件读完整内容。
 
 ---
 
 ## 📍 必问探测类(场景 1-12)
 
-**文件**:`references/probing-scenarios.md`
+**历史来源**:`references/probing-scenarios.md`（已重构，现行规则见 `references/coach-engine.md` 与各 Phase 文件）
 
 ### 强制 4 场景(Phase 0.5 必问)
 
@@ -42,7 +48,7 @@
 
 ## 🎯 专业判断类(场景 13-14)
 
-**文件**:`references/professional-judgment.md`
+**历史来源**:`references/professional-judgment.md`（已重构，现行规则分散在各 Phase 文件）
 
 | # | 场景 | Trigger Point |
 |---|---|---|
@@ -55,7 +61,7 @@
 
 ## 🎨 规范执行类(场景 15 + 架构修正)
 
-**文件**:`references/brand-discipline.md`
+**历史来源**:`references/brand-discipline.md`（已重构，现行规则见 `references/brand-spec/brand.md` 与 `references/designer-rules.md`）
 
 | # | 场景 | Trigger Point |
 |---|---|---|
@@ -72,7 +78,7 @@
 
 ## 🔧 工程教训类(场景 19-23)
 
-**文件**:`references/engineering-lessons.md`
+**历史来源**:`references/engineering-lessons.md`（已重构，现行规则见 `references/pptx-native-rules.md`、`references/quality-audit-protocol.md` 与 `references/phase-07.md`）
 
 | # | 场景 | Trigger Point |
 |---|---|---|
@@ -152,7 +158,9 @@
 
 ## 工具链技术细节（供调试参考）
 
-ppt-master 工具链的核心创新(在 `assets/svg_to_pptx/drawingml_elements.py`):
+ppt-master 工具链的核心创新(`estimate_text_width` 等实现在 `assets/svg_to_pptx/drawingml_utils.py`):
+
+> 下方代码块为历史摘录,系数可能与源码漂移;**一切以源码 `drawingml_utils.py` 为准**。
 
 ```python
 # baseline 偏移系数(经验值)

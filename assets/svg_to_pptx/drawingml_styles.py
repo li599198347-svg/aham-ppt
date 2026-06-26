@@ -470,18 +470,6 @@ def build_effect_xml(filter_elem: ET.Element) -> str:
     return build_glow_xml(filter_elem)
 
 
-def get_element_opacity(elem: ET.Element) -> float | None:
-    """Get opacity value from element. Returns None if 1.0 or not set."""
-    op = elem.get('opacity')
-    if op is None:
-        return None
-    try:
-        val = float(op)
-        return val if val < 1.0 else None
-    except ValueError:
-        return None
-
-
 def get_fill_opacity(
     elem: ET.Element,
     ctx: ConvertContext | None = None,

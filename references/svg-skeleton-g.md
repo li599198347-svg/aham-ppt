@@ -154,23 +154,23 @@
 <!-- 金字塔层1（顶层·最重要）：梯形 用polygon -->
 <!-- 顶层梯形：上宽400，下宽560，居中于x=640，y=120，高=110 -->
 <polygon points="440,120 840,120 870,230 410,230" fill="#262626"/>
-<text x="640" y="165" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#8AAED0" letter-spacing="2">[layer1_tag]</text>
+<text x="640" y="165" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#C4C4C4" letter-spacing="2">[layer1_tag]</text>
 <text x="640" y="200" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF">[layer1_title]</text>
 
 <!-- 层2：上宽560，下宽720，y=236，高=110 -->
-<polygon points="410,236 870,236 910,346 370,346" fill="#1A5FA8"/>
-<text x="640" y="281" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#A0C4E8" letter-spacing="2">[layer2_tag]</text>
+<polygon points="410,236 870,236 910,346 370,346" fill="#6E6E6E"/>
+<text x="640" y="281" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#C4C4C4" letter-spacing="2">[layer2_tag]</text>
 <text x="640" y="316" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF">[layer2_title]</text>
 
 <!-- 层3：上宽720，下宽880，y=352，高=110 -->
 <polygon points="370,352 910,352 950,462 330,462" fill="#C8C8C8"/>
-<text x="640" y="397" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#C0DDF0" letter-spacing="2">[layer3_tag]</text>
-<text x="640" y="432" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF">[layer3_title]</text>
+<text x="640" y="397" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#6E6E6E" letter-spacing="2">[layer3_tag]</text>
+<text x="640" y="432" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="20" font-weight="bold" fill="#262626">[layer3_title]</text>
 
 <!-- 层4（底层·最基础）：上宽880，下宽1040，y=468，高=110 -->
-<polygon points="330,468 950,468 990,578 290,578" fill="#6BA3D6"/>
-<text x="640" y="513" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#E0EEF8" letter-spacing="2">[layer4_tag]</text>
-<text x="640" y="548" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF">[layer4_title]</text>
+<polygon points="330,468 950,468 990,578 290,578" fill="#E7E7E7"/>
+<text x="640" y="513" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#6E6E6E" letter-spacing="2">[layer4_tag]</text>
+<text x="640" y="548" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="20" font-weight="bold" fill="#262626">[layer4_title]</text>
 
 <!-- 右侧注释（每层对齐） -->
 <line x1="875" y1="175" x2="960" y2="175" stroke="#C4C4C4" stroke-width="0.5" stroke-dasharray="3,3"/>

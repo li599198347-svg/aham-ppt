@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
-"""双档主题模板：A 克制档 / B 现代专业档（默认）。
-两档共用内容与组件，只切换封面/目录/章节模板与页眉皮肤。
+"""三档主题模板：A 克制档 / B 现代专业档（默认）/ C 高表现力档。
+A 克制白皮书，B 现代专业（默认），由 cover/toc/section/chrome 按 theme='A'|'B' 切换；
+C 高表现力档为深色重音页（#1C1C1C + 超大 mono 数字），由 cover_dark/section_dark/quote_dark 提供。
+三档共用同一份内容与组件，只切换封面/目录/章节模板与页眉皮肤（重音手法）。
 全部参数化、无品牌/客户硬编码——调用时传入实际文字。
 1280x720 画布。依赖同目录 components.py / icons.py。"""
-from components import (T,P,L,esc,SANS,MONO,ACC,INK1,INK2,INK3,INK4,LINE,PANEL)
-from icons import ICON, icon_circle, num_badge, num_ring
+from components import (T,P,L,MONO,ACC,INK1,INK2,INK3,INK4,LINE,PANEL)
+from icons import icon_circle
 
 def _svg(body,bg="#FFFFFF"):
     return (f'<svg width="1280" height="720" viewBox="0 0 1280 720" '
@@ -13,8 +15,9 @@ def _svg(body,bg="#FFFFFF"):
 # ============================================================
 #  封面
 # ============================================================
-def cover(theme,brand,title,subtitle,chapters,meta_left="",meta_right=""):
-    """theme='A'|'B'. chapters=[(num,zh,sub,icon),...]"""
+def cover(theme,brand,title,subtitle,chapters,meta_left="",meta_right="",eyebrow="OVERVIEW"):
+    """theme='A'|'B'. chapters=[(num,zh,sub,icon),...]。
+    eyebrow：B 档大标题上方的小字眉标，中性占位，按实际主题传入（勿写死行业）。"""
     if theme=="A":
         b=[f'<rect x="40" y="60" width="12" height="12" rx="2" fill="{ACC}"/>',
            T(62,76,brand,19,INK1,700),
@@ -33,7 +36,7 @@ def cover(theme,brand,title,subtitle,chapters,meta_left="",meta_right=""):
     # B · Hero
     b=[f'<rect x="40" y="60" width="12" height="12" rx="2" fill="{ACC}"/>',
        T(62,76,brand,19,INK1,700),
-       T(80,168,"MANUFACTURING OPERATIONS",13,INK3,ls=5),
+       T(80,168,eyebrow,13,INK3,ls=5),
        T(80,332,title,58,INK1,700)]
     if subtitle: b.append(T(80,404,subtitle,20,INK2))
     b.append(f'<rect x="84" y="430" width="150" height="5" rx="2" fill="{ACC}"/>')
@@ -135,11 +138,12 @@ DK_LINE = "#3A3A3A"  # 深底上的分隔线
 DK_PANEL = "#262626" # 深底上稍亮的块
 
 
-def cover_dark(brand, title, subtitle, chapters, meta_left="", meta_right=""):
-    """C 档深色封面。chapters=[(num,zh,sub,icon),...]（仅用 num/zh/sub）。"""
+def cover_dark(brand, title, subtitle, chapters, meta_left="", meta_right="", eyebrow="OVERVIEW"):
+    """C 档深色封面。chapters=[(num,zh,sub,icon),...]（仅用 num/zh/sub）。
+    eyebrow：大标题上方小字眉标，中性占位，按实际主题传入（勿写死行业）。"""
     b = [f'<rect x="40" y="60" width="12" height="12" rx="2" fill="{ACC}"/>',
          T(62, 76, brand, 19, LT1, 700),
-         T(80, 168, "MANUFACTURING OPERATIONS", 13, LT3, ls=5),
+         T(80, 168, eyebrow, 13, LT3, ls=5),
          T(80, 332, title, 56, LT1, 700)]
     if subtitle:
         b.append(T(80, 404, subtitle, 20, LT2))

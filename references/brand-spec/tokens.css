@@ -1,9 +1,9 @@
 /* ============================================================
    Aham UI — Design Tokens  (v6.1 · 2026-06)
-   单一事实源镜像自 aham-ui/tokens.json。
+   本技能取值的单一事实源（PPT / Office 轨）。
    北极星：极简、克制、留白、内容优先的桌面 AI 气质。
    性格：冷色的纸、克制的金属感、对话式。
-   ★ 本文件只镜像 token；任何取值以 aham-ui 仓库 tokens.json 为权威。
+   ★ 本文件是取值唯一事实源；PPT 落地取值见 §10 + brand.md §7。
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
@@ -123,7 +123,7 @@
   --easing: cubic-bezier(.2,0,0,1);
 
   /* ────────────────────────────────────────────────
-     10 · Office / PPT 导出映射（aham-ui-office.md）
+     10 · Office / PPT 导出映射（落地取值，配合 brand.md §7）
      PPT 16:9 · 底永远纯白 · 蓝是点缀
      ──────────────────────────────────────────────── */
   /* PPT 字号（pt）*/
@@ -135,11 +135,19 @@
   --ppt-label:        12pt;
   --ppt-bignum:       54pt;   /* 大数字 44–60，Consolas */
   --ppt-footer:        9pt;
+  /* C 档重音页（封面/章节/金句）深色 ramp——唯一登记的非纯白底，限这三类页
+     深底上不套用亮色墨四级；用下列深色专用阶；蓝点缀仍是唯一 --accent #336EE8 */
+  --ppt-surface-dark: #1C1C1C;   /* 深底（唯一非纯白底）*/
+  --ppt-dark-ink-1:   #F2F2F2;   /* 深底主字 */
+  --ppt-dark-ink-2:   #A8A8A8;   /* 深底次字 */
+  --ppt-dark-ink-3:   #787878;   /* 深底弱字（页脚/PART）*/
+  --ppt-dark-line:    #3A3A3A;   /* 深底分隔线 */
+  --ppt-dark-panel:   #262626;   /* 深底上稍亮块 */
   /* 文档（Word）标题层级 */
   --doc-h1: 22pt;  --doc-h2: 16pt;  --doc-h3: 13pt;  --doc-body: 10.5pt;  --doc-note: 9pt;
-  /* 图表灰阶（柱/线/环：灰阶 + 一个蓝高亮）*/
+  /* 图表灰阶（柱/线：灰阶 + 一个蓝高亮；#C8C8C8 仅图表次色）*/
   --chart-bar:     #9B9B9B;
-  --chart-bar-2:   #C8C8C8;
+  --chart-bar-2:   #C8C8C8;   /* 仅图表次色 */
   --chart-axis:    #E7E7E7;
   --chart-label:   #6E6E6E;
   --chart-hi:      #336EE8;   /* 当前/重点项，仅一个 */
