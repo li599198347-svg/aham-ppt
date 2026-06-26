@@ -1,6 +1,9 @@
 # Aham PPT · 代码资产目录
 
-本目录包含 SVG → 原生 PPTX 的工具链。**只有一个入口**，其他都是底层实现。
+本目录包含两类代码资产：
+
+- **`svg_to_pptx/` + `svg_to_pptx_wrapper.py`** —— SVG → 原生 PPTX 工具链（**只有一个入口**，其他都是底层实现）。
+- **`components/`** —— 生成 SVG 页面用的组件库（原子组件 / 图表 / 图标 / 三档模板）。
 
 ---
 
@@ -35,13 +38,32 @@ svg_to_native_pptx(svg_files, Path('output.pptx'))
 
 ---
 
+## 组件库：`components/`
+
+生成 SVG 页面用的参数化组件库——一行调用 = 一个合规元素，不再逐坐标手画。
+四个模块**自包含、无品牌/客户硬编码**，颜色一律按 `brand.md` / `tokens.css` 的角色色传入。
+
+| 文件 | 能力 |
+|---|---|
+| `components.py` | 关系图 / UI 原型原子组件：文本 `T`、面板 `P`、连线 `L`、直/曲箭头、`chip` / `hexagon` / `kpi` / `status`、设备与手机屏 `device_screen` / `phone_screen`、大按钮、占位图、分层蓝图 `blueprint`、泳道 `swimlane`。 |
+| `charts.py` | 参数化图表：`waterfall` / `bar` / `hbar` / `line` / `funnel` / `gantt` / `bullet` / `stacked` / `slope`。严格遵守 `brand.md §7.5 / §2.4`——灰阶 + 至多一个 `#336EE8` 高亮、无饼图/环形/3D/渐变、正负靠符号+文字双通道、数字 mono。 |
+| `icons.py` | Lucide 风格线性图标库（~40 个）：`ICON` 取图标、`icon_circle` 图标圆；取色传入，不写死品牌色。 |
+| `themes.py` | A / B / C 三档模板：`cover` / `toc` / `section` / `chrome`（A·B 通用）+ `cover_dark` / `section_dark` / `quote_dark`（C·高表现力深色档）。1280×720 画布，依赖 `components.py` / `icons.py`。 |
+
+---
+
 ## 文件清单
 
 ```
 assets/
 ├── README.md                    # 本文件
-├── svg_to_pptx_wrapper.py       # ★ 对外入口
-└── svg_to_pptx/                 # 工具链主体
+├── svg_to_pptx_wrapper.py       # ★ SVG → PPTX 对外入口
+├── components/                  # SVG 组件库
+│   ├── components.py            # 关系图 / UI 原型原子组件
+│   ├── charts.py                # 参数化图表
+│   ├── icons.py                 # Lucide 风格线性图标
+│   └── themes.py                # A / B / C 三档模板
+└── svg_to_pptx/                 # SVG → PPTX 工具链主体
     ├── __init__.py
     ├── drawingml_context.py
     ├── drawingml_converter.py
@@ -50,9 +72,7 @@ assets/
     ├── drawingml_styles.py
     ├── drawingml_utils.py
     ├── pptx_builder.py
-    ├── pptx_cli.py
     ├── pptx_dimensions.py
-    ├── pptx_discovery.py
     ├── pptx_media.py
     ├── pptx_notes.py
     ├── pptx_slide_xml.py

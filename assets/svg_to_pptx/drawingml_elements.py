@@ -742,9 +742,6 @@ def _build_tspan_line_shapes(
 
     children = [c for c in elem if c.tag.replace(f'{{{SVG_NS}}}', '') == 'tspan']
 
-    # Also handle any direct text in the parent element (before first tspan)
-    prefix_text = _normalize_text(elem.text or '')
-
     for i, child in enumerate(children):
         dy_raw = child.get('dy', '0')
         font_size = parent_attrs.get('font_size', 16)

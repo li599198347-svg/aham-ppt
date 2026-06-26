@@ -64,15 +64,16 @@ def status(x,y,label,kind="ok"):
     return f'<circle cx="{x}" cy="{y-4}" r="4" fill="{c}"/>'+T(x+12,y,label,12.5,INK1)
 
 # ---- 设备屏 / 手机 / 按钮（UI 原型）----
-def device_screen(x,y,w,h,brand=BRAND,kind="tablet"):
-    """返回 (壳 svg, 内容区 ix,iy,iw,ih)。顶栏品牌字用占位 brand。"""
+def device_screen(x,y,w,h,brand=BRAND,app="APP",clock="00:00"):
+    """返回 (壳 svg, 内容区 ix,iy,iw,ih)。顶栏：品牌占位 brand + 应用名 app + 时间 clock。
+    app/clock 均为中性占位，调用时按实际业务系统名/时间传入，勿写死行业。"""
     bez=6
     s=f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="14" fill="#FFFFFF" stroke="{INK3}" stroke-width="2"/>'
     ix,iy,iw,ih=x+bez,y+bez+18,w-2*bez,h-2*bez-18
     s+=f'<rect x="{x+bez}" y="{y+bez}" width="{w-2*bez}" height="18" rx="3" fill="{PANEL}"/>'
     s+=f'<circle cx="{x+bez+10}" cy="{y+bez+9}" r="3" fill="{ACC}"/>'
-    s+=T(x+bez+20,y+bez+13,f"{brand} MES",9,INK2,600)
-    s+=T(x+w-bez-8,y+bez+13,"09:24",9,INK3,fam=MONO,anchor="end")
+    s+=T(x+bez+20,y+bez+13,f"{brand} {app}",9,INK2,600)
+    s+=T(x+w-bez-8,y+bez+13,clock,9,INK3,fam=MONO,anchor="end")
     s+=f'<rect x="{ix}" y="{iy}" width="{iw}" height="{ih}" rx="4" fill="#FFFFFF"/>'
     return s,(ix,iy,iw,ih)
 def phone_screen(x,y,w,h):

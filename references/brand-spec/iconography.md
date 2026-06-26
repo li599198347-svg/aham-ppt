@@ -18,6 +18,8 @@ Why one library: mixing libraries is the #1 way that AI-generated work starts lo
 
 Rationale: the content layer reads as a quiet white-paper. Icons there add visual noise and a second "color language"; a leading `•` + label carries the same meaning with less ink.
 
+> **v2.1 例外（B / C 档）**：自 v2.1 起，**B 现代专业档 / C 高表现力档**允许在内容区使用 **Lucide 线性、单色**图标（如 `assets/components/icons.py` 的 `icon_circle` / 流程节点 / 关系图标识），用于结构化表达（流程、关系图、KPI 标识）；仍**禁多色 / 填充 / emoji**，单色随墨色或单蓝。**A 克制档**维持本铁规——内容区只用 `•` + 文字。落地判定见 `designer-rules.md`。
+
 ## CDN (recommended for prototypes)
 
 ```html
@@ -81,7 +83,7 @@ Colors: `●` success `#5A7A60` · `▲` warning `#8A7333` · `✕` danger `#9E3
 ## Hard bans
 
 ❌ **Emoji** in any production output (📊 🚀 ✨ 🔋 …)
-❌ **Icons in the content area** — bullets, KPIs, table cells, status rows, headers use `•`/dot + text, not icons
+❌ **Icons in the content area**（A 克制档）— bullets, KPIs, table cells, status rows, headers use `•`/dot + text, not icons。**B / C 档见上文 v2.1 例外**：内容区允许 Lucide 线性单色图标用于结构化表达
 ❌ **Colored-background pills stacking icons** (`bg-blue-light` rounded squares are retired)
 ❌ **Filled icons** — outline only; the *only* exception is the selected/active tab indicator
 ❌ **Multi-color** icons

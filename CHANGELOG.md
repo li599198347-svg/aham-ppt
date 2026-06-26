@@ -7,6 +7,31 @@
 
 ## [Unreleased]
 
+## [2.3.0] - 2026-06-26 — 仓库清理：去悬空引用 / 退役影子层 / 删死代码 / 规范单一源
+
+> 工程与规范层清理，**不改变技能的对外行为与产出视觉**；核心八阶段引擎保持不变。
+
+### 修复
+- 修正 **9 处**指向不存在文件 `aham-ui-office.md` 的悬空引用 → 改指 `brand.md §7` + `tokens.css §10`（取值唯一事实源）。
+- 出片/质检阶段不再教用衬线"宋体-简"与"顶部蓝条 / Action Title 蓝竖线"（违 brand 北极星，照做会被 Phase 8 判 ERROR）：`phase-06/07/08` 统一无衬线 + 无蓝竖线。
+- Action Title 字号统一 **32px**（双行 22px）；删除 `designer-rules` 与 `grid-system §八` 冲突的字数表（字数表唯一源 = `grid-system §八`）。
+- 图表配色去红绿：瀑布正负改灰阶 + 符号、甘特去蓝灰多色混用；KPI 数值不再染红绿（V-01 骨架数值改墨色，状态靠点 + 文字）。
+- 修正 `designer-rules` 自相矛盾（"禁写死色值"却内置色表）、伪造的 brand §2.3 引文、过时的 brand 结构索引；T-01 深色页去游离钢蓝 `#4A6680`。
+- 全仓脱敏真实项目名；修补 `layout-impl.md` / `svg-skeleton.md` 单数断链与 SPC/G 系→文件映射例外。
+
+### 变更
+- **规范单一事实源化**：PPTX 兼容雷区唯一源 = `designer-rules`；字数表 = `grid-system §八`；节奏阈值 = `layout-library §节奏约束`；版式坐标 = `grid-system`；其余文件改为引用而非各写一份。
+- **视觉档接线**：`phase-05/07` 显式按 `theme` 调用 `themes.py`（A/B→cover/toc/section/chrome；C→cover_dark/section_dark/quote_dark），兑现选档对产物的影响。
+- **C 高表现力档正式登记**：`brand.md §2.1` 登记 `#1C1C1C` 为唯一非纯白底例外（限封面/章节/金句），`tokens.css §10` + `quality-audit` 收录 C 档深色 ramp。
+- `iconography` 回写 v2.1"内容区线性图标"为 B/C 档例外；Phase 1 完成卡记录 deck_mode/output_format/theme；Phase 3→4 反对意见链路补专家模式回退（取受众卡"主要顾虑"）。
+
+### 移除
+- 退役整套影子版式层 `references/layout-impl-*.md`（7 个，与 `svg-skeleton-*` 重复且坐标漂移；坐标真源是 `grid-system`）。
+- 删除 `references/enhancements.md`（v2.1 增量已并入 `designer-rules` / `phase-02` / 组件代码）。
+- 工具链死代码：`pptx_cli.py` / `pptx_discovery.py`（无人调用的第二入口）、切换动画死分支（缺失模块 `pptx_animations`）、失效的 `config` / `project_utils` import、死函数 `get_element_opacity` / `num_badge` / `num_ring`。
+- 一次性发版脚本移出 `examples/` → `tools/`（`article_figures.py` / `social_banners.py`），去掉硬编码 `~/Desktop` 输出路径。
+- 旧 demo `examples/Aham-PPT-Demo.pptx`、散落的 `.DS_Store`。
+
 ## [2.2.0] - 2026-06-26 — C 高表现力档 + 数据图表组件 + 去对标
 
 ### 新增
@@ -25,14 +50,14 @@
 - **启动选档步骤**（SKILL.md Step 1.5）：规范加载后、解析材料前询问一次，回车默认 B。
 - **图标与组件库**（`assets/components/`）：`icons.py`（~40 线性图标 + icon_circle/num_badge/num_ring）、`components.py`（泳道/蓝图/箭头/KPI/状态/设备屏/手机/占位框）、`themes.py`（A/B 封面/目录/章节/页眉模板）。
 - 设计规则：**强调色语义** QC 项（禁无语义单点强调色）、真实照片**占位框**（禁 AI 图/网图）、**样张先行**。
-- 内容方法论：一手材料优先、措辞分寸、show-don't-tell、脱敏固定步骤、流程先确认形态。见 `references/enhancements.md`。
+- 内容方法论：一手材料优先、措辞分寸、show-don't-tell、脱敏固定步骤、流程先确认形态。
 
 ### 修复
 - **转换器文本宽度估算偏窄导致折行**（`assets/svg_to_pptx/drawingml_utils.py` 的 `estimate_text_width`）：窄字符 0.3→0.5、基准 0.55→0.62、mMwWOQ→0.82、CJK→1.02、整体 ×1.08。修复编号"01"、长英文串被 LibreOffice 拆行的问题。
 
 ### 变更
 - 规范微调：放开"内容区线性单色图标"为 B 档允许项（原仅限导航/发送栏）。
-- 建议产物写"版本目录"、页码用 ORDER 列表统一重排（见 enhancements.md）。
+- 建议产物写"版本目录"、页码用 ORDER 列表统一重排。
 
 ## [2.0.1] - 2026-06-21
 
@@ -73,7 +98,8 @@
 ### 修复
 - 修复版式命名冲突、品牌色硬编码等 8 项问题。
 
-[Unreleased]: https://github.com/li599198347-svg/aham-ppt/compare/v2.2.0...HEAD
+[Unreleased]: https://github.com/li599198347-svg/aham-ppt/compare/v2.3.0...HEAD
+[2.3.0]: https://github.com/li599198347-svg/aham-ppt/releases/tag/v2.3.0
 [2.2.0]: https://github.com/li599198347-svg/aham-ppt/releases/tag/v2.2.0
 [2.1.0]: https://github.com/li599198347-svg/aham-ppt/releases/tag/v2.1.0
 [2.0.1]: https://github.com/li599198347-svg/aham-ppt/releases/tag/v2.0.1

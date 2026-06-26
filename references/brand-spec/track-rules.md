@@ -2,7 +2,7 @@
 
 > **核心结论**：Aham UI v6.1 不再按"作品类型"分轨，而是按**落地介质**分四轨——**网页 / 应用 (macOS) / Office / 邮件**。同一套 token（`tokens.css`）跨四轨共享，差异只在落地介质强制的取值（字号单位、栅格、可用控件）。
 >
-> **本技能只产出 PPT，归属 `Office 轨 · PPT 子模型`。** 取值见 `tokens.css` 与 `brand.md`，落地细则遵循 `aham-ui-office.md` 的 PPT 段。本文件把"分轨思想 + 跨轨一致铁规 + 团队实操建议"显性化，避免混用介质导致取值串档。
+> **本技能只产出 PPT，归属 `Office 轨 · PPT 子模型`。** 取值见 `tokens.css` 与 `brand.md`，PPT 落地取值见 `brand.md` §7 + `tokens.css` §10。本文件把"分轨思想 + 跨轨一致铁规 + 团队实操建议"显性化，避免混用介质导致取值串档。
 
 ---
 
@@ -26,7 +26,7 @@
 | **网页** | 浏览器 Web / 后台 | px · 4 基栅格 | Inter / 雅黑·PingFang；数字 JetBrains Mono | 三层 `#FFFFFF / #F3F3F3 / #E7E7E7` | 见 `aham-ui-web` 段 |
 | **应用 (macOS)** | 桌面原生应用 | pt · macOS HIG | 同上（system-ui 回退 -apple-system） | 同三层 | 见 `aham-ui-app` 段 |
 | **Office** | PPT / Word / Excel | pt | 雅黑·PingFang；数字 Consolas（mono 回退） | 底永远纯白 | **本技能落点**，见下 §1.1 |
-| **邮件** | HTML 邮件 / 纯文本 | px · 邮件安全子集 | 雅黑·PingFang web-safe 回退 | 纯白 | 见 `aham-ui-office.md` 邮件段 |
+| **邮件** | HTML 邮件 / 纯文本 | px · 邮件安全子集 | 雅黑·PingFang web-safe 回退 | 纯白 | —（非本技能轨）|
 
 > **绝不混用介质**：PPT 里塞 px 栅格 = 错；Web 后台用 PPT 的 44pt 大数字 = 错；邮件里引浏览器才支持的 CSS = 错；任意轨出现衬线 / 蓝铺底 / 红黄绿灯 = 错（违反 §0）。
 
@@ -42,7 +42,7 @@
 
 ### 1.1 本技能 = Office 轨 · PPT 子模型（权威取值）
 
-PPT 子模型在 §0 三原则之上，强制以下落地取值（源：`tokens.css` §10 + `aham-ui-office.md` PPT 段）：
+PPT 子模型在 §0 三原则之上，强制以下落地取值（源：`tokens.css` §10 + `brand.md` §7）：
 
 | 维度 | 取值 |
 |---|---|
@@ -128,4 +128,4 @@ CSS 变量按**角色**而非颜色名取名，四轨共享同一套（权威源
 
 ---
 
-*本文件是 Aham UI v6.1 四介质轨的「分轨说明书」，统一取值以 `tokens.css` 为准，PPT 落地细则以 `aham-ui-office.md` 的 PPT 段为准。*
+*本文件是 Aham UI v6.1 四介质轨的「分轨说明书」，统一取值以 `tokens.css` 为准，PPT 落地取值以 `brand.md` §7 + `tokens.css` §10 为准。*

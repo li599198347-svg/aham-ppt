@@ -194,34 +194,54 @@ grep -rn "Aham\|aham" .
 ```
 aham-ppt/
 ├── SKILL.md                      # 技能入口（YAML 头触发配置）
-├── ORIGIN.md                     # 本技能的脱敏说明
+├── ORIGIN.md                     # 本技能的来源与脱敏说明
 ├── README.md                     # 本文件
-├── LESSONS.md                    # 24 个场景化经验索引（供人阅读）
+├── LESSONS.md                    # 场景化经验索引（历史归档，供人阅读）
+├── CONTRIBUTING.md               # 贡献与发版流程
+├── CHANGELOG.md                  # 变更记录（Keep a Changelog）
+├── NOTICE.md / LICENSE           # 第三方声明指针 / 许可
 │
-├── assets/                       # 工具链代码
-│   ├── README.md
-│   ├── svg_to_pptx_wrapper.py    # 对外入口
-│   └── svg_to_pptx/              # SVG → 原生 PPTX 工具链主体
+├── assets/                       # 代码资产与素材
+│   ├── README.md                 # 代码资产说明
+│   ├── svg_to_pptx_wrapper.py    # ★ SVG → 原生 PPTX 对外入口
+│   ├── svg_to_pptx/              # SVG → 原生 PPTX 工具链主体
+│   ├── components/               # SVG 组件库（生成内容页/图表/图标/模板）
+│   │   ├── components.py         # 关系图 / UI 原型原子组件
+│   │   ├── charts.py             # 参数化图表（柱/线/瀑布/漏斗/甘特…）
+│   │   ├── icons.py              # Lucide 风格线性图标
+│   │   └── themes.py             # A / B / C 三档封面·目录·章节模板
+│   ├── shots/                    # README 预览截图
+│   └── social-preview.{svg,png}  # 社交封面
+│
+├── docs/                         # 项目主页（GitHub Pages）
+│   ├── index.html
+│   └── banner.png
+│
+├── examples/                     # 可运行样例（11 页样张 + PPTX）
+│   ├── build_examples.py         # 一键生成 11 页 SVG + preview/deck.html
+│   ├── slide-01..11-*.svg        # 11 页内容页样张
+│   ├── *.pptx                    # 可编辑 PPTX 演示
+│   └── render_shots.py / build_*.py
 │
 └── references/                   # 方法论与规范
     ├── brand-spec/               # ★ 品牌视觉规范（替换这里的内容适配你的品牌）
-    │   ├── brand.md              # 主规范（色彩/字体/禁用）
+    │   ├── brand.md              # 主规范（色彩/字体/禁用，取值权威源）
+    │   ├── tokens.css            # CSS 变量（色值/字体栈，取值权威源）
     │   ├── track-rules.md        # 四轨道分流规则
-    │   ├── tokens.css            # CSS 变量（色值/字体栈）
     │   └── iconography.md        # 图标规范
     │
-    ├── designer-rules.md         # 设计师执行规则
-    ├── chart-impl.md             # 图表实现
     ├── coach-engine.md           # 教练引擎（能力自适应）
-    ├── grid-system.md            # 网格系统
-    ├── quality-audit-protocol.md # 质检协议
+    ├── designer-rules.md         # 设计师执行规则（含 PPTX 兼容雷区唯一源）
+    ├── grid-system.md            # 网格系统（版式坐标 / 单行字数表唯一源）
+    ├── layout-library.md         # 版式库总览
+    ├── chart-impl.md             # 图表实现
     ├── pptx-native-rules.md      # 原生 PPTX 输出规则
+    ├── quality-audit-protocol.md # 质检协议
     ├── theme-tiers.md            # ★ 三档视觉风格（A / B / C）
     │
     ├── phase-01.md ~ phase-08.md # 八阶段流程详细指引
-    ├── layout-library.md         # 版式库总览
-    ├── layout-impl-*.md          # 各版式类型的实现（7 个文件）
-    └── svg-skeleton-*.md         # 各版式的 SVG 骨架模板（7 个文件）
+    └── svg-skeleton-*.md         # 各版式 SVG 骨架模板
+                                  #   common / a / e / g / i / s / t / v（8 个）
 ```
 
 ---
@@ -262,7 +282,7 @@ aham-ppt/
 ## 相关资源
 
 - `ORIGIN.md` — 本技能的来源与脱敏说明
-- `LESSONS.md` — 24 个场景化经验，供人工翻阅
+- `LESSONS.md` — 24 个场景化经验（历史归档），供人工翻阅
 - `references/brand-spec/brand.md` — 品牌规范完整文档
 - `references/theme-tiers.md` — 三档视觉风格（A / B / C）
 - `references/designer-rules.md` — 设计师执行细则

@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """统一社交 banner 生成器（Aham 四仓库，1280×640）。
+一次性发版脚本，与技能运行时无关。运行：python3 tools/social_banners.py
 模板锚定 aham-ui 原版（顶条 + logo + 名称96/定位40/细节26 + 色板 + slogan + 类型标）。
-单一 #336EE8 平涂、无渐变。渲染 2x PNG + 同名 SVG 到桌面 banner统一/。依赖 playwright。
+单一 #336EE8 平涂、无渐变。渲染 2x PNG + 同名 SVG。依赖 playwright。
+输出目录：默认 ./tools/out/social-banners/，可用环境变量 AHAM_OUT_DIR 覆盖。
 """
+import os
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
@@ -73,7 +76,8 @@ BANNERS = {
                     "本地离线转写 · 说话人分离 · AI 会议纪要", "macOS App", g_voice()),
 }
 
-OUT = Path.home() / "Desktop" / "aham-门面统一-提案" / "banner统一"
+# 默认写到仓库内 tools/out/（不锚定某人桌面）；可用 AHAM_OUT_DIR 覆盖。
+OUT = Path(os.environ.get("AHAM_OUT_DIR", Path(__file__).resolve().parent / "out" / "social-banners"))
 OUT.mkdir(parents=True, exist_ok=True)
 FONTS = ('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?'
          'family=Inter:wght@400;500;600;700&display=swap">')

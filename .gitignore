@@ -29,6 +29,7 @@ Thumbs.db
 workspace/
 svg_final/
 deliverables/
+tools/out/
 *.pptx
 !examples/*.pptx
 

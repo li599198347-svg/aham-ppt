@@ -163,6 +163,9 @@ AI主动收集以下信息（可推断的不问，必须问的一次性问完）
 本阶段输出  BRAND_RULES（[品牌/通用商务]模式）
            受众卡
            能力档位：[专家/引导/教练]模式
+           交付参数：deck_mode=[presenting/hybrid/reading（默认）] ·
+                    output_format=[svg/pptx-native/both（默认）] · 期望页数=[N]
+           视觉档 theme=[A/B（默认）/C]（来自 Step 1.5）
 关键结论    受众：[X]
            核心关切：[Y]
            预期行动：[Z]

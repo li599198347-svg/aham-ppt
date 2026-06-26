@@ -5,7 +5,7 @@
 ## 改动约定
 - **视觉/规范以 `references/brand-spec/` 为权威**：色值、字体、版式只从 `brand.md` / `tokens.css` 查表，不在其它文件写死色值。取值同步自设计源 [aham-ui](https://github.com/li599198347-svg/aham-ui)。
 - **方法论与视觉分离**：八阶段流程、Action Title、探测场景等是方法论；颜色/字体/卡片是视觉。改一类不应顺手改另一类。
-- 改示例后跑 `python3 examples/build_examples.py` 重新生成 8 页 SVG + `preview/deck.html`；如需验证 PPTX，用 `assets/svg_to_pptx_wrapper.py` 转换并确认 0 跳过。
+- 改示例后跑 `python3 examples/build_examples.py` 重新生成 11 页 SVG + `preview/deck.html`；如需验证 PPTX，用 `assets/svg_to_pptx_wrapper.py` 转换并确认 0 跳过。
 - 提交走分支 + PR，提交信息沿用仓库既有风格（`feat:` / `fix:` / `docs:` / `chore:`）。
 
 ## 发版流程（SemVer + Keep a Changelog）

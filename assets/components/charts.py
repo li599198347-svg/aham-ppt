@@ -14,7 +14,7 @@
    坐标自包含：传入图表外框 (x,y,w,h)，函数内部自动留轴/标签边距。
 —— 复用 components.py 的原子函数与颜色常量，不在本文件写死品牌色。
 """
-from components import T, L, esc, SANS, MONO, ACC, INK1, INK2, INK3, INK4, LINE, PANEL
+from components import T, L, MONO, ACC, INK1, INK2, INK3, INK4, LINE
 
 BAR_MAIN = INK3        # 数据柱默认灰
 BAR_SUB = "#C8C8C8"    # 次级灰（§2.4 允许的次灰）
@@ -338,7 +338,7 @@ def stacked(x, y, w, h, data, seriesnames, hi_series=None, unit="", money=False,
     totals = [sum(vals) for _, vals in data]
     vmax = max(totals) or 1.0
     def vy(v): return pyt + ph - (v / vmax) * ph
-    grays = ["#C8C8C8", INK3, "#5E5E5E", INK1]
+    grays = ["#C8C8C8", INK3, INK2, INK1]   # 4 级灰阶（白名单内：#C8C8C8/#9B9B9B/#6E6E6E/#262626）
     s = []
     if title: s.append(T(x, y + 16, title, 15, INK1, 700))
     if unit: s.append(T(px, pyt - 4, unit, 10, INK3))

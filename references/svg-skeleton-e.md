@@ -99,7 +99,7 @@
 
 <!-- 阶段4：x=866 y=260 w=200 h=100 -->
 <rect x="866" y="260" width="200" height="100" rx="4" fill="#262626"/>
-<text x="966" y="296" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" font-weight="bold" fill="#8AAED0" letter-spacing="2">STAGE 04</text>
+<text x="966" y="296" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" font-weight="bold" fill="#C4C4C4" letter-spacing="2">STAGE 04</text>
 <text x="966" y="326" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">[stage4_name]</text>
 ```
 
@@ -111,7 +111,7 @@
 
 <!-- 顶层：x=240 y=140 w=800 h=110 -->
 <rect x="240" y="140" width="800" height="110" rx="4" fill="#262626"/>
-<text x="640" y="178" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#8AAED0" letter-spacing="3">[top_layer_tag]</text>
+<text x="640" y="178" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#C4C4C4" letter-spacing="3">[top_layer_tag]</text>
 <text x="640" y="212" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF">[top_layer_name]</text>
 
 <!-- 向下箭头 -->
@@ -119,16 +119,16 @@
 <polygon points="634,295 640,307 646,295" fill="#262626"/>
 
 <!-- 中层：x=240 y=307 w=800 h=110 -->
-<rect x="240" y="307" width="800" height="110" rx="4" fill="#9E3D31"/>
-<text x="640" y="345" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#F0A0A0" letter-spacing="3">[mid_layer_tag]</text>
+<rect x="240" y="307" width="800" height="110" rx="4" fill="#6E6E6E"/>
+<text x="640" y="345" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#C4C4C4" letter-spacing="3">[mid_layer_tag]</text>
 <text x="640" y="379" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF">[mid_layer_name]</text>
 
 <!-- 向下箭头 -->
-<line x1="640" y1="417" x2="640" y2="462" stroke="#9E3D31" stroke-width="2"/>
-<polygon points="634,462 640,474 646,462" fill="#9E3D31"/>
+<line x1="640" y1="417" x2="640" y2="462" stroke="#9B9B9B" stroke-width="2"/>
+<polygon points="634,462 640,474 646,462" fill="#9B9B9B"/>
 
 <!-- 底层：x=240 y=474 w=800 h=110 -->
 <rect x="240" y="474" width="800" height="110" rx="4" fill="#C8C8C8"/>
-<text x="640" y="512" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#A0C4E8" letter-spacing="3">[bot_layer_tag]</text>
-<text x="640" y="546" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF">[bot_layer_name]</text>
+<text x="640" y="512" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#6E6E6E" letter-spacing="3">[bot_layer_tag]</text>
+<text x="640" y="546" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22" font-weight="bold" fill="#262626">[bot_layer_name]</text>
 ```

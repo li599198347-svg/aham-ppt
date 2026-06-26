@@ -170,19 +170,19 @@ bar_x[i] = cx+60 + i * (plot_w/n) + bar_gap/2
 <line x1="[cx+60]" y1="[baseline_y]" x2="[cx+cw-20]" y2="[baseline_y]"
       stroke="#9B9B9B" stroke-width="0.5"/>
 
-<!-- 起始总量柱（深蓝） -->
+<!-- 起始/结果总量柱（深墨 #262626） -->
 <rect x="[bar0_x]" y="[bar0_y]" width="[bar_w]" height="[bar0_h]" fill="#262626"/>
 
-<!-- 增量柱（正向=绿色，负向=红色，浮动） -->
+<!-- 增量柱（灰阶；正负靠位置 + 符号区分，不用红绿）：正向 #9B9B9B / 负向 #C8C8C8 -->
 <!-- 正向增量 -->
-<rect x="[bar_x]" y="[float_y]" width="[bar_w]" height="[delta_h]" fill="#5A7A60"/>
-<!-- 负向增量 -->
-<rect x="[bar_x]" y="[float_y]" width="[bar_w]" height="[delta_h]" fill="#9E3D31"/>
+<rect x="[bar_x]" y="[float_y]" width="[bar_w]" height="[delta_h]" fill="#9B9B9B"/>
+<!-- 负向增量（更浅灰区分） -->
+<rect x="[bar_x]" y="[float_y]" width="[bar_w]" height="[delta_h]" fill="#C8C8C8"/>
 <!-- 浮动连接虚线 -->
 <line x1="[prev_bar_x+bar_w]" y1="[prev_top_y]" x2="[bar_x]" y2="[prev_top_y]"
       stroke="#E7E7E7" stroke-width="0.5" stroke-dasharray="2,2"/>
 
-<!-- 结果总量柱（深蓝） -->
+<!-- 结果总量柱（深墨 #262626） -->
 <rect x="[bar_last_x]" y="[bar_last_y]" width="[bar_w]" height="[bar_last_h]" fill="#262626"/>
 
 <!-- 柱顶数值 -->
@@ -195,7 +195,7 @@ bar_x[i] = cx+60 + i * (plot_w/n) + bar_gap/2
 
 ## 甘特图模板
 
-适用：项目实施计划（F21版式）
+适用：项目实施计划（配合 S-03 时间轴 / V 系数据页）
 
 ```svg
 <!-- 时间刻度表头 -->
@@ -207,9 +207,9 @@ bar_x[i] = cx+60 + i * (plot_w/n) + bar_gap/2
 <rect x="[cx+240]" y="[row_y]" width="[plot_w]" height="44"
       fill="[奇行#FFFFFF / 偶行#F3F3F3]"/>
 
-<!-- 任务条 -->
+<!-- 任务条（默认灰 #9B9B9B；当前/重点一期可用唯一蓝 #336EE8，至多一个，不要每期一色） -->
 <rect x="[task_x]" y="[row_y+10]" width="[task_w]" height="24"
-      rx="3" fill="[一期#336EE8 / 二期#9B9B9B / 三期#C8C8C8]"/>
+      rx="3" fill="[默认#9B9B9B；重点期#336EE8]"/>
 <text x="[task_x+task_w/2]" y="[row_y+26]" text-anchor="middle"
       font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#FFFFFF">[task_name]</text>
 
@@ -228,7 +228,7 @@ bar_x[i] = cx+60 + i * (plot_w/n) + bar_gap/2
 
 ## KPI 指标卡模板（单个组件）
 
-适用：B05执行摘要顶部、D15数据看板，也可内嵌于其他版式
+适用：S-09 / V-01 KPI 看板，也可内嵌于其他版式
 
 ```svg
 <!-- 卡片底（无边框无阴影；优先不画卡、直接留白排版，需成块才用面板） -->
@@ -253,7 +253,7 @@ bar_x[i] = cx+60 + i * (plot_w/n) + bar_gap/2
 
 ## 2×2 四象限模板
 
-适用：E19四象限框架、F22风险评估矩阵
+适用：S-02 2×2 矩阵 / 风险评估矩阵
 
 ```svg
 <!-- 背景区 -->

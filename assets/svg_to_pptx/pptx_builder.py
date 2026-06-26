@@ -27,15 +27,8 @@ from .pptx_notes import (
     create_notes_slide_xml, create_notes_slide_rels_xml,
 )
 from .pptx_slide_xml import (
-    ANIMATIONS_AVAILABLE, TRANSITIONS,
     create_slide_xml_with_svg, create_slide_rels_xml,
 )
-
-# Re-import create_transition_xml only if available
-try:
-    from pptx_animations import create_transition_xml
-except ImportError:
-    create_transition_xml = None
 
 
 def _append_relationship(
@@ -142,8 +135,7 @@ def create_pptx_with_native_svg(
         else:
             print(f"  Compatibility mode: Disabled (pure SVG)")
         if transition:
-            trans_name = TRANSITIONS.get(transition, {}).get('name', transition) if TRANSITIONS else transition
-            print(f"  Transition effect: {trans_name}")
+            print(f"  Transition effect: {transition}")
         if enable_notes and notes:
             print(f"  Speaker notes: {len(notes)} page(s)")
         elif enable_notes:
@@ -190,17 +182,7 @@ def create_pptx_with_native_svg(
                         svg_path, slide_num=slide_num, verbose=verbose,
                     )
 
-                    # Add transition if specified
-                    if transition and ANIMATIONS_AVAILABLE and create_transition_xml:
-                        transition_xml = '\n' + create_transition_xml(
-                            effect=transition,
-                            duration=transition_duration,
-                            advance_after=auto_advance,
-                        )
-                        slide_xml = slide_xml.replace(
-                            '</p:sld>',
-                            transition_xml + '\n</p:sld>',
-                        )
+                    # 页面切换动画已下线(pptx_animations 模块不存在),native 模式不再注入 transition。
 
                     # Write slide XML
                     slide_xml_path = extract_dir / 'ppt' / 'slides' / f'slide{slide_num}.xml'

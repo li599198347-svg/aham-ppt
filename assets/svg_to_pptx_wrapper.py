@@ -52,7 +52,7 @@ def svg_to_native_pptx(
     关键参数说明:
         - use_native_shapes=True:启用原生 DrawingML 形状模式(而不是 SVG 图片嵌入)
         - use_compat_mode=False:不生成 PNG 后备(纯矢量)
-        - transition=None:不添加页面切换动画(客户可以自己加)
+        - transition=None:不添加页面切换动画(切换动画能力已下线)
     """
     # 'auto' 等价于 None,触发底层 viewBox 自动检测
     if canvas_format == 'auto':

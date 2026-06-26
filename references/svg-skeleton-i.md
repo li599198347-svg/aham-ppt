@@ -16,7 +16,7 @@
 <!-- 细分隔线 -->
 <line x1="140" y1="410" x2="420" y2="410" stroke="#262626" stroke-width="1.2"/>
 
-<!-- 断言（宋体 Bold） -->
+<!-- 断言（无衬线 Bold） -->
 <text x="140" y="456" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="30" font-weight="bold" fill="#262626">[assertion]</text>
 
 <!-- 支撑说明 -->

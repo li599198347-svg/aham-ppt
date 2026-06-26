@@ -8,16 +8,16 @@
 
 ## 版式系总览
 
-| 系 | 全称 | 叙事功能 | 实现文件 |
+| 系 | 全称 | 叙事功能 | 骨架文件（坐标真源 grid-system.md） |
 |----|------|---------|---------|
-| **I** | Impact · 震撼 | 强结论、核心数字、引言宣言 | `layout-impl-i.md` / `svg-skeleton-i.md` |
-| **S** | Structure · 结构 | 并列要点、矩阵、时间轴、对比 | `layout-impl-s.md` / `svg-skeleton-s.md` |
-| **E** | Explain · 说明 | 图文结合、流程图、概念曲线、架构图 | `layout-impl-e.md` / `svg-skeleton-e.md` |
-| **V** | Evidence · 证据 | 图表、KPI 看板、数据展示 | `layout-impl-v.md` / `svg-skeleton-v.md` |
-| **T** | Transition · 过渡 | 引言页、章节切换、宣言页 | `layout-impl-t.md` / `svg-skeleton-t.md` |
-| **A** | Action · 动作 | 决策、下一步、责任矩阵 | `layout-impl-a.md` / `svg-skeleton-a.md` |
+| **I** | Impact · 震撼 | 强结论、核心数字、引言宣言 | `svg-skeleton-i.md` |
+| **S** | Structure · 结构 | 并列要点、矩阵、时间轴、对比 | `svg-skeleton-s.md` |
+| **E** | Explain · 说明 | 图文结合、流程图、概念曲线、架构图 | `svg-skeleton-e.md` |
+| **V** | Evidence · 证据 | 图表、KPI 看板、数据展示 | `svg-skeleton-v.md` |
+| **T** | Transition · 过渡 | 引言页、章节切换、宣言页 | `svg-skeleton-t.md` |
+| **A** | Action · 动作 | 决策、下一步、责任矩阵 | `svg-skeleton-a.md` |
 | **G** | Graph · 结构图 | 树状分解、三支柱、金字塔 | `svg-skeleton-g.md` |
-| **Ch** | Chart · 数据图 | 柱状图、折线图、进度条 | `chart-impl.md`（配合 V 系使用）|
+| **Ch** | Chart · 数据图 | 柱状图、折线图、进度条 | `charts.py` 组件（兜底 `chart-impl.md`，配合 V 系）|
 | **SPC** | Special · 特殊页 | 封面、分隔页、结尾页 | `svg-skeleton-common.md` |
 
 > **G系 vs Ch系**：G系是结构性示意图（树状/支柱/金字塔），Ch系是数据可视化图表（柱/线/条）。选版式时注意区分。
@@ -103,7 +103,7 @@
 | 折线图 | 趋势、增长曲线、多指标对比 |
 | 水平进度条 | 完成率、占比、排名 |
 
-> 图表实现见 `chart-impl.md`，配合 V-02/V-03/V-04 版式使用。
+> 图表实现优先调用 `assets/components/charts.py` 组件（未覆盖时兜底 `chart-impl.md`），配合 V-02/V-03/V-04 版式使用。
 
 ### SPC系 · Special 特殊页（共 3 个）
 
@@ -152,4 +152,4 @@
 
 ---
 
-*本文件随版式扩展同步更新 · V2.0 · 2026-04*
+*本文件随版式扩展同步更新。*

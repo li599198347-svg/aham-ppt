@@ -29,8 +29,8 @@
 
 <!-- STEP 3：x=860 y=160 w=380 h=400 -->
 <rect x="860" y="160" width="380" height="400" rx="4" fill="#262626"/>
-<rect x="860" y="160" width="4" height="400" fill="#8AAED0"/>
-<text x="880" y="192" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#8AAED0" letter-spacing="3">STEP 03 · [step3_time]</text>
+<rect x="860" y="160" width="4" height="400" fill="#336EE8"/>
+<text x="880" y="192" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#C4C4C4" letter-spacing="3">STEP 03 · [step3_time]</text>
 <text x="880" y="236" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF">[step3_action]</text>
 <text x="880" y="268" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#FFFFFF">[step3_detail1]</text>
 <text x="880" y="292" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#FFFFFF">[step3_detail2]</text>

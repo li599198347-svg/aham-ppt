@@ -56,13 +56,3 @@ def icon_circle(name, cx, cy, r=18, color="#262626", bg="#F3F3F3", ring=None, is
     if ring: s+=f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="{ring}" stroke-width="1.4"/>'
     isz=isize or r*1.25
     return s+ICON(name, cx-isz/2, cy-isz/2, isz, color)
-
-def num_badge(cx, cy, n, r=15, color="#FFFFFF", bg="#336EE8", fs=14):
-    return (f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="{bg}"/>'
-            f'<text x="{cx}" y="{cy+fs*0.35}" text-anchor="middle" font-family="{MONO}" '
-            f'font-size="{fs}" font-weight="700" fill="{color}">{n}</text>')
-
-def num_ring(cx, cy, n, r=15, color="#336EE8", fs=14):
-    return (f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="#FFFFFF" stroke="{color}" stroke-width="1.6"/>'
-            f'<text x="{cx}" y="{cy+fs*0.35}" text-anchor="middle" font-family="{MONO}" '
-            f'font-size="{fs}" font-weight="700" fill="{color}">{n}</text>')

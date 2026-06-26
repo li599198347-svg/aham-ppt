@@ -55,9 +55,8 @@
 - 你可以以任何形式传播和分享
 - 你无须署名，但保留本文件即是对原作者付出的尊重
 
-工具链部分（`assets/svg_to_pptx/`）基于 MIT License 的
-[ppt-master](https://github.com/hugohe3/ppt-master) 项目构建，
-请遵守其原始 License，详见 `assets/svg_to_pptx/LICENSE_NOTE.md`。
+工具链部分（`assets/svg_to_pptx/`）的上游派生与 License 声明，
+统一以 [`assets/svg_to_pptx/LICENSE_NOTE.md`](assets/svg_to_pptx/LICENSE_NOTE.md) 为唯一权威来源。
 
 ---
 

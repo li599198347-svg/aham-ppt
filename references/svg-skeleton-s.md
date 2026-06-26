@@ -131,8 +131,8 @@
 
 <!-- 左侧边栏：x=40 y=100 w=244 h=580 -->
 <rect x="40" y="100" width="244" height="580" rx="4" fill="#262626"/>
-<text x="162" y="140" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#8AAED0" letter-spacing="2">[left_tag]</text>
-<line x1="60" y1="156" x2="264" y2="156" stroke="#1A5FA8" stroke-width="0.5"/>
+<text x="162" y="140" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#A8A8A8" letter-spacing="2">[left_tag]</text>
+<line x1="60" y1="156" x2="264" y2="156" stroke="#6E6E6E" stroke-width="0.5"/>
 <text x="162" y="200" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF">[left_title]</text>
 <text x="60" y="238" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#A8A8A8">[left_desc1]</text>
 <text x="60" y="258" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#A8A8A8">[left_desc2]</text>
@@ -229,7 +229,7 @@
 
 <!-- 顶部大结论区：x=40 y=100 w=1200 h=255 -->
 <rect x="40" y="100" width="1200" height="255" rx="4" fill="#262626"/>
-<text x="56" y="136" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#8AAED0" letter-spacing="3">CORE FINDING</text>
+<text x="56" y="136" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#A8A8A8" letter-spacing="3">CORE FINDING</text>
 <text x="56" y="188" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="26" font-weight="bold" fill="#FFFFFF">[conclusion_line_1]</text>
 <text x="56" y="228" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="26" font-weight="bold" fill="#FFFFFF">[conclusion_line_2]</text>
 
@@ -353,7 +353,7 @@
 
 <!-- 顶部结论区：x=40 y=100 w=1200 h=255 -->
 <rect x="40" y="100" width="1200" height="255" rx="4" fill="#262626"/>
-<text x="56" y="136" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#8AAED0" letter-spacing="3">CORE FINDING</text>
+<text x="56" y="136" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#A8A8A8" letter-spacing="3">CORE FINDING</text>
 <text x="56" y="188" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="26" font-weight="bold" fill="#FFFFFF">[conclusion_line_1]</text>
 <text x="56" y="228" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="26" font-weight="bold" fill="#FFFFFF">[conclusion_line_2]</text>
 
@@ -384,7 +384,7 @@
 
 <!-- 顶部结论区：x=40 y=100 w=1200 h=255 -->
 <rect x="40" y="100" width="1200" height="255" rx="4" fill="#262626"/>
-<text x="56" y="136" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#8AAED0" letter-spacing="3">CORE FINDING</text>
+<text x="56" y="136" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#A8A8A8" letter-spacing="3">CORE FINDING</text>
 <text x="56" y="188" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="26" font-weight="bold" fill="#FFFFFF">[conclusion_line_1]</text>
 <text x="56" y="228" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="26" font-weight="bold" fill="#FFFFFF">[conclusion_line_2]</text>
 
