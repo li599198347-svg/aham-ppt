@@ -28,7 +28,8 @@
 - **A / B 档保持不变**：A 克制白皮书、B 现代专业（默认）。
 - **不变的底线**：三档共用同一套内容与组件——单一主色 + 中性灰、数字 mono、状态"符号 + 颜色"双通道、表格只横线；禁渐变 / 3D / 阴影 / 饼图 / 衬线 / emoji。
 
-![C 高表现力档 · 深色重音封面](assets/shots/theme-c-cover.png)
+<img width="1688" height="1455" alt="00_封面_三档总览" src="https://github.com/user-attachments/assets/9efaab4a-6848-4633-b4cf-a1003dcba6f8" />
+
 
 > 三档只是"音量"，不是换一套审美。完整规则见 [`references/theme-tiers.md`](references/theme-tiers.md)。
 
