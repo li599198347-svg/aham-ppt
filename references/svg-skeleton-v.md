@@ -3,57 +3,7 @@
 > Phase 7 按版式ID读取本文件。使用规则：复制骨架→替换[占位符]→不改坐标。
 > 通用骨架（Chrome框架/卡片/箭头）见 svg-skeleton-common.md。
 
-> **⭐ v3 · 图表区一律用 charts 组件填充**：下方各 V 版式中标着「[此处替换为…图表代码]」的图表区，不再手画 —— 改为 `from charts import bar, hbar, line, waterfall, funnel, gantt, bullet, stacked, slope`，用该版式注释里给出的图表区 x/y/w/h 调用对应组件（例：V-02 单图区 x=40 y=100 w=1200 h=540 → `bar(40,100,1200,540,data,...)`；V-03 折线区 x=40 y=100 w=800 h=540 → `line(40,100,800,540,values,xlabels,...)`）。组件已内置 brand §7.5 合规与 PPTX 兼容。**V-01 的 KPI 卡：数值一律墨色 `#262626`（绝不用红绿染数字，见 chart-impl.md KPI 模板），涨跌状态靠左侧细条 + 趋势文字双通道（达标 `#5A7A60` / 风险 `#9E3D31` / 中性 `#9B9B9B`）；蓝 `#336EE8` 仅留给单个高亮指标。**
-
----
-
-## ## V-01 KPI看板（证据类）
-```svg
-<!-- V-01与S-09结构相同，颜色语义更严格 -->
-<!-- 标准Chrome -->
-
-<!-- 说明：数值一律墨色 #262626；涨跌靠左侧细条 + 趋势文字（达标 #5A7A60 / 风险 #9E3D31 / 中性 #9B9B9B），不染数字红绿 -->
-<!-- 参照 S-09 骨架，左侧细条作状态标，数值保持墨色 -->
-<!-- 卡片1（达标） -->
-<rect x="40" y="120" width="360" height="160" rx="4" fill="#F3F3F3"/>
-<rect x="40" y="120" width="4" height="160" fill="#5A7A60"/>
-<text x="56" y="152" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#9B9B9B">[kpi1_label]</text>
-<text x="56" y="214" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="44" font-weight="bold" fill="#262626">[kpi1_value]</text>
-<text x="56" y="268" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6E6E6E">[kpi1_trend]</text>
-
-<!-- 卡片2（风险） -->
-<rect x="440" y="120" width="360" height="160" rx="4" fill="#F3F3F3"/>
-<rect x="440" y="120" width="4" height="160" fill="#9E3D31"/>
-<text x="456" y="152" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#9B9B9B">[kpi2_label]</text>
-<text x="456" y="214" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="44" font-weight="bold" fill="#262626">[kpi2_value]</text>
-<text x="456" y="268" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6E6E6E">[kpi2_trend]</text>
-
-<!-- 卡片3（中性） -->
-<rect x="840" y="120" width="400" height="160" rx="4" fill="#F3F3F3"/>
-<rect x="840" y="120" width="4" height="160" fill="#9B9B9B"/>
-<text x="856" y="152" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#9B9B9B">[kpi3_label]</text>
-<text x="856" y="214" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="44" font-weight="bold" fill="#262626">[kpi3_value]</text>
-<text x="856" y="268" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6E6E6E">[kpi3_trend]</text>
-
-<!-- 行2 y=320，同上规律，替换kpi4/5/6内容 -->
-<rect x="40" y="320" width="360" height="160" rx="4" fill="#F3F3F3"/>
-<rect x="40" y="320" width="4" height="160" fill="#9B9B9B"/>
-<text x="56" y="352" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#9B9B9B">[kpi4_label]</text>
-<text x="56" y="414" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="44" font-weight="bold" fill="#262626">[kpi4_value]</text>
-<text x="56" y="468" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6E6E6E">[kpi4_trend]</text>
-
-<rect x="440" y="320" width="360" height="160" rx="4" fill="#F3F3F3"/>
-<rect x="440" y="320" width="4" height="160" fill="#5A7A60"/>
-<text x="456" y="352" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#9B9B9B">[kpi5_label]</text>
-<text x="456" y="414" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="44" font-weight="bold" fill="#262626">[kpi5_value]</text>
-<text x="456" y="468" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6E6E6E">[kpi5_trend]</text>
-
-<rect x="840" y="320" width="400" height="160" rx="4" fill="#F3F3F3"/>
-<rect x="840" y="320" width="4" height="160" fill="#9E3D31"/>
-<text x="856" y="352" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#9B9B9B">[kpi6_label]</text>
-<text x="856" y="414" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="44" font-weight="bold" fill="#262626">[kpi6_value]</text>
-<text x="856" y="468" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6E6E6E">[kpi6_trend]</text>
-```
+> **⭐ v3 · 图表区一律用 charts 组件填充**：下方各 V 版式中标着「[此处替换为…图表代码]」的图表区，不再手画 —— 改为 `from charts import bar, hbar, line, waterfall, funnel, gantt, bullet, stacked, slope`，用该版式注释里给出的图表区 x/y/w/h 调用对应组件（例：V-02 单图区 x=40 y=100 w=1200 h=540 → `bar(40,100,1200,540,data,...)`；V-03 折线区 x=40 y=100 w=800 h=540 → `line(40,100,800,540,values,xlabels,...)`）。组件已内置 brand §7.5 合规与 PPTX 兼容。（KPI 看板见 S 系 S-09，不在 V 系重复。）
 
 ---
 

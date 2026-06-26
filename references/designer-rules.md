@@ -98,7 +98,7 @@ Step 5  执行输出前自检（含PPTX兼容性5条负面约束）
 
 | narrative_purpose | Chrome 类型 |
 |---|---|
-| impact (I-02 I-05) | 极简 Chrome |
+| impact (I-01 / I-04 / I-05) | 极简 Chrome |
 | transition | 极简 Chrome 或深色底 |
 | 其他 | 标准 Chrome |
 

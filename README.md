@@ -7,307 +7,101 @@
 
 ![Aham PPT — 克制的 AI PPT 制作技能](assets/social-preview.png)
 
-> **Aham 应用矩阵**：[Aham UI](https://github.com/li599198347-svg/aham-ui) · [Aham Survey](https://github.com/li599198347-svg/aham-survey) · [Aham Voice](https://github.com/li599198347-svg/aham-voice) · **Aham PPT**
+## 为什么做这个技能
 
-一套克制的 AI PPT 制作技能，含完整八阶段流程 + 原生 PPTX 输出工具链；现支持 **A / B / C 三档**视觉风格。
+市面上的 AI 做 PPT，大多是「一句话出一份能看的 PPT」——快，但只到「能看」。而要拿去给客户、给领导的**方案、汇报、报告**，需要的是逻辑站得住、论证有依据、版面专业克制、能直接交付的水准——这不是一键速成能给的。
 
-> 📘 **Aham 是虚构的示例品牌。** 你可以直接使用本技能生成"Aham 风格"的 PPT，
-> 也可以（推荐）将它替换为你自己的品牌。替换指引见本文档下方。
->
-> 关于本技能的来源与脱敏说明，见 `ORIGIN.md`。
-
-**🖥 项目主页 → <https://li599198347-svg.github.io/aham-ppt/>**
+这个技能为此而做：它不追求秒出，而是按资深顾问的成稿流程一步步推进，把零散素材做成**方案级 / 报告级**的专业 PPT。
 
 ---
 
-## 🆕 更新 · 三档视觉风格（2026-06）
+## 定位
 
-本次更新把原来的 A / B 两档，扩展为 **A / B / C 三档**——内核仍是克制，只是把"克制的音量"做成了可调：
+产出的不是「好看的模板 PPT」，而是一份经得起审视的专业交付物：
 
-- **新增 C · 高表现力档**：深色重音页（`#1C1C1C`）+ 超大 mono 数字 + 图表占版面主导 + 必要时配人物头像；面向路演 / 竞标 / 重点客户。已实现 `cover_dark / section_dark / quote_dark` 深色模板。
-- **A / B 档保持不变**：A 克制白皮书、B 现代专业（默认）。
-- **不变的底线**：三档共用同一套内容与组件——单一主色 + 中性灰、数字 mono、状态"符号 + 颜色"双通道、表格只横线；禁渐变 / 3D / 阴影 / 饼图 / 衬线 / emoji。
+- **专业** — 像资深顾问写的白皮书：逻辑、数据、措辞都站得住，经得起客户和领导推敲。
+- **简洁克制** — 一页一个核心结论，留白优先；不堆字、不花哨、不靠装饰撑场面。
+- **内容优先** — 视觉只为内容服务，该上图表上图表、该留白留白，不喧宾夺主。
+- **通篇一致** — 全册一套规范，没有东拼西凑的模板拼贴感。
 
-<img width="1688" height="1455" alt="00_封面_三档总览" src="https://github.com/user-attachments/assets/9efaab4a-6848-4633-b4cf-a1003dcba6f8" />
-
-
-> 三档只是"音量"，不是换一套审美。完整规则见 [`references/theme-tiers.md`](references/theme-tiers.md)。
+> 简言之：做的是「方案 / 报告」，不是「营销海报」。
+> 具体的配色、字体、版式规范在 `references/`，这里只讲定位。
 
 ---
 
-## 预览
+## 八步法
 
-> 用本技能（Aham UI v6.1）生成的 11 页样张：**底永远纯白 · 蓝是点缀 · 文档式表格 · 留白分隔 · 数字 mono · 状态点+文字**。
-> 可编辑版 → [aham-ppt-v6.1-demo.pptx](examples/aham-ppt-v6.1-demo.pptx)　·　一键生成 → [build_examples.py](examples/build_examples.py)
+技能的核心是一条八步流水线，每一步都为「最后那份 PPT 够不够专业」负责：
 
-<img src="assets/shots/slide-01-cover.png" alt="封面" width="100%">
+**1 · 规范加载**　先把品牌的色值、字体、禁用项装进上下文，后面每页都照同一套规范走。解决的是「每页风格各异、AI 自己发明配色」的失控。
+
+**2 · 材料解析**　把你丢进来的文档 / 数据 / 纪要拆成结构化的事实、数据、问题、结论，分清哪些有来源、哪些待确认。这样后面的论证才有据可依，也不会编数字。
+
+**3 · 论点提炼**　用金字塔原理从材料里逼出一句话核心结论（灵魂句），让整份 PPT 有立场、能说服，而不是一堆信息的流水账。
+
+**4 · 叙事骨架**　先把每页标题排成一条论证链（Ghost Deck）——只读标题就知道全篇在讲什么。先把逻辑定下来，避免做到一半发现方向错了再推翻重来。
+
+**5 · 大纲版式**　为每页定内容要点和版式：数据上图表、流程上结构图，而不是页页堆 bullet。这一步直接决定了「专业感」和「会不会平淡」。
+
+**6 · 样稿确认**　先做 3–5 页样稿和你对齐视觉方向，确认后再铺全册——3 页改比 50 页改省太多。
+
+**7 · 逐页设计**　按规范逐页出图，再用工具链转成**原生可编辑**的 PPTX（不是图片，能直接在 PowerPoint 里改）。
+
+**8 · 质检交付**　出片前按清单逐项扫：颜色合规、字体一致、数据有来源、版式有节奏，问题修掉再交付。
+
+---
+
+## 样式与示例
+
+三档视觉风格 **共用同一套内容与组件，只切视觉层**，都坚持单一主色 + 中性灰：A 克制档（白皮书）· B 现代专业档（默认）· C 高表现力档（深色重音 / 竞标）。
 
 <table>
 <tr>
-<td width="50%"><img src="assets/shots/slide-02-dashboard.png" alt="KPI 看板"><br><sub><b>02</b> · KPI 看板（指标条 + 文档表 + 关键发现 + Top3）</sub></td>
-<td width="50%"><img src="assets/shots/slide-03-options.png" alt="方案选型对照"><br><sub><b>03</b> · 方案选型对照（推荐列=灰底非蓝 + 蓝「推荐」点缀）</sub></td>
-</tr>
-<tr>
-<td><img src="assets/shots/slide-04-evidence.png" alt="趋势图"><br><sub><b>04</b> · 证据 · 趋势图（灰阶柱 + 一抹蓝高亮）</sub></td>
-<td><img src="assets/shots/slide-05-roadmap.png" alt="实施路线"><br><sub><b>05</b> · 实施路线 + 责任矩阵（里程碑轴 + 三阶段 + 表）</sub></td>
-</tr>
-<tr>
-<td><img src="assets/shots/slide-06-bignumber.png" alt="大数字冲击"><br><sub><b>06</b> · 大数字冲击（mono 巨号 + 损失拆解）</sub></td>
-<td><img src="assets/shots/slide-07-architecture.png" alt="三层架构图"><br><sub><b>07</b> · 三层架构图（战略/管理/执行 × 模块面板）</sub></td>
-</tr>
-<tr>
-<td><img src="assets/shots/slide-08-matrix.png" alt="2×2 优先级矩阵"><br><sub><b>08</b> · 2×2 优先级矩阵（蓝只染「优先实施」象限）</sub></td>
-<td><img src="assets/shots/slide-09-flow.png" alt="流程闭环"><br><sub><b>09</b> · 流程闭环（五步 + 反馈回路）</sub></td>
-</tr>
-<tr>
-<td><img src="assets/shots/slide-10-versus.png" alt="VS 对照"><br><sub><b>10</b> · VS 对照（现状 vs 改善 · 点+文字双通道）</sub></td>
-<td><img src="assets/shots/slide-11-dark.png" alt="深色过渡"><br><sub><b>11</b> · 深色过渡（暗色提案调色板，章节切换）</sub></td>
+<td width="33%"><img src="assets/shots/theme-a-cover.png" alt="A 克制档"><br><sub><b>A · 克制档</b> · 极简白皮书</sub></td>
+<td width="33%"><img src="assets/shots/theme-b-cover.png" alt="B 现代专业档"><br><sub><b>B · 现代专业档（默认）</b> · Hero + 章节块</sub></td>
+<td width="33%"><img src="assets/shots/theme-c-cover.png" alt="C 高表现力档"><br><sub><b>C · 高表现力档</b> · 深色重音</sub></td>
 </tr>
 </table>
 
----
-
-## 视觉档（风格切换）
-
-开始做 PPT 时技能会先问你选**视觉档**（[`SKILL.md`](SKILL.md) Step 1.5，回车默认 **B**）。三档**共用同一份内容与组件，只切换视觉层**（封面 / 目录 / 章节模板 + 页眉皮肤 + 重音手法），都坚持单一主色 + 中性灰、不引入多色。
-
-| 档 | 气质 | 适用 |
-|---|---|---|
-| **A · 克制档** | 纯白白皮书、安静权威 | 高层正式汇报、严谨决策 |
-| **B · 现代专业档（默认）** | 图标 + 关系图、设计化封面 / 目录 / 章节 | 多数客户方案、汇报 + 会后阅读 |
-| **C · 高表现力档** | 深色重音页 + 超大数字 + 图表占版面 + 可配头像 | 路演、竞标、重点客户方案 |
-
-同一份封面，三种档：
+内容页样式举例（统一：纯白底 · 数字 mono · 文档式表格 · 状态点 + 文字）：
 
 <table>
 <tr>
-<td width="33%"><img src="assets/shots/theme-a-cover.png" alt="A 克制档封面"><br><sub><b>A · 克制档</b> · 极简标题 + 竖排目录</sub></td>
-<td width="33%"><img src="assets/shots/theme-b-cover.png" alt="B 现代专业档封面"><br><sub><b>B · 现代专业档（默认）</b> · Hero + 章节图标块</sub></td>
-<td width="33%"><img src="assets/shots/theme-c-cover.png" alt="C 高表现力档封面"><br><sub><b>C · 高表现力档</b> · 深色重音 + 章节缩略</sub></td>
+<td width="33%"><img src="assets/shots/slide-02-dashboard.png" alt="KPI 看板"><br><sub><b>KPI 看板</b> · 指标条 + 文档表</sub></td>
+<td width="33%"><img src="assets/shots/slide-04-evidence.png" alt="趋势图"><br><sub><b>趋势图</b> · 灰阶柱 + 一抹蓝</sub></td>
+<td width="33%"><img src="assets/shots/slide-07-architecture.png" alt="三层架构"><br><sub><b>三层架构</b> · 战略 / 管理 / 执行</sub></td>
 </tr>
 </table>
 
-B 档的设计化目录 / 章节页：
-
-<table>
-<tr>
-<td width="50%"><img src="assets/shots/theme-b-toc.png" alt="B 目录"><br><sub>目录 · 图标圆 + 编号 + 描述</sub></td>
-<td width="50%"><img src="assets/shots/theme-b-section.png" alt="B 章节页"><br><sub>章节页 · 水印编号 + 本章内容</sub></td>
-</tr>
-</table>
-
-> 上面「预览」的 11 页是**内容页版式**（三档通用）；这里展示的是各档在**封面 / 目录 / 章节**上的差异。完整规则见 [`references/theme-tiers.md`](references/theme-tiers.md)。
+> 完整 11 页样张 + 可编辑版 → [aham-ppt-v6.1-demo.pptx](examples/aham-ppt-v6.1-demo.pptx)
 
 ---
 
-## 快速开始
+## 使用方法
 
-### 1. 安装技能
+最简单：**把本仓库地址 `https://github.com/li599198347-svg/aham-ppt` 发给 Claude，让它把技能装好**；或下载本仓库后，把技能文件上传给 Claude。
 
-将整个 `aham-ppt/` 目录放到你的 Claude 技能路径下。
+装好后对 Claude 说「帮我做 PPT / 做客户方案 PPT」即可——技能会自动按八步法推进，开场先问你选视觉档（回车默认 B）。
 
-**Claude Code 或 Claude 桌面版的标准路径**：
-```
-~/.claude/skills/user/aham-ppt/
-```
-
-**Claude.ai Web 的标准路径**：
-```
-/mnt/skills/user/aham-ppt/
-```
-
-### 2. 触发技能
-
-在 Claude 对话中，说出以下任一触发词即可：
-
-- 帮我做 PPT
-- 做演示文稿
-- 做一个汇报
-- 根据这份资料做 PPT
-- 做客户方案 PPT
-- 制作幻灯片
-
-技能会自动按八阶段流程推进，从规范加载到质检交付全程覆盖。开始时会先问你选**视觉档**（A 克制 / B 现代专业 / C 高表现力，默认 B），见 [`references/theme-tiers.md`](references/theme-tiers.md)。
-
-### 3. 准备素材
-
-执行前请准备好：
-- 需要转化为 PPT 的原始素材（文字、数据、图表、PDF 均可）
-- 明确的受众（给客户老板 / 给内部管理层 / 给投资人？）
-- 预期篇幅（10 页 / 30 页 / 50 页？）
-- 交付时间（影响流程中每一步的深度）
+> 想换成自己的品牌？Aham 只是示例，改 `references/brand-spec/`（`brand.md` + `tokens.css`）即可。
 
 ---
 
-## 换成你自己的品牌（4 步）
+## 更新记录
 
-### Step 1：替换品牌元信息
-
-编辑 `references/brand-spec/brand.md` 开头的 Brand 块：
-
-```markdown
-**Brand**: 你的品牌名
-**Locale**: 你的主要语言环境
-**Applicability**: 你的品牌调性描述
-**Brand attributes**: 你的品牌属性关键词
-```
-
-### Step 2：替换强调色
-
-编辑 `references/brand-spec/tokens.css`，把唯一的强调色相换成你自己的：
-
-```css
---accent:       #你的主色;   /* 强调蓝 · 唯一色相 · 仅点缀 */
---accent-hover: #略浅色;
---accent-press: #略深色;     /* 蓝底需更深时 */
-```
-
-> 强调色只用于 logo / 主操作 / 选中下划线 / 推荐标 / 单个高亮数据点，**绝不铺底**——
-> 「蓝若第一眼注意到就超标」。三层表面（`--surface-1/2/3`）与四级墨色（`--ink-1~4`）
-> 是冷色中性体系，建议沿用默认，不必随品牌色改动。
-
-### Step 3：替换字体栈（可选）
-
-本规范用**单一无衬线 + 等宽数字**，不用衬线。默认字体栈：
-
-```css
---ff-sans: "Inter", "Microsoft YaHei", "PingFang SC", ...;   /* 正文/标题 · 无衬线 */
---ff-mono: "JetBrains Mono", "Consolas", ...;                /* 数字/代码 · 等宽 */
-```
-
-如果你的品牌用了不同字体，把西文换成你的无衬线字体、CJK 换成你的黑体即可；
-层级靠字号 + 字重建立，不靠衬线、不靠颜色。**不要引入衬线字体做正文。**
-
-### Step 4：搜索替换剩余的 "Aham" 字样
-
-```bash
-cd aham-ppt/
-grep -rn "Aham\|aham" .
-```
-
-把出现的品牌名替换为你自己的品牌名即可。
-
----
-
-## 目录结构
-
-```
-aham-ppt/
-├── SKILL.md                      # 技能入口（YAML 头触发配置）
-├── ORIGIN.md                     # 本技能的来源与脱敏说明
-├── README.md                     # 本文件
-├── LESSONS.md                    # 场景化经验索引（历史归档，供人阅读）
-├── CONTRIBUTING.md               # 贡献与发版流程
-├── CHANGELOG.md                  # 变更记录（Keep a Changelog）
-├── NOTICE.md / LICENSE           # 第三方声明指针 / 许可
-│
-├── assets/                       # 代码资产与素材
-│   ├── README.md                 # 代码资产说明
-│   ├── svg_to_pptx_wrapper.py    # ★ SVG → 原生 PPTX 对外入口
-│   ├── svg_to_pptx/              # SVG → 原生 PPTX 工具链主体
-│   ├── components/               # SVG 组件库（生成内容页/图表/图标/模板）
-│   │   ├── components.py         # 关系图 / UI 原型原子组件
-│   │   ├── charts.py             # 参数化图表（柱/线/瀑布/漏斗/甘特…）
-│   │   ├── icons.py              # Lucide 风格线性图标
-│   │   └── themes.py             # A / B / C 三档封面·目录·章节模板
-│   ├── shots/                    # README 预览截图
-│   └── social-preview.{svg,png}  # 社交封面
-│
-├── docs/                         # 项目主页（GitHub Pages）
-│   ├── index.html
-│   └── banner.png
-│
-├── examples/                     # 可运行样例（11 页样张 + PPTX）
-│   ├── build_examples.py         # 一键生成 11 页 SVG + preview/deck.html
-│   ├── slide-01..11-*.svg        # 11 页内容页样张
-│   ├── *.pptx                    # 可编辑 PPTX 演示
-│   └── render_shots.py / build_*.py
-│
-└── references/                   # 方法论与规范
-    ├── brand-spec/               # ★ 品牌视觉规范（替换这里的内容适配你的品牌）
-    │   ├── brand.md              # 主规范（色彩/字体/禁用，取值权威源）
-    │   ├── tokens.css            # CSS 变量（色值/字体栈，取值权威源）
-    │   ├── track-rules.md        # 四轨道分流规则
-    │   └── iconography.md        # 图标规范
-    │
-    ├── coach-engine.md           # 教练引擎（能力自适应）
-    ├── designer-rules.md         # 设计师执行规则（含 PPTX 兼容雷区唯一源）
-    ├── grid-system.md            # 网格系统（版式坐标 / 单行字数表唯一源）
-    ├── layout-library.md         # 版式库总览
-    ├── chart-impl.md             # 图表实现
-    ├── pptx-native-rules.md      # 原生 PPTX 输出规则
-    ├── quality-audit-protocol.md # 质检协议
-    ├── theme-tiers.md            # ★ 三档视觉风格（A / B / C）
-    │
-    ├── phase-01.md ~ phase-08.md # 八阶段流程详细指引
-    └── svg-skeleton-*.md         # 各版式 SVG 骨架模板
-                                  #   common / a / e / g / i / s / t / v（8 个）
-```
-
----
-
-## 八阶段流程
-
-本技能的核心是这条八阶段流水线：
-
-| # | 阶段 | 产物 |
-|---|---|---|
-| 1 | 规范加载 | 确认轨道 A，加载色值、字体、禁用清单 |
-| 2 | 材料解析 | 从原始素材中提取关键信息、证据、数字 |
-| 3 | 论点提炼 | 按金字塔原理（结构化论证）提炼核心论点 |
-| 4 | 叙事骨架 | 搭建 Ghost Deck（每页一句话的结论骨架） |
-| 5 | 大纲版式 | 规划 Part 结构、每页版式类型 |
-| 6 | 样稿确认 | 选 3-5 页做样稿，与用户对齐视觉方向 |
-| 7 | 逐页设计 | 生成所有页的 SVG + 调用工具链转为 PPTX |
-| 8 | 质检交付 | 按 QC 清单逐项扫描、修正、最终交付 |
-
-详细指引见 `references/phase-01.md` ~ `phase-08.md`。
-
----
-
-## 设计哲学（四个支柱）
-
-北极星是极简、克制、留白、内容优先的桌面 AI 气质；性格「冷色的纸」。
-本规范的四条核心原则：
-
-1. **清晰优先** — 内容是主角；用留白与字号建立秩序，先加间距再考虑加线
-2. **层次靠层差** — 深度来自三层背景（#FFFFFF / #F3F3F3 / #E7E7E7）的灰度层差，不靠材质、边框或阴影；卡片无边框无阴影，选中是扁平灰非蓝
-3. **蓝是点缀** — 蓝 #336EE8 是唯一色相，只用于 logo / 主操作 / 选中下划线 / 推荐标 / 单个高亮数据点，绝不铺底；「蓝若第一眼注意到就超标」
-4. **单一无衬线** — 一套无衬线（西文 Inter / CJK 雅黑·黑体）+ 等宽数字（JetBrains Mono），层级靠字号 + 字重，不靠衬线、不靠颜色；状态用 6px 点 + 文字表达，不用红黄绿灯
-
-**绝对禁用**：渐变 · 3D · 投影（浮层除外）· 纯黑 #000 · 衬线 · 第二装饰彩色 · 蓝色铺底 / 整行整列铺色 · 红黄绿灯 · 饼图 · 表格竖线 · emoji · 圆角滥用。
-
----
-
-## 相关资源
-
-- `ORIGIN.md` — 本技能的来源与脱敏说明
-- `LESSONS.md` — 24 个场景化经验（历史归档），供人工翻阅
-- `references/brand-spec/brand.md` — 品牌规范完整文档
-- `references/theme-tiers.md` — 三档视觉风格（A / B / C）
-- `references/designer-rules.md` — 设计师执行细则
-- 参与贡献与发版流程见 [CONTRIBUTING.md](CONTRIBUTING.md)
-
----
-
-## 版本与许可
-
-- 版本与下载：[Releases](https://github.com/li599198347-svg/aham-ppt/releases)
-- 变更记录：[CHANGELOG.md](CHANGELOG.md)（Keep a Changelog · SemVer）
-- 参与贡献：[CONTRIBUTING.md](CONTRIBUTING.md)
-- 许可：[MIT](LICENSE)
+[Releases](https://github.com/li599198347-svg/aham-ppt/releases) · [CHANGELOG](CHANGELOG.md)（Keep a Changelog · SemVer） · [CONTRIBUTING](CONTRIBUTING.md) · [MIT](LICENSE)
 
 ---
 
 ## 关于 Aham
 
-> **把灵光一现，做成能用的 AI 工具。**
-
-Aham 来自 *aha moment*。每个工具只把一件事做利落。
+> 把灵光一现，做成能用的 AI 工具。Aham 来自 *aha moment*，每个工具只把一件事做利落。
 
 | 应用 | 一句话 |
 |---|---|
 | [Aham UI](https://github.com/li599198347-svg/aham-ui) | 供 AI 消费的设计系统——写一次规范，AI 产出处处一致 |
 | [Aham Survey](https://github.com/li599198347-svg/aham-survey) | 现场调研工具（macOS）——聊一圈，调研结果自己长出来 |
 | [Aham Voice](https://github.com/li599198347-svg/aham-voice) | 录音转写与会议纪要（macOS）——录一段会，纪要已经写好 |
-| [Aham PPT](https://github.com/li599198347-svg/aham-ppt) | 克制的 AI PPT 制作技能——丢一堆素材，幻灯片出来了 |
+| **Aham PPT** | 克制的 AI PPT 制作技能——把素材做成方案级 PPT |
+
+来源与脱敏说明见 [`ORIGIN.md`](ORIGIN.md)。

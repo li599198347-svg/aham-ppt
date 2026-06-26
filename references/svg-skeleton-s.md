@@ -223,7 +223,7 @@
 
 ---
 
-## ### S-07 阶梯递进（顶部结论+底部三支撑）
+## ### S-07 HERO-3（顶部结论+底部三支撑）
 ```svg
 <!-- 标准Chrome -->
 
@@ -329,13 +329,13 @@
 <!-- 卡片4 -->
 <rect x="40" y="320" width="360" height="160" rx="4" fill="#F3F3F3"/>
 <text x="56" y="348" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#9B9B9B">[kpi4_label]</text>
-<text x="56" y="410" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="44" font-weight="bold" fill="#5A7A60">[kpi4_value]</text>
+<text x="56" y="410" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="44" font-weight="bold" fill="#262626">[kpi4_value]</text>
 <text x="56" y="466" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6E6E6E">[kpi4_desc]</text>
 
 <!-- 卡片5 -->
 <rect x="440" y="320" width="360" height="160" rx="4" fill="#F3F3F3"/>
 <text x="456" y="348" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#9B9B9B">[kpi5_label]</text>
-<text x="456" y="410" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="44" font-weight="bold" fill="#9E3D31">[kpi5_value]</text>
+<text x="456" y="410" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="44" font-weight="bold" fill="#262626">[kpi5_value]</text>
 <text x="456" y="466" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6E6E6E">[kpi5_desc]</text>
 
 <!-- 卡片6 -->
