@@ -59,13 +59,14 @@ Step 5  执行输出前自检（含PPTX兼容性5条负面约束）
 
 ## 路径A：结构性页面
 
-读取 `svg-skeleton-common.md` 中的 Chrome 骨架，按页面类型选对应模板：
-- cover → I-01 单数字超大屏
-- exec_summary → S-09 KPI看板
-- toc → S-12 全版铺满
-- section → T-03 章节承接页
-- end → A-01 下一步三步决策
+封面 / 目录 / 章节页**按 Phase 1 视觉档调用 `themes.py` 模板**，不在内容版式系内选：
+- cover → `cover`（A/B）/ `cover_dark`（C）
+- toc → `toc`（A/B）/（C 沿用 toc 或封面同款深色）
+- section → `section`（A/B）/ `section_dark`（C）
+- exec_summary → S-09 KPI看板（内容版式）
+- end → A-01 下一步三步决策（内容版式）
 
+内容页 Chrome 读 `svg-skeleton-common.md` 的 Chrome 骨架（坐标真源 `grid-system.md`）。
 替换所有 `[占位符]` 为实际内容。
 
 **交叉检查：替换完成后，SVG 中不能有任何 `[` 或 `]` 字符（占位符未替换完）。**
@@ -448,7 +449,7 @@ Windows 落 Inter→Calibri、微软雅黑、Consolas；macOS 落 Inter→PingFa
 单页设计完成、写入前补一个正向检查（与上面的“防过度 / 兼容”自检互补）：
 - [ ] 本页有视觉主体（数据图表 / 结构图 / 大数字 / UI原型 / 关系图 之一）
 - [ ] 若是纯文字排列版式，已确认此页确实无可图形化内容（否则回 Phase 5 改为图表 / 结构图）
-- [ ] 数据型内容用了 charts 组件，未把多条数据排成纯文字
+- [ ] 本页 ≥3 条 D 类数据 / 可对比排序 / 时间序列已用 charts 组件（否则回 Phase 5 改版式，不得文字化）
 
 ---
 

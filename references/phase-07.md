@@ -1,6 +1,7 @@
 # Phase 7 · 逐页SVG设计
 
 > 本阶段是八步流水线的**必经一步**（不可跳过 / 不可与其它阶段合并产出）；文件本身可独立维护。
+> ▶ **进入本阶段第一句先输出**：`【阶段 7/8 · 逐页SVG设计 · 已加载 phase-07.md】`
 > 本Phase按布局规划卡逐页输出SVG，所有设计决策基于已确认的视觉基调。
 > SVG是唯一真源（Single Source of Truth）。PPTX由SVG机器转换，不手写。
 
@@ -99,7 +100,9 @@
 版式：[版式ID]  骨架：svg-skeleton-[系].md → [章节名]（SPC→svg-skeleton-common.md）
 坐标：来自Phase 5规划卡，不自行计算
 
-负面约束（全部✓才开始写代码）：
+设计前门禁（全部✓才开始写代码）：
+□ 已加载 svg-skeleton-[系].md + grid-system.md，骨架照抄、坐标不自算（数据页改调 charts.py；结构性页用 themes.py）
+□ 本页若聚集 ≥3 条 D 类数据/可对比排序/时间序列 → 已选 V 系并调 charts 组件（否则停，回 Phase 5 改版式，不得文字化）
 □ 无未转义的 & < > "
 □ 无 <marker>（箭头用 <polygon>）
 □ 无 <g transform="rotate/scale(-1)">
