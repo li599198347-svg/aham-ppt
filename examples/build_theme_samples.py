@@ -20,6 +20,7 @@ COVER = dict(brand="Aham", title="三条产线运营诊断", subtitle="OEE 71%�
 SAMPLES = {
     "theme-a-cover": themes.cover("A", **COVER),
     "theme-b-cover": themes.cover("B", **COVER),
+    "theme-c-cover": themes.cover_dark(**COVER),
     "theme-b-toc": themes.toc("B", CH),
     "theme-b-section": themes.section("B", "02", "改善方案", "选型对照与体系架构",
                                       items=[("grid", "方案选型对照"), ("layers", "三层体系架构"), ("route", "实施路线")]),

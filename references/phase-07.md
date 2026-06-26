@@ -76,7 +76,7 @@
 - `svg-skeleton-[当前版式系].md`：当前页对应系的版式骨架（仅读对应1个）
 - `layout-impl-[当前版式系].md`：当前页版式实现细节（仅读对应1个）
 - `designer-rules.md`：设计原则+品牌纪律+PPTX约束
-- `chart-impl.md`：图表规范（**仅有图表的页面才读**）
+- `chart-impl.md`：图表（有图表的页面才读）。**优先 `from charts import bar, hbar, line, waterfall` 一行生成，不逐坐标手画**；charts 未覆盖的类型才用 chart-impl 手画模板
 
 确认以下内容已就绪：
 - 布局规划卡（来自Phase 5）

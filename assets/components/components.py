@@ -60,7 +60,7 @@ def kpi(x,y,w,h,value,label,unit="",accent=False):
 
 # ---- 状态点（双通道：色点 + 文字，色盲友好）----
 def status(x,y,label,kind="ok"):
-    c={"ok":"#2E9E6B","warn":"#CC8A2B","bad":"#DB5B49","idle":INK3}.get(kind,INK3)
+    c={"ok":"#5A7A60","warn":"#8A7333","bad":"#9E3D31","idle":INK3}.get(kind,INK3)
     return f'<circle cx="{x}" cy="{y-4}" r="4" fill="{c}"/>'+T(x+12,y,label,12.5,INK1)
 
 # ---- 设备屏 / 手机 / 按钮（UI 原型）----

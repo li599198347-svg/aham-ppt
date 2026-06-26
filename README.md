@@ -1,15 +1,15 @@
-# Aham PPT — 咨询级 AI PPT 制作技能
+# Aham PPT — 克制的 AI PPT 制作技能
 
 [![Release](https://img.shields.io/github/v/release/li599198347-svg/aham-ppt?color=336EE8)](https://github.com/li599198347-svg/aham-ppt/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-336EE8.svg)](LICENSE)
 [![Design](https://img.shields.io/badge/Design-Aham%20UI%20v6.1-336EE8.svg)](https://github.com/li599198347-svg/aham-ui)
 [![Type](https://img.shields.io/badge/type-Claude%20Skill-336EE8.svg)](#)
 
-![Aham PPT — 咨询级 AI PPT 制作技能](assets/social-preview.png)
+![Aham PPT — 克制的 AI PPT 制作技能](assets/social-preview.png)
 
 > **Aham 应用矩阵**：[Aham UI](https://github.com/li599198347-svg/aham-ui) · [Aham Survey](https://github.com/li599198347-svg/aham-survey) · [Aham Voice](https://github.com/li599198347-svg/aham-voice) · **Aham PPT**
 
-一套对标麦肯锡/德勤标准的 AI PPT 制作技能，含完整八阶段流程 + 原生 PPTX 输出工具链。
+一套克制的 AI PPT 制作技能，含完整八阶段流程 + 原生 PPTX 输出工具链；现支持 **A / B / C 三档**视觉风格。
 
 > 📘 **Aham 是虚构的示例品牌。** 你可以直接使用本技能生成"Aham 风格"的 PPT，
 > 也可以（推荐）将它替换为你自己的品牌。替换指引见本文档下方。
@@ -17,6 +17,22 @@
 > 关于本技能的来源与脱敏说明，见 `ORIGIN.md`。
 
 **🖥 项目主页 → <https://li599198347-svg.github.io/aham-ppt/>**
+
+---
+
+## 🆕 更新 · 三档视觉风格（2026-06）
+
+本次更新把原来的 A / B 两档，扩展为 **A / B / C 三档**——内核仍是克制，只是把"克制的音量"做成了可调：
+
+- **新增 C · 高表现力档**：深色重音页（`#1C1C1C`）+ 超大 mono 数字 + 图表占版面主导 + 必要时配人物头像；面向路演 / 竞标 / 重点客户。已实现 `cover_dark / section_dark / quote_dark` 深色模板。
+- **A / B 档保持不变**：A 克制白皮书、B 现代专业（默认）。
+- **不变的底线**：三档共用同一套内容与组件——单一主色 + 中性灰、数字 mono、状态"符号 + 颜色"双通道、表格只横线；禁渐变 / 3D / 阴影 / 饼图 / 衬线 / emoji。
+
+![C 高表现力档 · 深色重音封面](assets/shots/theme-c-cover.png)
+
+> 三档只是"音量"，不是换一套审美。完整规则见 [`references/theme-tiers.md`](references/theme-tiers.md)。
+
+---
 
 ## 预览
 
@@ -52,19 +68,21 @@
 
 ## 视觉档（风格切换）
 
-开始做 PPT 时技能会先问你选**视觉档**（[`SKILL.md`](SKILL.md) Step 1.5，回车默认 **B**）。两档**共用同一份内容与组件，只切换视觉层**（封面 / 目录 / 章节模板 + 页眉皮肤），都坚持单一主色 + 中性灰、不引入多色。
+开始做 PPT 时技能会先问你选**视觉档**（[`SKILL.md`](SKILL.md) Step 1.5，回车默认 **B**）。三档**共用同一份内容与组件，只切换视觉层**（封面 / 目录 / 章节模板 + 页眉皮肤 + 重音手法），都坚持单一主色 + 中性灰、不引入多色。
 
 | 档 | 气质 | 适用 |
 |---|---|---|
 | **A · 克制档** | 纯白白皮书、安静权威 | 高层正式汇报、严谨决策 |
 | **B · 现代专业档（默认）** | 图标 + 关系图、设计化封面 / 目录 / 章节 | 多数客户方案、汇报 + 会后阅读 |
+| **C · 高表现力档** | 深色重音页 + 超大数字 + 图表占版面 + 可配头像 | 路演、竞标、重点客户方案 |
 
-同一份封面，两种档：
+同一份封面，三种档：
 
 <table>
 <tr>
-<td width="50%"><img src="assets/shots/theme-a-cover.png" alt="A 克制档封面"><br><sub><b>A · 克制档</b> · 极简标题 + 竖排目录</sub></td>
-<td width="50%"><img src="assets/shots/theme-b-cover.png" alt="B 现代专业档封面"><br><sub><b>B · 现代专业档（默认）</b> · Hero + 章节图标块</sub></td>
+<td width="33%"><img src="assets/shots/theme-a-cover.png" alt="A 克制档封面"><br><sub><b>A · 克制档</b> · 极简标题 + 竖排目录</sub></td>
+<td width="33%"><img src="assets/shots/theme-b-cover.png" alt="B 现代专业档封面"><br><sub><b>B · 现代专业档（默认）</b> · Hero + 章节图标块</sub></td>
+<td width="33%"><img src="assets/shots/theme-c-cover.png" alt="C 高表现力档封面"><br><sub><b>C · 高表现力档</b> · 深色重音 + 章节缩略</sub></td>
 </tr>
 </table>
 
@@ -77,7 +95,7 @@ B 档的设计化目录 / 章节页：
 </tr>
 </table>
 
-> 上面「预览」的 11 页是**内容页版式**（两档通用）；这里展示的是两档在**封面 / 目录 / 章节**上的差异。完整规则见 [`references/theme-tiers.md`](references/theme-tiers.md)。
+> 上面「预览」的 11 页是**内容页版式**（三档通用）；这里展示的是各档在**封面 / 目录 / 章节**上的差异。完整规则见 [`references/theme-tiers.md`](references/theme-tiers.md)。
 
 ---
 
@@ -108,7 +126,7 @@ B 档的设计化目录 / 章节页：
 - 做客户方案 PPT
 - 制作幻灯片
 
-技能会自动按八阶段流程推进，从规范加载到质检交付全程覆盖。开始时会先问你选**视觉档**（A 克制 / B 现代专业，默认 B），见 [`references/theme-tiers.md`](references/theme-tiers.md)。
+技能会自动按八阶段流程推进，从规范加载到质检交付全程覆盖。开始时会先问你选**视觉档**（A 克制 / B 现代专业 / C 高表现力，默认 B），见 [`references/theme-tiers.md`](references/theme-tiers.md)。
 
 ### 3. 准备素材
 
@@ -197,6 +215,7 @@ aham-ppt/
     ├── grid-system.md            # 网格系统
     ├── quality-audit-protocol.md # 质检协议
     ├── pptx-native-rules.md      # 原生 PPTX 输出规则
+    ├── theme-tiers.md            # ★ 三档视觉风格（A / B / C）
     │
     ├── phase-01.md ~ phase-08.md # 八阶段流程详细指引
     ├── layout-library.md         # 版式库总览
@@ -214,7 +233,7 @@ aham-ppt/
 |---|---|---|
 | 1 | 规范加载 | 确认轨道 A，加载色值、字体、禁用清单 |
 | 2 | 材料解析 | 从原始素材中提取关键信息、证据、数字 |
-| 3 | 论点提炼 | 按麦肯锡金字塔结构提炼核心论点 |
+| 3 | 论点提炼 | 按金字塔原理（结构化论证）提炼核心论点 |
 | 4 | 叙事骨架 | 搭建 Ghost Deck（每页一句话的结论骨架） |
 | 5 | 大纲版式 | 规划 Part 结构、每页版式类型 |
 | 6 | 样稿确认 | 选 3-5 页做样稿，与用户对齐视觉方向 |
@@ -244,6 +263,7 @@ aham-ppt/
 - `ORIGIN.md` — 本技能的来源与脱敏说明
 - `LESSONS.md` — 24 个场景化经验，供人工翻阅
 - `references/brand-spec/brand.md` — 品牌规范完整文档
+- `references/theme-tiers.md` — 三档视觉风格（A / B / C）
 - `references/designer-rules.md` — 设计师执行细则
 - 参与贡献与发版流程见 [CONTRIBUTING.md](CONTRIBUTING.md)
 
@@ -269,4 +289,4 @@ Aham 来自 *aha moment*。每个工具只把一件事做利落。
 | [Aham UI](https://github.com/li599198347-svg/aham-ui) | 供 AI 消费的设计系统——写一次规范，AI 产出处处一致 |
 | [Aham Survey](https://github.com/li599198347-svg/aham-survey) | 现场调研工具（macOS）——聊一圈，调研结果自己长出来 |
 | [Aham Voice](https://github.com/li599198347-svg/aham-voice) | 录音转写与会议纪要（macOS）——录一段会，纪要已经写好 |
-| [Aham PPT](https://github.com/li599198347-svg/aham-ppt) | 咨询级 AI PPT 制作技能——丢一堆素材，幻灯片出来了 |
+| [Aham PPT](https://github.com/li599198347-svg/aham-ppt) | 克制的 AI PPT 制作技能——丢一堆素材，幻灯片出来了 |

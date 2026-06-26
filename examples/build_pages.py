@@ -12,8 +12,8 @@ NAV = [("aham-ui", "Aham UI"), ("aham-survey", "Aham Survey"),
        ("aham-voice", "Aham Voice"), ("aham-ppt", "Aham PPT")]
 
 SITES = {
-    "aham-ppt": dict(dir="aham-ppt", name="Aham PPT", tag="咨询级 AI PPT 制作技能", type="Claude Skill",
-        sub="丢一堆素材，幻灯片出来了。对标麦肯锡/德勤 · 八阶段流程 · 原生 PPTX 输出。",
+    "aham-ppt": dict(dir="aham-ppt", name="Aham PPT", tag="克制的 AI PPT 制作技能", type="Claude Skill",
+        sub="丢一堆素材，幻灯片出来了。三档风格 · 八阶段流程 · 原生 PPTX 输出。",
         feats=[("八阶段流水线", "规范加载 → 材料解析 → 论点提炼 → … → 质检交付，不是排版美化"),
                ("原生可编辑 PPTX", "每个元素都是 PPT 原生形状 / 文本框，双击即改"),
                ("11 页样张", "封面 / 看板 / 选型 / 趋势 / 路线 / 大数字 / 架构 / 2×2 / 流程 / 对照 / 深色"),

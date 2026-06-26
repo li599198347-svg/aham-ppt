@@ -1,8 +1,8 @@
-# 双档主题系统（v2.1）
+# 三档主题系统（v2.2）
 
-提供两个视觉档，**共用同一套内容与组件，只切换"主题层"**（封面/目录/章节模板 + 页眉皮肤）。
+提供三个视觉档，**共用同一套内容与组件，只切换"主题层"**（封面/目录/章节模板 + 页眉皮肤）。
 不引入多色体系——实测多色"AI 感 / 营销感"偏重，且与"单一主色 + 中性灰"品牌冲突；
-两档都坚持单一品牌主色 + 四级墨灰。
+三档都坚持单一品牌主色 + 四级墨灰。
 
 | 维度 | A · 克制档 | B · 现代专业档（默认） |
 |---|---|---|
@@ -15,7 +15,19 @@
 | 颜色 | 单主色点缀 | 单主色点缀（同 A，不加多色） |
 
 > 把"设计化的封面 / 目录 / 章节"归入 **B 档**；A 档保留极简版。
-> 两档其余铁规（纯白底、状态双通道、禁渐变/3D/阴影/衬线/emoji）一致。
+> 三档其余铁规（纯白底、状态双通道、禁渐变/3D/阴影/衬线/emoji）一致。
+
+## C · 高表现力档（v2.2 · 激进；路演 / 竞标 / 重点客户方案）
+
+在 B 档基础上**把设计感下沉到内容页**，允许更强视觉手段（仍守单一主色 + 中性灰，不引入多色相）：
+- **深色重音页**：章节页 / 金句页用深墨底 `#1C1C1C`（非纯黑）+ 浅色大字，制造“白—白—深”三明治节奏（参考 `examples/slide-11-dark.svg`）。
+- **半幅大数字冲击页**：关键结论用 I 系 ≥120pt mono 大数字 + 右侧拆解（参考 `examples/slide-06-bignumber.svg`）。
+- **数据图表占版面主导**：数据页直接用 charts 组件铺满主区，不塞进小卡。
+- **内容页更大深色块**：允许更大面积 `#262626` 结论块（如 S-07 深色结论区放大）。
+
+**代价（务必向用户说明）**：C 档偏离“安静的权威 / 白皮书”，更接近“有设计感的演说稿”，适合路演 / 竞标；严肃决策汇报仍用 A 档。
+**绝不松动的底线**：单一主色 + 中性灰、禁渐变 / 3D / 投影 / 饼图、禁衬线、数字 mono、状态双通道、禁 emoji。
+> Step 1.5 选档增加 C 选项。C 档深色模板**已实现**于 `themes.py`：`cover_dark(brand,title,subtitle,chapters,meta_left,meta_right)` / `section_dark(num,zh,summary,total,items)` / `quote_dark(lines,attribution,brand)`（均深底 #1C1C1C + 浅字，已渲染 + 转换实测）。
 
 ## 调用（assets/components/themes.py）
 
@@ -33,6 +45,21 @@ section(theme, "02", "章节标题", "一句话引导",
 chrome(theme, "页眉小标", "页面 Action Title", "来源", page="5", total="20",
        body=<svg 片段>, brand="{品牌}", icon="trend")        # icon 仅 B 用
 ```
+
+**C 档调用（深色模板是独立函数，不走 theme 参数）：**
+
+```python
+from themes import cover_dark, section_dark, quote_dark, chrome
+from charts import bar, line, waterfall   # 数据页按形态选
+
+cover_dark(brand="{品牌}", title="{项目} 建设规划", subtitle="副标题",
+           chapters=ch, meta_left="受众：… · YYYY-MM-DD", meta_right="机密")
+section_dark("02", "章节标题", "一句话引导", total="04",
+             items=["要点一", "要点二", "要点三"])   # 注意：items 是字符串列表（与 B 的 (icon,text) 不同）
+quote_dark(["金句第一行", "第二行", "第三行"], attribution="—— 出处", brand="{品牌}")
+chrome("B", "页眉小标", "Action Title", "来源", page="5", total="20", body=<svg>)  # C 档内容页仍用 B 皮肤
+```
+- C 档 = B 的内容页皮肤 + 深色封面/章节/金句重音页 + 数据页 charts 占主导；深色页穿插制造“白—白—深”节奏。
 
 - `theme="A"` 时，section 的 `items` / chrome 的 `icon` 自动忽略，回退极简。
 - 所有文字参数化，**不在模板内写死任何品牌/客户/项目名**——出片前用真实文字替换占位。

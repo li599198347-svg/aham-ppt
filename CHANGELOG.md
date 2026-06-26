@@ -7,6 +7,17 @@
 
 ## [Unreleased]
 
+## [2.2.0] - 2026-06-26 — C 高表现力档 + 数据图表组件 + 去对标
+
+### 新增
+- **C · 高表现力档**：A/B 基础上新增深色重音页（`#1C1C1C`）+ 超大 mono 数字 + 图表占版面，面向路演/竞标/重点客户；深色模板 `cover_dark / section_dark / quote_dark`（`themes.py`）。视觉档由 A/B 两档扩为 **A/B/C 三档**。
+- **数据图表组件库** `assets/components/charts.py`：9 类（柱/横柱/折线/瀑布/漏斗/甘特/子弹/堆叠/坡度），一行调用、brand §7.5 合规、转换实测可编辑。
+- **防平淡规则链**：数据强制图表化 + 图形化占比下限 + 防平淡审计（`phase-04/05`、`chart-impl`、`quality-audit-protocol`、`designer-rules`）。
+
+### 变更
+- 文案去除“对标麦肯锡/德勤”“咨询级”等对标式描述，统一为“克制”定位；八阶段“麦肯锡金字塔”→“金字塔原理”。
+- 重做 banner（`social-preview` · “三档风格 · 八阶段流程 · 原生 PPTX”）；README 加「🆕 三档视觉风格」节 + C 档封面 + A/B/C 对比；Pages 同步。
+
 ## [2.1.0] - 2026-06-22 — 双档主题 + 工具链修复
 
 ### 新增
@@ -35,7 +46,7 @@
 
 ## [2.0.0] - 2026-06-21
 
-设计语言换血：从旧规范（McKinsey 风 · `#1677FF` 重蓝 · 衬线标题 · 描边大卡）
+设计语言换血：从旧规范（`#1677FF` 重蓝 · 衬线标题 · 描边大卡）
 全量迁移到 **Aham UI v6.1**（Claude desktop 气质 · 冷色的纸 · 蓝是点缀）。
 生成的 PPT 视觉彻底改变；八阶段方法论、触发词、调用方式保持不变。
 
@@ -62,7 +73,8 @@
 ### 修复
 - 修复版式命名冲突、品牌色硬编码等 8 项问题。
 
-[Unreleased]: https://github.com/li599198347-svg/aham-ppt/compare/v2.1.0...HEAD
+[Unreleased]: https://github.com/li599198347-svg/aham-ppt/compare/v2.2.0...HEAD
+[2.2.0]: https://github.com/li599198347-svg/aham-ppt/releases/tag/v2.2.0
 [2.1.0]: https://github.com/li599198347-svg/aham-ppt/releases/tag/v2.1.0
 [2.0.1]: https://github.com/li599198347-svg/aham-ppt/releases/tag/v2.0.1
 [2.0.0]: https://github.com/li599198347-svg/aham-ppt/releases/tag/v2.0.0
