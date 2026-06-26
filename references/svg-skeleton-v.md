@@ -3,6 +3,8 @@
 > Phase 7 按版式ID读取本文件。使用规则：复制骨架→替换[占位符]→不改坐标。
 > 通用骨架（Chrome框架/卡片/箭头）见 svg-skeleton-common.md。
 
+> **⭐ v3 · 图表区一律用 charts 组件填充**：下方各 V 版式中标着「[此处替换为…图表代码]」的图表区，不再手画 —— 改为 `from charts import bar, hbar, line, waterfall, funnel, gantt, bullet, stacked, slope`，用该版式注释里给出的图表区 x/y/w/h 调用对应组件（例：V-02 单图区 x=40 y=100 w=1200 h=540 → `bar(40,100,1200,540,data,...)`；V-03 折线区 x=40 y=100 w=800 h=540 → `line(40,100,800,540,values,xlabels,...)`）。组件已内置 brand §7.5 合规与 PPTX 兼容。V-01 的 KPI 卡沿用语义色（正 #5A7A60 / 负 #9E3D31 / 中 #336EE8）不变。
+
 ---
 
 ## ## V-01 KPI看板（证据类）

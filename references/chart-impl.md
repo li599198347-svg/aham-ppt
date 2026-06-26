@@ -7,6 +7,27 @@
 
 ---
 
+## ⭐ v3 · 图表优先调用 charts.py 组件（不再逐坐标手画）
+
+**所有图表一律优先调用 `assets/components/charts.py` 的参数化函数**：一行生成、坐标自动计算、已内置 brand §7.5 合规（灰阶 + 至多一个蓝、无红绿多色、Y 轴从 0）与 PPTX 兼容（只用 rect/line/text/circle，均已实测转为可编辑形状）。下方手画模板仅在组件未覆盖某类型时作兜底。
+
+已验证可用（`from charts import bar, hbar, line, waterfall, funnel, gantt, bullet, stacked, slope`）：
+- `bar(x,y,w,h,data,hi_index=None,unit="",money=False,title=None,target=None)` — 纵向柱状（对比/排名）
+- `hbar(x,y,w,h,data,hi_index=None,money=False,title=None)` — 横向柱状（排名/长标签）
+- `line(x,y,w,h,values,xlabels,hi_last=True,target=None,unit="",money=False,title=None)` — 折线趋势
+- `waterfall(x,y,w,h,items,hi_index=None,money=False,title=None)` — 瀑布拆解；`items=[(label,value,'total'|'delta'),...]`
+
+约定：`data=[(label,value),...]`；`hi_index` 用唯一蓝高亮重点项；正负/目标靠位置 + 符号 + 灰阶，不用红绿。
+- `funnel(x,y,w,h,stages,hi_index=None,money=False,title=None)` — 漏斗（转化收窄）；`stages=[(label,value),...]`
+- `gantt(x,y,w,h,tasks,total_units,today=None,unit_label="",title=None)` — 甘特（分期排期）；`tasks=[(name,start,dur[,hi]),...]`，today 画今日竖虚线
+- `bullet(x,y,w,h,metrics,hi_index=None,money=False,title=None)` — 子弹（实际 vs 目标）；`metrics=[(label,actual,target,max),...]`
+- `stacked(x,y,w,h,data,seriesnames,hi_series=None,unit="",money=False,title=None)` — 堆叠柱（构成变化，≤4段）；`data=[(label,[v1,v2,...]),...]`
+- `slope(x,y,w,h,items,label_left="前",label_right="后",hi_index=None,money=False,title=None)` — 坡度（前后对比）；`items=[(name,vleft,vright),...]`
+
+以上 **9 个图表组件均已渲染 + 转换实测**（元素 0 跳过、转为可编辑形状；rect/line/text/circle/polygon 全覆盖）。
+
+---
+
 ## 图表区坐标系统
 
 图表通常嵌入内容页的某个卡片内，或直接占用内容区（D系版式）。

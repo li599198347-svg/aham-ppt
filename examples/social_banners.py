@@ -65,8 +65,8 @@ def banner(name, tagline, detail, type_label, glyph):
 BANNERS = {
     "ui": banner("Aham UI", "供 AI 消费的设计系统",
                  "单一事实源 · 八层规范 · 亮/暗双色 · 内容优先", "Design System", g_ui()),
-    "ppt": banner("Aham PPT", "咨询级 AI 演示制作技能",
-                  "对标麦肯锡/德勤 · 八阶段流程 · 原生 PPTX", "Claude Skill", g_ppt()),
+    "ppt": banner("Aham PPT", "克制的 AI 演示制作技能",
+                  "三档风格 · 八阶段流程 · 原生 PPTX", "Claude Skill", g_ppt()),
     "survey": banner("Aham Survey", "现场调研工具 · macOS",
                      "项目制调研 · 行业模板 · 本地语音 · AI 追问", "macOS App", g_survey()),
     "voice": banner("Aham Voice", "录音转写与会议纪要 · macOS",

@@ -121,3 +121,84 @@ def chrome(theme,section_label,title,source,page,total,body,brand="",tsize=26,ic
           T(40,709,"来源："+source,11,INK3),
           T(1240,709,f"{page} / {total}",11,INK3,fam=MONO,anchor="end")]
     return _svg("".join(head)+body+"".join(foot))
+
+
+# ============================================================
+#  C · 高表现力档 —— 深色模板（v3）
+#  深底 #1C1C1C + 浅色字；不依赖 icons，只用 components 原子函数。
+# ============================================================
+BG_DARK = "#1C1C1C"
+LT1 = "#F2F2F2"      # 深底上主字
+LT2 = "#A8A8A8"      # 深底上次字
+LT3 = "#787878"      # 深底上弱字（页脚/PART）
+DK_LINE = "#3A3A3A"  # 深底上的分隔线
+DK_PANEL = "#262626" # 深底上稍亮的块
+
+
+def cover_dark(brand, title, subtitle, chapters, meta_left="", meta_right=""):
+    """C 档深色封面。chapters=[(num,zh,sub,icon),...]（仅用 num/zh/sub）。"""
+    b = [f'<rect x="40" y="60" width="12" height="12" rx="2" fill="{ACC}"/>',
+         T(62, 76, brand, 19, LT1, 700),
+         T(80, 168, "MANUFACTURING OPERATIONS", 13, LT3, ls=5),
+         T(80, 332, title, 56, LT1, 700)]
+    if subtitle:
+        b.append(T(80, 404, subtitle, 20, LT2))
+    b.append(f'<rect x="84" y="430" width="150" height="5" rx="2" fill="{ACC}"/>')
+    b.append(f'<rect x="812" y="96" width="428" height="528" rx="22" fill="{DK_PANEL}"/>')
+    b.append(T(852, 150, "本册导览", 15, LT1, 700))
+    b.append(T(852, 172, "IN THIS DECK", 10, LT3, ls=2))
+    m = min(len(chapters), 5)
+    for i, (n, zh, sub, ic) in enumerate(chapters[:5]):
+        y = 220 + i * 78
+        b.append(T(852, y, n, 14, ACC, 700, fam=MONO))
+        b.append(T(892, y, zh, 16, LT1, 600))
+        if sub:
+            b.append(T(892, y + 20, sub, 12, LT2))
+        if i < m - 1:
+            b.append(L(852, y + 46, 1200, y + 46, DK_LINE, 1))
+    b.append(L(80, 648, 1240, 648, DK_LINE, 1))
+    b.append(T(80, 682, meta_left, 13, LT3))
+    b.append(T(1240, 682, meta_right, 13, LT3, anchor="end"))
+    return _svg("".join(b), bg=BG_DARK)
+
+
+def section_dark(num, zh, summary, total="04", items=None):
+    """C 档深色章节页。items=[text,...]（字符串列表，右侧本章内容）。"""
+    b = [T(60, 300, num, 200, "#2E2E2E", 700, fam=MONO),
+         f'<rect x="60" y="470" width="120" height="6" rx="3" fill="{ACC}"/>',
+         T(60, 540, zh, 40, LT1, 700),
+         T(60, 592, summary, 16, LT2),
+         T(60, 640, f"PART {num} / {total}", 13, LT3, ls=3, fam=MONO)]
+    if items:
+        rx = 620
+        b.append(T(rx, 150, "本章内容", 16, LT1, 700))
+        b.append(T(rx, 172, "IN THIS SECTION", 10, LT3, ls=2))
+        for i, t in enumerate(items):
+            y = 232 + i * 80
+            b.append(f'<rect x="{rx}" y="{y-13}" width="6" height="26" rx="2" fill="{ACC}"/>')
+            b.append(T(rx + 22, y + 5, t, 16, LT1, 600))
+            if i < len(items) - 1:
+                b.append(L(rx, y + 40, 1200, y + 40, DK_LINE, 1))
+    b.append(T(1240, 700, f"{num} / {total}", 11, LT3, fam=MONO, anchor="end"))
+    return _svg("".join(b), bg=BG_DARK)
+
+
+def quote_dark(lines, attribution="", brand=""):
+    """C 档金句页。lines=字符串或字符串列表（每行一句，自行折行）。"""
+    if isinstance(lines, str):
+        lines = [lines]
+    b = []
+    if brand:
+        b.append(f'<rect x="40" y="60" width="12" height="12" rx="2" fill="{ACC}"/>')
+        b.append(T(62, 76, brand, 17, LT2, 700))
+    b.append(T(108, 300, "\u201C", 170, "#333333", 700))
+    n = len(lines)
+    lh = 66
+    y0 = 360 - (n - 1) * lh / 2
+    for i, ln in enumerate(lines):
+        b.append(T(152, y0 + i * lh, ln, 40, LT1, 700))
+    yend = y0 + (n - 1) * lh + 42
+    b.append(f'<rect x="154" y="{yend:.0f}" width="120" height="4" rx="2" fill="{ACC}"/>')
+    if attribution:
+        b.append(T(154, yend + 44, attribution, 17, LT2))
+    return _svg("".join(b), bg=BG_DARK)
