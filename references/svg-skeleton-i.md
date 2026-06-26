@@ -33,52 +33,6 @@
 
 ---
 
-## ### I-02 一句话宣言（深色底）
-```svg
-<!-- 深色背景 -->
-<rect width="1280" height="720" fill="#1C1C1C"/>
-<text x="80" y="80" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#A8A8A8" letter-spacing="3">INTERLUDE · [page_no]</text>
-
-<!-- 主引言（两行） -->
-<text x="120" y="300" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="42" font-weight="bold" fill="#FFFFFF">[declaration_line_1]</text>
-<text x="120" y="360" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="42" font-weight="bold" fill="#FFFFFF">[declaration_line_2]</text>
-
-<!-- 副注 -->
-<text x="120" y="450" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="28" fill="#A8A8A8">[sub_line_1]</text>
-<text x="120" y="490" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="28" fill="#A8A8A8">[sub_line_2]</text>
-
-<!-- 引用来源 -->
-<text x="1200" y="640" text-anchor="end" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#A8A8A8">—— [source]</text>
-```
-
----
-
-## ### I-03 反差双栏（现状vs目标）
-```svg
-<!-- 极简Chrome -->
-<text x="40" y="40" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#9B9B9B" letter-spacing="2">[section_path]</text>
-
-<!-- 左：警示/现状 -->
-<text x="100" y="200" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#9E3D31" letter-spacing="2">[left_label]</text>
-<text x="100" y="310" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="80" font-weight="bold" fill="#9E3D31">[left_big]</text>
-<text x="100" y="370" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="16" fill="#262626">[left_desc]</text>
-
-<!-- 中间分隔 -->
-<line x1="640" y1="160" x2="640" y2="580" stroke="#E7E7E7" stroke-width="0.5"/>
-<text x="628" y="388" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="24" fill="#9B9B9B">→</text>
-
-<!-- 右：目标/未来 -->
-<text x="720" y="200" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#5A7A60" letter-spacing="2">[right_label]</text>
-<text x="720" y="310" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="80" font-weight="bold" fill="#5A7A60">[right_big]</text>
-<text x="720" y="370" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="16" fill="#262626">[right_desc]</text>
-
-<!-- 极简页脚 -->
-<text x="40" y="708" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#9B9B9B">来源：[source]</text>
-<text x="1240" y="708" text-anchor="end" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#9B9B9B">[page_index]</text>
-```
-
----
-
 ## ## I-04 数据冲击（大数字+细节支撑）
 ```svg
 <!-- 极简Chrome -->
@@ -139,8 +93,8 @@
 <text x="640" y="360" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="34" font-weight="bold" fill="#262626">[warning_title]</text>
 <text x="640" y="404" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15" fill="#6E6E6E">[warning_desc]</text>
 
-<!-- 大号窗口期 -->
-<text x="640" y="510" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="60" font-weight="bold" fill="#9E3D31">[window_period]</text>
+<!-- 大号窗口期（墨色；紧迫性靠上方红色"当前"节点 + 警示标题双通道，不染数字红绿） -->
+<text x="640" y="510" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="60" font-weight="bold" fill="#262626">[window_period]</text>
 <text x="640" y="558" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="14" fill="#9B9B9B">[window_label]</text>
 
 <!-- 极简页脚 -->

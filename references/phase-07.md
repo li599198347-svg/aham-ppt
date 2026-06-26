@@ -1,6 +1,6 @@
 # Phase 7 · 逐页SVG设计
 
-> 可插拔模块。独立升级不影响其他Phase。
+> 本阶段是八步流水线的**必经一步**（不可跳过 / 不可与其它阶段合并产出）；文件本身可独立维护。
 > 本Phase按布局规划卡逐页输出SVG，所有设计决策基于已确认的视觉基调。
 > SVG是唯一真源（Single Source of Truth）。PPTX由SVG机器转换，不手写。
 
@@ -73,7 +73,7 @@
 
 读取以下文件，加载设计规则：
 - `svg-skeleton-common.md`：通用Chrome/卡片/箭头骨架
-- `svg-skeleton-[当前版式系].md`：当前页对应系的版式骨架（仅读对应1个）；**系→文件例外**：SPC 系（封面/分隔/结尾）读 `svg-skeleton-common.md` 末尾特殊页模板，Ch 系（数据图）调 `charts.py`（坐标真源始终是 `grid-system.md`）
+- `svg-skeleton-[当前版式系].md`：当前页对应系的版式骨架（仅读对应1个）；**系→文件例外**：封面/目录/章节用 `themes.py` 生成（不读 svg-skeleton），数据图表调 `charts.py`（坐标真源始终是 `grid-system.md`）
 - `designer-rules.md`：设计原则+品牌纪律+PPTX约束
 - `chart-impl.md`：图表（有图表的页面才读）。**优先 `from charts import bar, hbar, line, waterfall, funnel, gantt, bullet, stacked, slope` 一行生成，不逐坐标手画**；charts 未覆盖的类型才用 chart-impl 手画模板
 
