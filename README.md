@@ -75,6 +75,7 @@
 | 应用 | 一句话 |
 |---|---|
 | [Aham UI](https://github.com/li599198347-svg/aham-ui) | 供 AI 消费的设计系统——写一次规范，AI 产出处处一致 |
+| [Aham Word](https://github.com/li599198347-svg/aham-word) | 供 AI 消费的 Word 规范——AI 据规范产出处处一致的 .docx |
 | [Aham Survey](https://github.com/li599198347-svg/aham-survey) | 现场调研工具（macOS）——本地优先，把现场对话做成结构化调研成果 |
 | [Aham Voice](https://github.com/li599198347-svg/aham-voice) | 录音转写与会议纪要（macOS）——本地离线转写，纪要走你自己的模型 |
 | **Aham PPT** | 克制的 AI PPT 制作技能——把素材做成方案级 PPT |
