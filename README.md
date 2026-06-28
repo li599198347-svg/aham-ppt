@@ -4,6 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-336EE8.svg)](LICENSE)
 [![Design](https://img.shields.io/badge/Design-Aham%20UI%20v6.1-336EE8.svg)](https://github.com/li599198347-svg/aham-ui)
 [![Type](https://img.shields.io/badge/type-Claude%20Skill-336EE8.svg)](#)
+[![联系我](https://img.shields.io/badge/%E8%81%94%E7%B3%BB%E6%88%91-%E5%BE%AE%E4%BF%A1-336EE8.svg?logo=wechat&logoColor=white)](assets/wechat-qr.png)
 
 ![Aham PPT — 克制的 AI PPT 制作技能](assets/social-preview.png)
 
