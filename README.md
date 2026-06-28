@@ -81,3 +81,9 @@
 | **Aham PPT** | 克制的 AI PPT 制作技能——把素材做成方案级 PPT |
 
 来源与脱敏说明见 [`ORIGIN.md`](ORIGIN.md)。
+
+### 关注 · 交流
+
+公众号看更多 AI 工具实践与更新；也欢迎扫码加我，交流与反馈。
+
+<p><img src="assets/wechat-qr.png" width="640" alt="关注 Aham 公众号 / 加作者微信"></p>
