@@ -127,3 +127,15 @@ def swimlane(x,y,w,lanes,lane_h=88,gap=10):
                 s+=f'<rect x="{nx}" y="{ly+lane_h/2-19}" width="{nw}" height="38" rx="8" fill="#FFFFFF" stroke="{INK4}" stroke-width="1.2"/>'
                 s+=T(nx+nw/2,ly+lane_h/2+5,nd,12.5,INK1,anchor="middle")
     return s
+
+
+def placeholder(x, y, w, h, label="产品界面"):
+    """软件界面占位框（待替换真实截图）——demo/UI 未到位时占位，不硬编假界面。"""
+    s = f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="10" fill="#F7F8FA" stroke="{INK4}" stroke-width="1.5" stroke-dasharray="7 5"/>'
+    cx, cy = x + w/2, y + h/2
+    s += f'<rect x="{cx-30:.0f}" y="{cy-34:.0f}" width="60" height="44" rx="5" fill="none" stroke="{INK3}" stroke-width="1.8"/>'
+    s += f'<circle cx="{cx-12:.0f}" cy="{cy-20:.0f}" r="5" fill="{INK3}"/>'
+    s += f'<path d="M{cx-26:.0f} {cy+8:.0f} l18 -18 l11 11 l9 -7 l16 14" fill="none" stroke="{INK3}" stroke-width="1.8" stroke-linejoin="round"/>'
+    s += T(cx, cy+38, "产品界面占位", 12, INK2, 700, anchor="middle")
+    s += T(cx, cy+59, label, 10, INK3, anchor="middle")
+    return s
