@@ -7,6 +7,16 @@
 
 ## [Unreleased]
 
+## [2.5.0] - 2026-07-01 — 工程预检工具 + 防坑附录
+
+### 新增
+- **工程预检工具** `assets/tools/`：`lint_svg.py`（tofu 高危字符 / 页脚总页数一致性 / 源码中文双引号预检）、`icons_preview.py`（图标缩略校验）、`pageno_fill.py`（页码集中回填，根治 /50 与 /57 并存）。
+- **`assets/components/mes_icons.py`**：25 个具象制造业图标（worker / conveyor / andon / scanner / gearmold / injection…）。
+- **`components.placeholder()`**：软件界面占位框（UI 未到位时占位，不硬编假界面）。
+
+### 变更
+- SKILL.md 新增「工程预检与防坑」附录（字符安全 / 图标 / 页码 / 占位 / 术语 / 基线 + 双轨审计 / 客户图为锚 / 每页不套模板）；质检协议增自动预检 + 双轨审计；LESSONS 补大体量册复盘。
+
 ## [2.4.0] - 2026-06-26 — 更稳的流程（防跳步）+ 更准的版式（去重 · 单一决策表 · 硬门禁）
 
 > 治两大体验问题：Claude **跳步骤** 与 **版式选不对**。不改对外触发与产出视觉，核心八阶段方法论不变。
@@ -121,7 +131,8 @@
 ### 修复
 - 修复版式命名冲突、品牌色硬编码等 8 项问题。
 
-[Unreleased]: https://github.com/li599198347-svg/aham-ppt/compare/v2.4.0...HEAD
+[Unreleased]: https://github.com/li599198347-svg/aham-ppt/compare/v2.5.0...HEAD
+[2.5.0]: https://github.com/li599198347-svg/aham-ppt/releases/tag/v2.5.0
 [2.4.0]: https://github.com/li599198347-svg/aham-ppt/releases/tag/v2.4.0
 [2.3.0]: https://github.com/li599198347-svg/aham-ppt/releases/tag/v2.3.0
 [2.2.0]: https://github.com/li599198347-svg/aham-ppt/releases/tag/v2.2.0
