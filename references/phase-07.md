@@ -74,7 +74,7 @@
 
 读取以下文件，加载设计规则：
 - `svg-skeleton-common.md`：通用Chrome/卡片/箭头骨架
-- `svg-skeleton-[当前版式系].md`：当前页对应系的版式骨架（仅读对应1个）；**系→文件例外**：封面/目录/章节用 `themes.py` 生成（不读 svg-skeleton），数据图表调 `charts.py`（坐标真源始终是 `grid-system.md`）
+- `svg-skeleton-[当前版式系].md`：当前页对应系的版式骨架（仅读对应1个）；**系→文件例外**：封面/目录/章节用 `themes.py` 生成（不读 svg-skeleton），数据图表调 `charts.py`、**X-90 段/标注层调 `consulting.py`（读 `svg-skeleton-d.md`）**（坐标真源始终是 `grid-system.md`）
 - `designer-rules.md`：设计原则+品牌纪律+PPTX约束
 - `chart-impl.md`：图表（有图表的页面才读）。**优先 `from charts import bar, hbar, line, waterfall, funnel, gantt, bullet, stacked, slope` 一行生成，不逐坐标手画**；charts 未覆盖的类型才用 chart-impl 手画模板
 
@@ -101,7 +101,7 @@
 坐标：来自Phase 5规划卡，不自行计算
 
 设计前门禁（全部✓才开始写代码）：
-□ 已加载 svg-skeleton-[系].md + grid-system.md，骨架照抄、坐标不自算（数据页改调 charts.py；结构性页用 themes.py）
+□ 已加载 svg-skeleton-[系].md + grid-system.md，骨架照抄、坐标不自算（数据页改调 charts.py；X-90 段/标注层调 consulting.py；结构性页用 themes.py）
 □ 本页若聚集 ≥3 条 D 类数据/可对比排序/时间序列 → 已选 V 系并调 charts 组件（否则停，回 Phase 5 改版式，不得文字化）
 □ 无未转义的 & < > "
 □ 无 <marker>（箭头用 <polygon>）

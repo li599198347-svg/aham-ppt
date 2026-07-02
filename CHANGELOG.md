@@ -7,6 +7,25 @@
 
 ## [Unreleased]
 
+## [2.5.2] - 2026-07-02 — D 层修订（chrome 红线 + 密度纪律）
+
+### 移除
+- `consulting.py` 的 `sidebar()`（左缘竖排侧标）。用户裁定：页眉/页脚/页面框架归 skeleton-common 与 themes.py，D 层禁止改动 chrome、只作用于内容区。
+### 变更
+- `svg-skeleton-d.md`：§2 六版式改为「主视觉＋必配辅助层」组合配方；§3 新增密度纪律（禁单元素占满内容区）；§4 竖排处置改为「D 层不做竖排」。
+- LESSONS 新增第 4 条（单组件整页=过简）。
+
+## [2.5.1] - 2026-07-02 — 咨询密集层 D（异形 + 标注，降 AI 方形大卡片味）
+
+### 新增
+- **`assets/components/consulting.py`**：12 个异形/标注 API（雪佛龙链、流向带、哑铃、点阵、驱动树节点+肘线、链式递减；椭圆圈注、引线、水印、逐字侧标、So-What、线画对勾）。
+- **`references/svg-skeleton-d.md`**：D 层骨架与纪律（降 AI 味三原则含出处、X-90 段版式 6 个、标注层配额、PPTX 兼容补遗）。
+- **layout-library**：新增 90 段版式 E-90/V-90/V-91/V-92/G-90/I-90；phase-05/07 例外句挂接 consulting.py。
+- **examples/consulting/**：冒烟页 demo_d（12 API 一页，原生转换 sp=339/pic=0）+ FIFA26 世界杯 10 页 SVG 真源作参考。
+### 实测结论（写入 LESSONS 与 skeleton-d §4）
+- `<text>/<ellipse>` 上 translate+rotate 组合变换转换后漂移 → 竖排一律逐字侧标。
+- 细段标注需自带空格并错层（"1/44" 粘连事故）；`✓` 属 tofu 高危 → 线画对勾。
+
 ## [2.5.0] - 2026-07-01 — 工程预检工具 + 防坑附录
 
 ### 新增
@@ -131,8 +150,10 @@
 ### 修复
 - 修复版式命名冲突、品牌色硬编码等 8 项问题。
 
-[Unreleased]: https://github.com/li599198347-svg/aham-ppt/compare/v2.5.0...HEAD
-[2.5.0]: https://github.com/li599198347-svg/aham-ppt/releases/tag/v2.5.0
+[Unreleased]: https://github.com/li599198347-svg/aham-ppt/compare/v2.5.2...HEAD
+[2.5.2]: https://github.com/li599198347-svg/aham-ppt/compare/v2.5.1...v2.5.2
+[2.5.1]: https://github.com/li599198347-svg/aham-ppt/compare/v2.5.0...v2.5.1
+[2.5.0]: https://github.com/li599198347-svg/aham-ppt/compare/v2.4.0...v2.5.0
 [2.4.0]: https://github.com/li599198347-svg/aham-ppt/releases/tag/v2.4.0
 [2.3.0]: https://github.com/li599198347-svg/aham-ppt/releases/tag/v2.3.0
 [2.2.0]: https://github.com/li599198347-svg/aham-ppt/releases/tag/v2.2.0
@@ -140,3 +161,10 @@
 [2.0.1]: https://github.com/li599198347-svg/aham-ppt/releases/tag/v2.0.1
 [2.0.0]: https://github.com/li599198347-svg/aham-ppt/releases/tag/v2.0.0
 [1.1.0]: https://github.com/li599198347-svg/aham-ppt/releases/tag/v1.1.0
+
+
+## v2.5（实战复盘增量）
+- 新增 `assets/tools/lint_svg.py`（tofu/页码/中文引号预检）、`icons_preview.py`（图标缩略校验）、`pageno_fill.py`（页码集中回填）。
+- 新增 `assets/components/mes_icons.py`（25+ 具象制造业图标；修正 gearmold=模具、新增 injection=注塑机）。
+- `components.py` 新增 `placeholder()` 界面占位组件。
+- SKILL.md 增"工程预检与防坑"附录；质检协议增自动预检 + 双轨审计；LESSONS 增大体量册复盘。

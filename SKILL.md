@@ -13,6 +13,7 @@ description: >
 
 > **版本 v2.4**（更稳的流程 · 更准的版式）：八阶段**强制逐步执行**（防跳步 + 卡点等待 + 进度可见）、**版式库去重 + 单一选择决策表 + 首选核心集**、**数据强制图表化三环硬门禁**（规划/设计/质检）；并含 v2.3 仓库清理（去悬空引用/死代码、规范单一事实源）。详见 `CHANGELOG.md`。
 >
+> **v2.5**（咨询密集层 D · 降 AI 方卡味）新增 **异形+标注组件 `consulting.py`（12 API）、骨架 `svg-skeleton-d.md`、X-90 段版式 6 个（E/V/G/I 系挂接）**；PPTX 兼容补遗（禁 text/ellipse 组合 rotate、D 层禁触 chrome 等实测结论）。
 > **v2.2**（表现力增强 · 防平淡）新增 **9 类数据图表组件 `charts.py`、C 高表现力档（深色模板 `cover_dark/section_dark/quote_dark`）、防平淡规则链**（数据强制图表化 + 图形化占比下限 + 防平淡审计）。
 >
 > **v2.1**（双档主题 + 工具链修复）新增：A 克制档 / B 现代专业档（默认 B）、
@@ -51,7 +52,7 @@ view references/theme-tiers.md     ← 三档主题：A 克制 / B 现代专业 
 ```
 （v2.1 的字宽修复 / 强调色语义 QC / 图标组件 / 内容方法论已并入 `designer-rules.md`、`phase-02.md` 与组件代码，不再单列文件。）
 图标与组件资产位于 `assets/components/`：`icons.py`（~40 线性图标 + icon_circle）、
-`components.py`（泳道/蓝图/箭头/KPI/状态/设备屏/占位框）、`charts.py`（**9 类数据图表：柱/横柱/折线/瀑布/漏斗/甘特/子弹/堆叠/坡度**，一行调用、已 brand §7.5 合规、转换实测可编辑）、`themes.py`（A/B 封面/目录/章节/页眉模板 + **C 档深色模板 `cover_dark/section_dark/quote_dark`**）。
+`components.py`（泳道/蓝图/箭头/KPI/状态/设备屏/占位框）、`charts.py`（**9 类数据图表：柱/横柱/折线/瀑布/漏斗/甘特/子弹/堆叠/坡度**，一行调用、已 brand §7.5 合规、转换实测可编辑）、`themes.py`（A/B 封面/目录/章节/页眉模板 + **C 档深色模板 `cover_dark/section_dark/quote_dark`**）、`consulting.py`（**咨询密集异形层 D：雪佛龙链/流向带/哑铃/点阵/驱动树+肘线/链式递减 + 标注层（椭圆圈注/引线/水印/线画对勾/So-What）**，brand 合规、转换实测原生可编辑，规则见 `references/svg-skeleton-d.md`）。
 
 ---
 

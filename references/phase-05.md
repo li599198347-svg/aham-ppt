@@ -120,7 +120,7 @@ Action Title：[标题]
 按本页『视觉主角』在该表取**首选版式**，优先用表头列出的「首选核心集」；**不要在本文件或别处另立一套映射**。
 封面/目录/章节等结构性页按上方 theme 走 `themes.py`，不在此表内选。
 
-> 完整版式清单及每个版式的骨架文件见 `layout-library.md`。版式ID即骨架文件章节名，如 I-01 对应 svg-skeleton-i.md 的 `## I-01` 章节。**例外**：封面/目录/章节由 `themes.py` 生成（不在 svg-skeleton 里，别找 svg-skeleton-spc.md）；数据图表用 `charts.py` 组件（不是独立版式系）。
+> 完整版式清单及每个版式的骨架文件见 `layout-library.md`。版式ID即骨架文件章节名，如 I-01 对应 svg-skeleton-i.md 的 `## I-01` 章节。**例外**：封面/目录/章节由 `themes.py` 生成（不在 svg-skeleton 里，别找 svg-skeleton-spc.md）；数据图表用 `charts.py` 组件（不是独立版式系）；**D 层异形/标注用 `consulting.py`（同为可调用层，版式 ID 为各系 90 段，骨架与纪律见 `svg-skeleton-d.md`）**。
 
 ---
 

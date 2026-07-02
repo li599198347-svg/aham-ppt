@@ -156,5 +156,5 @@ def database(cx, cy, s=40, c="#6E6E6E"):
 ALL = {"worker": worker, "machine": machine, "warehouse": warehouse, "shelf": shelf, "conveyor": conveyor,
        "andon": andon, "scanner": scanner, "screen": screen, "sensor": sensor, "motor": motor,
        "camera": camera, "qrcode": qrcode, "bin": bin, "gauge": gauge, "badge": badge, "clock": clock,
-       "robotarm": robotarm, "agv": agv, "inspect": inspect, "gearmold": gearmold, "injection": injection, "alert": alert,
+       "robotarm": robotarm, "agv": agv, "inspect": inspect, "gearmold": gearmold, "alert": alert,
        "doc": doc, "network": network, "database": database}
