@@ -20,7 +20,11 @@ SITES = {
                ("换成你的品牌", "改 tokens 主色 + 字体 + 品牌名，四步适配")],
         ctas=[("在 GitHub 查看", "https://github.com/li599198347-svg/aham-ppt", 1),
               ("示例 PPTX", "https://github.com/li599198347-svg/aham-ppt/blob/main/examples/aham-ppt-v6.1-demo.pptx", 0),
-              ("Releases", "https://github.com/li599198347-svg/aham-ppt/releases", 0)]),
+              ("Releases", "https://github.com/li599198347-svg/aham-ppt/releases", 0)],
+        shots=[("shots/consulting-tree.png", "驱动树 · 肘线分解 + 圈注 + 自洽校验"),
+               ("shots/consulting-dots.png", "点阵去向 · 细分条 + 圈注"),
+               ("shots/consulting-chain.png", "链式递减 · 节点链 + So-What 收口")],
+        shot_wide=("shots/consulting-skin.png", "同一真源一键换肤 · Aham 蓝 ⇄ 黑·白·金三国色（v2.5 世界杯样张）")),
     "aham-survey": dict(dir="aham-survey", name="Aham Survey", tag="现场调研工具（macOS）", type="macOS App",
         sub="把现场对话做成可交付的结构化调研报告。结构化问卷 · 本地录音转写 · 自行配置 LLM Key 的 AI。",
         feats=[("项目制调研", "按客户 / 项目建调研，进行中 / 草稿 / 已完成 / 已归档"),
@@ -53,6 +57,15 @@ def page(repo, c):
         f'<div class="feat"><div class="ft">{t}</div><div class="fd">{d}</div></div>' for t, d in c["feats"])
     ctas = "\n".join(
         f'<a class="btn {"pri" if p else "sec"}" href="{u}">{t}{" ↗" if not p else ""}</a>' for t, u, p in c["ctas"])
+    shots_html = ""
+    if c.get("shots"):
+        cells = "\n".join(
+            f'<figure class="shot"><img src="{p}" alt="{cap}" loading="lazy"><figcaption>{cap}</figcaption></figure>'
+            for p, cap in c["shots"])
+        if c.get("shot_wide"):
+            p, cap = c["shot_wide"]
+            cells += f'\n<figure class="shot wide"><img src="{p}" alt="{cap}" loading="lazy"><figcaption>{cap}</figcaption></figure>'
+        shots_html = f'<h2 class="sh">样张</h2>\n  <div class="shots">\n{cells}\n  </div>\n  '
     return f"""<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{c['name']} — {c['tag']}</title>
@@ -77,9 +90,14 @@ def page(repo, c):
   .feats{{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:48px}}
   .feat{{background:var(--p);border-radius:12px;padding:18px 20px}}
   .feat .ft{{font-weight:600;font-size:16px}} .feat .fd{{color:var(--i2);font-size:14px;margin-top:6px}}
+  .sh{{font-size:20px;font-weight:700;margin:0 0 16px}}
+  .shots{{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:48px}}
+  .shot{{margin:0}} .shot.wide{{grid-column:1/-1}}
+  .shot img{{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:10px}}
+  .shot figcaption{{font-size:12px;color:var(--i3);margin-top:6px}}
   footer{{border-top:1px solid var(--line);padding-top:20px;color:var(--i3);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}}
   footer a{{color:var(--i3);text-decoration:none}}
-  @media(max-width:680px){{.feats{{grid-template-columns:1fr}}}}
+  @media(max-width:680px){{.feats{{grid-template-columns:1fr}}.shots{{grid-template-columns:1fr}}}}
 </style></head><body><div class="wrap">
   <nav><span class="d"></span>{nav_html(repo)}</nav>
   <img class="hero" src="banner.png" alt="{c['name']} — {c['tag']}">
@@ -91,14 +109,18 @@ def page(repo, c):
   <div class="feats">
 {feats}
   </div>
-  <footer>
+  {shots_html}<footer>
     <span>Aham · 把灵光一现，做成能用的 AI 工具</span>
     <span><a href="https://github.com/li599198347-svg/{repo}">github.com/li599198347-svg/{repo}</a></span>
   </footer>
 </div></body></html>
 """
 
+import sys
+ONLY = sys.argv[1] if len(sys.argv) > 1 else None
 for repo, c in SITES.items():
+    if ONLY and repo != ONLY:
+        continue
     repo_dir = Path(DOCS) / c["dir"]
     docs = repo_dir / "docs"; docs.mkdir(exist_ok=True)
     (docs / "index.html").write_text(page(repo, c), encoding="utf-8")

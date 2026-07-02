@@ -22,9 +22,14 @@
   .feats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:48px}
   .feat{background:var(--p);border-radius:12px;padding:18px 20px}
   .feat .ft{font-weight:600;font-size:16px} .feat .fd{color:var(--i2);font-size:14px;margin-top:6px}
+  .sh{font-size:20px;font-weight:700;margin:0 0 16px}
+  .shots{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:48px}
+  .shot{margin:0} .shot.wide{grid-column:1/-1}
+  .shot img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:10px}
+  .shot figcaption{font-size:12px;color:var(--i3);margin-top:6px}
   footer{border-top:1px solid var(--line);padding-top:20px;color:var(--i3);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
   footer a{color:var(--i3);text-decoration:none}
-  @media(max-width:680px){.feats{grid-template-columns:1fr}}
+  @media(max-width:680px){.feats{grid-template-columns:1fr}.shots{grid-template-columns:1fr}}
 </style></head><body><div class="wrap">
   <nav><span class="d"></span><a href="https://github.com/li599198347-svg/aham-ui">Aham UI</a> <span class="sep">·</span> <a href="https://github.com/li599198347-svg/aham-survey">Aham Survey</a> <span class="sep">·</span> <a href="https://github.com/li599198347-svg/aham-voice">Aham Voice</a> <span class="sep">·</span> <b>Aham PPT</b></nav>
   <img class="hero" src="banner.png" alt="Aham PPT — 克制的 AI PPT 制作技能">
@@ -40,6 +45,13 @@
 <div class="feat"><div class="ft">原生可编辑 PPTX</div><div class="fd">每个元素都是 PPT 原生形状 / 文本框，双击即改</div></div>
 <div class="feat"><div class="ft">11 页样张</div><div class="fd">封面 / 看板 / 选型 / 趋势 / 路线 / 大数字 / 架构 / 2×2 / 流程 / 对照 / 深色</div></div>
 <div class="feat"><div class="ft">换成你的品牌</div><div class="fd">改 tokens 主色 + 字体 + 品牌名，四步适配</div></div>
+  </div>
+  <h2 class="sh">样张</h2>
+  <div class="shots">
+<figure class="shot"><img src="shots/consulting-tree.png" alt="驱动树 · 肘线分解 + 圈注 + 自洽校验" loading="lazy"><figcaption>驱动树 · 肘线分解 + 圈注 + 自洽校验</figcaption></figure>
+<figure class="shot"><img src="shots/consulting-dots.png" alt="点阵去向 · 细分条 + 圈注" loading="lazy"><figcaption>点阵去向 · 细分条 + 圈注</figcaption></figure>
+<figure class="shot"><img src="shots/consulting-chain.png" alt="链式递减 · 节点链 + So-What 收口" loading="lazy"><figcaption>链式递减 · 节点链 + So-What 收口</figcaption></figure>
+<figure class="shot wide"><img src="shots/consulting-skin.png" alt="同一真源一键换肤 · Aham 蓝 ⇄ 黑·白·金三国色（v2.5 世界杯样张）" loading="lazy"><figcaption>同一真源一键换肤 · Aham 蓝 ⇄ 黑·白·金三国色（v2.5 世界杯样张）</figcaption></figure>
   </div>
   <footer>
     <span>Aham · 把灵光一现，做成能用的 AI 工具</span>
