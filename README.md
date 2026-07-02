@@ -49,13 +49,17 @@
 <td width="33%"><img src="assets/shots/theme-c-cover.png" alt="C 高表现力档"><br><sub><b>C · 高表现力档</b> · 深色重音</sub></td>
 </tr>
 <tr>
-<td width="33%"><img src="assets/shots/slide-02-dashboard.png" alt="KPI 看板"><br><sub><b>KPI 看板</b> · 指标条 + 文档表</sub></td>
-<td width="33%"><img src="assets/shots/slide-04-evidence.png" alt="趋势图"><br><sub><b>趋势图</b> · 灰阶柱 + 一抹蓝</sub></td>
-<td width="33%"><img src="assets/shots/slide-07-architecture.png" alt="三层架构"><br><sub><b>三层架构</b> · 战略 / 管理 / 执行</sub></td>
+<td width="33%"><img src="assets/shots/consulting-tree.png" alt="驱动树"><br><sub><b>驱动树</b> · 肘线分解 + 圈注 + 自洽校验</sub></td>
+<td width="33%"><img src="assets/shots/consulting-dots.png" alt="点阵去向"><br><sub><b>点阵去向</b> · 48 队去向 + 细分条 + 圈注</sub></td>
+<td width="33%"><img src="assets/shots/consulting-chain.png" alt="链式递减"><br><sub><b>链式递减</b> · 节点链 + 终点拆解 + So-What</sub></td>
 </tr>
 </table>
 
-> 完整 11 页样张 + 可编辑版 → [aham-ppt-v6.1-demo.pptx](examples/aham-ppt-v6.1-demo.pptx)
+同一份真源一键换肤（Aham 蓝 ⇄ 黑·白·金三国色，v2.5 世界杯样张）：
+
+<img src="assets/shots/consulting-skin.png" alt="同一真源换肤对比" width="100%">
+
+> 完整 11 页样张 + 可编辑版 → [aham-ppt-v6.1-demo.pptx](examples/aham-ppt-v6.1-demo.pptx)　·　世界杯十页样张（SVG 真源 + 双配色 PPTX）→ [examples/consulting/](examples/consulting/)
 
 ## 开始使用
 
